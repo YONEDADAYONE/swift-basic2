@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Title</key>
+	<array>
+		<string>テキスト</string>
+		<string>テキスト</string>
+		<string>テキスト</string>
+		<string>テキスト</string>
+		<string>テキスト</string>
+		<string>テキスト</string>
+		<string>テキスト</string>
+		<string>テキスト</string>
+		<string>テキスト</string>
+	</array>
+	<key>subTitle</key>
+	<array>
+		<string>てきすと</string>
+		<string>てきすと</string>
+		<string>てきすと</string>
+		<string>てきすと</string>
+		<string>てきすと</string>
+		<string>てきすと</string>
+		<string>てきすと</string>
+		<string>てきすと</string>
+		<string>てきすと</string>
+	</array>
+	<key>image</key>
+	<array>
+		<string>0</string>
+		<string>1</string>
+		<string>2</string>
+	</array>
+	<key>image2</key>
+	<array>
+		<string>3</string>
+		<string>4</string>
+		<string>5</string>
+		<string>6</string>
+	</array>
+	<key>image3</key>
+	<array>
+		<string>7</string>
+		<string>8</string>
+	</array>
+</dict>
+</plist>
