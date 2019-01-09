@@ -67,7 +67,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="タイトル" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bwy-Rq-B5s">
-                                <rect key="frame" x="16" y="175" width="343" height="30"/>
+                                <rect key="frame" x="16" y="185" width="343" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -95,13 +95,14 @@
                     </view>
                     <navigationItem key="navigationItem" title="ToDo登録画面" id="aHM-eW-fEN"/>
                     <connections>
+                        <outlet property="button" destination="vsh-dI-prs" id="6L3-rW-kf3"/>
                         <outlet property="todoContentsText" destination="6RE-nc-AfL" id="Hxc-kK-5xz"/>
                         <outlet property="todoTitleText" destination="bwy-Rq-B5s" id="2Dh-n9-5YU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2052" y="-1461"/>
+            <point key="canvasLocation" x="2111" y="-1461"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Jze-6y-IJ5">

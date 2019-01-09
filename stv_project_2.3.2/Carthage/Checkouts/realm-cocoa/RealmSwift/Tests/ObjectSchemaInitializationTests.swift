@@ -223,8 +223,8 @@ class SwiftFakeObject: NSObject {
     @objc class func primaryKey() -> String? { return nil }
     @objc class func ignoredProperties() -> [String] { return [] }
     @objc class func indexedProperties() -> [String] { return [] }
-    @objc class func _realmObjectName() -> String? { return nil }
-    @objc class func _realmColumnNames() -> [String: String]? { return nil }
+    @objc class func realmObjectName() -> String? { return nil }
+    @objc class func realmColumnNames() -> [String: String]? { return nil }
 }
 
 class SwiftObjectWithNSURL: SwiftFakeObject {
