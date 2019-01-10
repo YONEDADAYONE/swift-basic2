@@ -79,7 +79,7 @@ class SwiftOptionalObject: Object {
 }
 
 class SwiftOptionalPrimaryObject: SwiftOptionalObject {
-    let id = RealmOptional<Int>()
+    let realmid = RealmOptional<Int>()
 
     override class func primaryKey() -> String? { return "id" }
 }
@@ -151,7 +151,7 @@ class SwiftOptionalDefaultValuesObject: Object {
 }
 
 class SwiftOptionalIgnoredPropertiesObject: Object {
-    @objc dynamic var id = 0
+    @objc dynamic var realmid = 0
 
     @objc dynamic var optNSStringCol: NSString? = "A"
     @objc dynamic var optStringCol: String? = "B"
@@ -232,7 +232,7 @@ class SwiftArrayPropertySubclassObject: SwiftArrayPropertyObject {
 }
 
 class SwiftLinkToPrimaryStringObject: Object {
-    @objc dynamic var pk = ""
+    @objc dynamic var primaryKey = ""
     @objc dynamic var object: SwiftPrimaryStringObject?
     let objects = List<SwiftPrimaryStringObject>()
 
@@ -525,7 +525,7 @@ class SwiftGenericPropsOrderingObject: SwiftGenericPropsOrderingParent {
     var firstIgnored = 999
     @objc dynamic var dynamicIgnored = 999
     @objc dynamic var firstNumber = 0                   // Managed property
-    class func myClassFunction(x: Int, y: Int) -> Int { return x + y }
+    class func myClassFunction(xxx: Int, yyy: Int) -> Int { return xxx + yyy }
     var secondIgnored = 999
     lazy var lazyIgnored = 999
     let firstArray = List<SwiftStringObject>()          // Managed property

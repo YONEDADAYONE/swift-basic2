@@ -25,7 +25,7 @@ class SwiftRealmTests: RLMTestCase {
 
     func testRealmExists() {
         let realm = realmWithTestPath()
-        XCTAssertNotNil(realm, "realm should not be nil");
+        XCTAssertNotNil(realm, "realm should not be nil")
         XCTAssertTrue((realm as AnyObject) is RLMRealm, "realm should be of class RLMRealm")
     }
 
@@ -67,7 +67,7 @@ class SwiftRealmTests: RLMTestCase {
 
         // we have two notifications, one for opening the realm, and a second when performing our transaction
         let notificationFired = expectation(description: "notification fired")
-        let token = realm.addNotificationBlock { note, realm in
+        let token = realm.addNotificationBlock { _, realm in
             XCTAssertNotNil(realm, "Realm should not be nil")
             notificationFired.fulfill()
         }
@@ -115,8 +115,9 @@ class SwiftRealmTests: RLMTestCase {
         let objs = SwiftIntObject.allObjects(in: realm)
         let objects = SwiftIntObject.allObjects(in: realm).sortedResults(usingKeyPath: "intCol", ascending: true)
         let updateComplete = expectation(description: "background update complete")
-
+        // swiftlint:disable (empty_parentheses_with_trailing_closure)
         let token = realm.addNotificationBlock() { (_, _) in
+        // swiftlint:disable:previous empty_parentheses_with_trailing_closure
             XCTAssertEqual(objs.count, UInt(2))
             XCTAssertEqual(objs.sortedResults(usingKeyPath: "intCol", ascending: true).count, UInt(2))
             XCTAssertEqual(objects.count, UInt(2))
@@ -127,11 +128,11 @@ class SwiftRealmTests: RLMTestCase {
             let realm = self.realmWithTestPath()
             try! realm.transaction {
                 var obj = SwiftIntObject()
-                obj.intCol = 2;
+                obj.intCol = 2
                 realm.add(obj)
 
                 obj = SwiftIntObject()
-                obj.intCol = 1;
+                obj.intCol = 1
                 realm.add(obj)
             }
         }
@@ -144,7 +145,7 @@ class SwiftRealmTests: RLMTestCase {
         let realm = realmWithTestPath()
 
         let notificationFired = expectation(description: "notification fired")
-        let token = realm.addNotificationBlock { note, realm in
+        let token = realm.addNotificationBlock { _, realm in
             XCTAssertNotNil(realm, "Realm should not be nil")
             notificationFired.fulfill()
         }
@@ -229,7 +230,7 @@ class SwiftRealmTests: RLMTestCase {
 
         // we have two notifications, one for opening the realm, and a second when performing our transaction
         let notificationFired = expectation(description: "notification fired")
-        let token = realm.addNotificationBlock { note, realm in
+        let token = realm.addNotificationBlock { _, realm in
             XCTAssertNotNil(realm, "Realm should not be nil")
             notificationFired.fulfill()
         }

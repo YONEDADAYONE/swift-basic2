@@ -81,10 +81,10 @@ class SwiftAggregateObject: RLMObject {
 }
 
 class SwiftAllIntSizesObject: RLMObject {
-    @objc dynamic var int8  : Int8  = 0
-    @objc dynamic var int16 : Int16 = 0
-    @objc dynamic var int32 : Int32 = 0
-    @objc dynamic var int64 : Int64 = 0
+    @objc dynamic var int8: Int8  = 0
+    @objc dynamic var int16: Int16 = 0
+    @objc dynamic var int32: Int32 = 0
+    @objc dynamic var int64: Int64 = 0
 }
 
 class SwiftEmployeeObject: RLMObject {
@@ -109,7 +109,9 @@ class SwiftDynamicObject: RLMObject {
 }
 
 class SwiftUTF8Object: RLMObject {
+    // swiftlint:disable (identifier_name)
     @objc dynamic var 柱колоéнǢкƱаم👍 = "值значен™👍☞⎠‱௹♣︎☐▼❒∑⨌⧭иеمرحبا"
+    // swiftlint:disable:previous identifier_name
 }
 
 class SwiftIgnoredPropertiesObject: RLMObject {
@@ -133,26 +135,26 @@ class SwiftPrimaryStringObject: RLMObject {
 }
 
 class SwiftLinkSourceObject: RLMObject {
-    @objc dynamic var id = 0
+    @objc dynamic var realmid = 0
     @objc dynamic var link: SwiftLinkTargetObject?
 }
 
 class SwiftLinkTargetObject: RLMObject {
-    @objc dynamic var id = 0
+    @objc dynamic var realmid = 0
     @objc dynamic var backlinks: RLMLinkingObjects<SwiftLinkSourceObject>?
 
-    override class func linkingObjectsProperties() -> [String : RLMPropertyDescriptor] {
+    override class func linkingObjectsProperties() -> [String: RLMPropertyDescriptor] {
         return ["backlinks": RLMPropertyDescriptor(with: SwiftLinkSourceObject.self, propertyName: "link")]
     }
 }
 
-class SwiftLazyVarObject : RLMObject {
-    @objc dynamic lazy var lazyProperty : String = "hello world"
+class SwiftLazyVarObject: RLMObject {
+    @objc dynamic lazy var lazyProperty: String = "hello world"
 }
 
-class SwiftIgnoredLazyVarObject : RLMObject {
-    @objc dynamic var id = 0
-    @objc dynamic lazy var ignoredVar : String = "hello world"
+class SwiftIgnoredLazyVarObject: RLMObject {
+    @objc dynamic var realmid = 0
+    @objc dynamic lazy var ignoredVar: String = "hello world"
     override class func ignoredProperties() -> [String] { return ["ignoredVar"] }
 }
 

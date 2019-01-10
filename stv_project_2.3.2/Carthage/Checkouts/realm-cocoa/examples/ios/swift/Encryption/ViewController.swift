@@ -82,7 +82,9 @@ class ViewController: UIViewController {
     }
 
     func log(text: String) {
+        // swiftlint:disable (shorthand_operator)
         textView.text = textView.text + text + "\n\n"
+        // swiftlint:disable:previous shorthand_operator
     }
 
     func getKey() -> NSData {

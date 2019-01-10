@@ -26,7 +26,7 @@ class OuterClass {
     }
 }
 
-class SwiftStringObjectSubclass : SwiftStringObject {
+class SwiftStringObjectSubclass: SwiftStringObject {
     @objc dynamic var stringCol2 = ""
 }
 
@@ -39,7 +39,7 @@ class SwiftDefaultObject: RLMObject {
     @objc dynamic var intCol = 1
     @objc dynamic var boolCol = true
 
-    override class func defaultPropertyValues() -> [AnyHashable : Any]? {
+    override class func defaultPropertyValues() -> [AnyHashable: Any]? {
         return ["intCol": 2]
     }
 }
@@ -146,38 +146,38 @@ class SwiftObjectInterfaceTests: RLMTestCase {
 
     func testOptionalNSNumberProperties() {
         let realm = realmWithTestPath()
-        let no = SwiftOptionalNumberObject()
+        let noo = SwiftOptionalNumberObject()
         XCTAssertEqual([.int, .float, .double, .bool], no.objectSchema.properties.map { $0.type })
 
-        XCTAssertEqual(1, no.intCol!)
+        XCTAssertEqual(1, noo.intCol!)
         XCTAssertEqual(2.2 as Float as NSNumber, no.floatCol!)
-        XCTAssertEqual(3.3, no.doubleCol!)
-        XCTAssertEqual(true, no.boolCol!)
+        XCTAssertEqual(3.3, noo.doubleCol!)
+        XCTAssertEqual(true, noo.boolCol!)
 
         try! realm.transaction {
             realm.add(no)
-            no.intCol = nil
-            no.floatCol = nil
-            no.doubleCol = nil
-            no.boolCol = nil
+            noo.intCol = nil
+            noo.floatCol = nil
+            noo.doubleCol = nil
+            noo.boolCol = nil
         }
 
-        XCTAssertNil(no.intCol)
-        XCTAssertNil(no.floatCol)
-        XCTAssertNil(no.doubleCol)
-        XCTAssertNil(no.boolCol)
+        XCTAssertNil(noo.intCol)
+        XCTAssertNil(noo.floatCol)
+        XCTAssertNil(noo.doubleCol)
+        XCTAssertNil(noo.boolCol)
 
         try! realm.transaction {
-            no.intCol = 1.1
-            no.floatCol = 2.2 as Float as NSNumber
-            no.doubleCol = 3.3
-            no.boolCol = false
+            noo.intCol = 1.1
+            noo.floatCol = 2.2 as Float as NSNumber
+            noo.doubleCol = 3.3
+            noo.boolCol = false
         }
 
-        XCTAssertEqual(1, no.intCol!)
-        XCTAssertEqual(2.2 as Float as NSNumber, no.floatCol!)
-        XCTAssertEqual(3.3, no.doubleCol!)
-        XCTAssertEqual(false, no.boolCol!)
+        XCTAssertEqual(1, noo.intCol!)
+        XCTAssertEqual(2.2 as Float as NSNumber, noo.floatCol!)
+        XCTAssertEqual(3.3, noo.doubleCol!)
+        XCTAssertEqual(false, noo.boolCol!)
     }
 
     func testOptionalSwiftProperties() {
@@ -204,7 +204,7 @@ class SwiftObjectInterfaceTests: RLMTestCase {
         XCTAssertEqual(firstObj.optStringCol!, "Hi!")
         XCTAssertEqual(firstObj.optNSStringCol!, "Hi!")
         XCTAssertEqual(firstObj.optBinaryCol!, Data(bytes: "hi", count: 2))
-        XCTAssertEqual(firstObj.optDateCol!,  Date(timeIntervalSinceReferenceDate: 10))
+        XCTAssertEqual(firstObj.optDateCol!, Date(timeIntervalSinceReferenceDate: 10))
 
         try! realm.transaction {
             firstObj.optObjectCol = nil
@@ -273,9 +273,9 @@ class SwiftObjectInterfaceTests: RLMTestCase {
     func testCustomAccessors() {
         let realm = realmWithTestPath()
         realm.beginWriteTransaction()
-        let ca = CustomAccessorsObject.create(in: realm, withValue: ["name", 2])
+        let caa = CustomAccessorsObject.create(in: realm, withValue: ["name", 2])
         XCTAssertEqual(ca.name!, "name", "name property should be name.")
-        ca.age = 99
+        caa.age = 99
         XCTAssertEqual(ca.age, Int32(99), "age property should be 99")
         try! realm.commitWriteTransaction()
     }
@@ -299,16 +299,16 @@ class SwiftObjectInterfaceTests: RLMTestCase {
         let realm = RLMRealm.default()
         realm.beginWriteTransaction()
         _ = SwiftPrimaryStringObject.createOrUpdateInDefaultRealm(withValue: ["string", 1])
-        let objects = SwiftPrimaryStringObject.allObjects();
-        XCTAssertEqual(objects.count, UInt(1), "Should have 1 object");
-        XCTAssertEqual((objects[0] as! SwiftPrimaryStringObject).intCol, 1, "Value should be 1");
+        let objects = SwiftPrimaryStringObject.allObjects()
+        XCTAssertEqual(objects.count, UInt(1), "Should have 1 object")
+        XCTAssertEqual((objects[0] as! SwiftPrimaryStringObject).intCol, 1, "Value should be 1")
 
         _ = SwiftPrimaryStringObject.createOrUpdateInDefaultRealm(withValue: ["stringCol": "string2", "intCol": 2])
         XCTAssertEqual(objects.count, UInt(2), "Should have 2 objects")
 
         _ = SwiftPrimaryStringObject.createOrUpdateInDefaultRealm(withValue: ["string", 3])
         XCTAssertEqual(objects.count, UInt(2), "Should have 2 objects")
-        XCTAssertEqual((objects[0] as! SwiftPrimaryStringObject).intCol, 3, "Value should be 3");
+        XCTAssertEqual((objects[0] as! SwiftPrimaryStringObject).intCol, 3, "Value should be 3")
 
         try! realm.commitWriteTransaction()
     }

@@ -26,7 +26,7 @@ func nextPrimaryKey() -> Int {
 }
 
 class KVOObject: Object {
-    @objc dynamic var pk = nextPrimaryKey() // primary key for equality
+    @objc dynamic var primaryKey = nextPrimaryKey() // primary key for equality
     @objc dynamic var ignored: Int = 0
 
     @objc dynamic var boolCol: Bool = false

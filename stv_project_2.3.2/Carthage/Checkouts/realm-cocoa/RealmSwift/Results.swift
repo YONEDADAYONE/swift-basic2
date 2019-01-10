@@ -394,11 +394,11 @@ extension Results: RealmCollection {
     /// zero or more applications of successor().
     public var endIndex: Int { return count }
 
-    public func index(after i: Int) -> Int { return i + 1 }
-    public func index(before i: Int) -> Int { return i - 1 }
+    public func index(after integer: Int) -> Int { return integer + 1 }
+    public func index(before integer: Int) -> Int { return integer - 1 }
 
     /// :nodoc:
-    public func _observe(_ block: @escaping (RealmCollectionChange<AnyRealmCollection<Element>>) -> Void) ->
+    public func observe(_ block: @escaping (RealmCollectionChange<AnyRealmCollection<Element>>) -> Void) ->
         NotificationToken {
         let anyCollection = AnyRealmCollection(self)
         return rlmResults.addNotificationBlock { _, change, error in

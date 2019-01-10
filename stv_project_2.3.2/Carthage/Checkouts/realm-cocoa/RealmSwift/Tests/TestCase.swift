@@ -114,11 +114,11 @@ class TestCase: XCTestCase {
 
     /// Check whether two test objects are equal (refer to the same row in the same Realm), even if their models
     /// don't define a primary key.
-    func assertEqual<O: Object>(_ o1: O?, _ o2: O?, fileName: StaticString = #file, lineNumber: UInt = #line) {
+    func assertEqual<O: Object>(_ oo1: O?, _ oo2: O?, fileName: StaticString = #file, lineNumber: UInt = #line) {
         if o1 == nil && o2 == nil {
             return
         }
-        if let o1 = o1, let o2 = o2, o1.isSameObject(as: o2) {
+        if let oo1 = oo1, let oo2 = oo2, oo1.isSameObject(as: oo2) {
             return
         }
         XCTFail("Objects expected to be equal, but weren't. First: \(String(describing: o1)), "
@@ -126,10 +126,10 @@ class TestCase: XCTestCase {
     }
 
     /// Check whether two collections containing Realm objects are equal.
-    func assertEqual<C: Collection>(_ c1: C, _ c2: C, fileName: StaticString = #file, lineNumber: UInt = #line)
+    func assertEqual<C: Collection>(_ cc1: C, _ cc2: C, fileName: StaticString = #file, lineNumber: UInt = #line)
         where C.Iterator.Element: Object {
             XCTAssertEqual(c1.count, c2.count, "Collection counts were incorrect", file: fileName, line: lineNumber)
-            for (o1, o2) in zip(c1, c2) {
+            for (oo1, oo2) in zip(cc1, cc2) {
                 assertEqual(o1, o2, fileName: fileName, lineNumber: lineNumber)
             }
     }
@@ -142,7 +142,7 @@ class TestCase: XCTestCase {
         }
 
         XCTAssertEqual(expected.count, actual.count, "Collection counts were incorrect", file: file, line: line)
-        for (e, a) in zip(expected, actual) where e != a {
+        for (eee, aaa) in zip(expected, actual) where eee != aaa {
             XCTFail("assertEqual failed: (\"\(expected)\") is not equal to (\"\(actual)\")",
                 file: file, line: line)
             return
@@ -184,7 +184,7 @@ class TestCase: XCTestCase {
             _ = try block()
             XCTFail("Expected to catch <\(expectedError)>, but no error was thrown.",
                 file: fileName, line: lineNumber)
-        } catch let e as Realm.Error where e.code == expectedError {
+        } catch let eee as Realm.Error where eee.code == expectedError {
             // Success!
         } catch {
             XCTFail("Expected to catch <\(expectedError)>, but instead caught <\(error)>.",
@@ -199,7 +199,7 @@ class TestCase: XCTestCase {
             _ = try block()
             XCTFail("Expected to catch <\(expectedError)>, but no error was thrown.",
                 file: fileName, line: lineNumber)
-        } catch let e where e._code == expectedError._code {
+        } catch let eee where eee._code == expectedError._code {
             // Success!
         } catch {
             XCTFail("Expected to catch <\(expectedError)>, but instead caught <\(error)>.",

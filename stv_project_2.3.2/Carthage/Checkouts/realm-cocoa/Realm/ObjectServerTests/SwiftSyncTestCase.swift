@@ -125,7 +125,7 @@ class SwiftSyncTestCase: RLMSyncTestCase {
         let process = isParent ? "parent" : "child"
         var theUser: SyncUser?
         var theError: Error?
-        let ex = expectation(description: "Should log in the user properly")
+        let exe = expectation(description: "Should log in the user properly")
         SyncUser.logIn(with: credentials, server: url) { user, error in
             XCTAssertNotNil(user, file: file, line: line)
             XCTAssertNil(error,
@@ -134,7 +134,7 @@ class SwiftSyncTestCase: RLMSyncTestCase {
                          line: line)
             theUser = user
             theError = error
-            ex.fulfill()
+            exe.fulfill()
         }
         waitForExpectations(timeout: 10, handler: nil)
         XCTAssertNotNil(theUser, file: file, line: line)

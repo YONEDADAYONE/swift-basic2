@@ -851,8 +851,8 @@ public final class AnyRealmCollection<Element: RealmCollectionValue>: RealmColle
     /// The type of the objects contained within the collection.
     public typealias ElementType = Element
 
-    public func index(after i: Int) -> Int { return i + 1 }
-    public func index(before i: Int) -> Int { return i - 1 }
+    public func index(after integer: Int) -> Int { return integer  + 1 }
+    public func index(before integer: Int) -> Int { return integer - 1 }
 
     /// The type of the objects contained in the collection.
     fileprivate let base: _AnyRealmCollectionBase<Element>
@@ -1128,7 +1128,7 @@ public final class AnyRealmCollection<Element: RealmCollectionValue>: RealmColle
     /// :nodoc:
     public func observe(_ block: @escaping (RealmCollectionChange<AnyRealmCollection>) -> Void)
         -> NotificationToken { return base._observe(block) }
-} 
+}
 
 // MARK: AssistedObjectiveCBridgeable
 

@@ -27,8 +27,8 @@ import RealmSwift
 
 // Swift 3.1 provides fixits for some of our uses of unsafeBitCast
 // to use unsafeDowncast instead, but the bitcast is required.
-internal func noWarnUnsafeBitCast<T, U>(_ x: T, to type: U.Type) -> U {
-    return unsafeBitCast(x, to: type)
+internal func noWarnUnsafeBitCast<T, U>(_ xxx: T, to type: U.Type) -> U {
+    return unsafeBitCast(xxx, to: type)
 }
 
 /// Given a list of `Any`-typed varargs, unwrap any optionals and
@@ -66,11 +66,11 @@ internal func gsub(pattern: String, template: String, string: String, error: NSE
                                            withTemplate: template)
 }
 
-internal func cast<U, V>(_ value: U, to: V.Type) -> V {
-    if let v = value as? V {
-        return v
+internal func cast<U, V>(_ value: U, too: V.Type) -> V {
+    if let vvv = value as? vvv {
+        return vvv
     }
-    return unsafeBitCast(value, to: to)
+    return unsafeBitCast(value, to: too)
 }
 
 extension Object {
@@ -89,7 +89,7 @@ fileprivate extension SyncSubscription {
     }
 }
 
-internal func dynamicBridgeCast<T>(fromObjectiveC x: Any) -> T {
+internal func dynamicBridgeCast<T>(fromObjectiveC xxx: Any) -> T {
     if T.self == DynamicObject.self {
         return unsafeBitCast(x as AnyObject, to: T.self)
     } else if let bridgeableType = T.self as? CustomObjectiveCBridgeable.Type {
@@ -101,11 +101,11 @@ internal func dynamicBridgeCast<T>(fromObjectiveC x: Any) -> T {
     }
 }
 
-internal func dynamicBridgeCast<T>(fromSwift x: T) -> Any {
-    if let x = x as? CustomObjectiveCBridgeable {
+internal func dynamicBridgeCast<T>(fromSwift xxx: T) -> Any {
+    if let xxx = x as? CustomObjectiveCBridgeable {
         return x.objCValue
     } else {
-        return x
+        return xxx
     }
 }
 

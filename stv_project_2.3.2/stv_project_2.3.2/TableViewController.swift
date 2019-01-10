@@ -13,7 +13,7 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
     @IBOutlet weak var tableview: UITableView!
     //空の配列
-    var todoArray: [trTodo] = []
+    var todoArray: [TrTodo] = []
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -29,7 +29,7 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //ここで自分で指定したCellを呼んでる。
-        let cell = tableview.dequeueReusableCell(withIdentifier : "Cell", for: indexPath)
+        let cell = tableview.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         let formatter = DateFormatter()
         formatter.dateFormat =
             DateFormatter.dateFormat(fromTemplate: "ydMMM", options: 0, locale: Locale(identifier: "ja_JP"))
@@ -53,10 +53,10 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func tableView(_ tableView: UITableView,
                    commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         let city = todoArray[indexPath.row]
-        let realm = try! Realm()
+        let realm = try? Realm()
         do {
-            try realm.write {
-                realm.delete(city)
+            try realm?.write {
+                realm?.delete(city)
                 todoArray.remove(at: indexPath.row)
             }
         } catch {
@@ -78,7 +78,7 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func fetchDate() {
         let realm = try? Realm()
         //空の配列のCityArrayにrelmeのデータを入れる
-        todoArray = Array(realm!.objects(trTodo.self).sorted(byKeyPath: "limitDate", ascending: false))
+        todoArray = Array(realm!.objects(TrTodo.self).sorted(byKeyPath: "limitDate", ascending: false))
     }
 
 }

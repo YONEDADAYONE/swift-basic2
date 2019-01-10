@@ -730,7 +730,7 @@ class ObjectCreationTests: TestCase {
     /// If a Swift class declares generic properties before non-generic ones, the properties
     /// should be registered in order and creation from an array of values should work.
     func testProperOrderingOfProperties() {
-        let v: [Any] = [
+        let vvv: [Any] = [
             // Superclass's columns
             [["intCol": 42], ["intCol": 9001]],
             100,
@@ -787,7 +787,7 @@ class ObjectCreationTests: TestCase {
         XCTAssertEqual(object.dateCol, (array[6] as! Date))
         XCTAssertEqual(object.objectCol!.boolCol, boolObjectValue)
         XCTAssertEqual(object.arrayCol.count, boolObjectListValues.count)
-        for i in 0..<boolObjectListValues.count {
+        for integer in 0..<boolObjectListValues.count {
             XCTAssertEqual(object.arrayCol[i].boolCol, boolObjectListValues[i])
         }
     }
@@ -803,7 +803,7 @@ class ObjectCreationTests: TestCase {
         XCTAssertEqual(object.dateCol, (dictionary["dateCol"] as! Date))
         XCTAssertEqual(object.objectCol!.boolCol, boolObjectValue)
         XCTAssertEqual(object.arrayCol.count, boolObjectListValues.count)
-        for i in 0..<boolObjectListValues.count {
+        for integer  in 0..<boolObjectListValues.count {
             XCTAssertEqual(object.arrayCol[i].boolCol, boolObjectListValues[i])
         }
     }

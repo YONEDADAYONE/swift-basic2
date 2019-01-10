@@ -9,7 +9,7 @@ import Foundation
 import RealmSwift
 
 //var だけではRelme Brower で下記結果がnilになったが@objc dynamicを加えると正常になった
-class trTodo: Object {
+class TrTodo: Object {
     @objc dynamic var todoid = 0
     @objc dynamic var todoTitle = ""
     @objc dynamic var todoContents = ""

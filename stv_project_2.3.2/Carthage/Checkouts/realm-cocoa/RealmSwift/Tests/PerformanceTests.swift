@@ -224,8 +224,8 @@ class SwiftPerformanceTests: TestCase {
         let realm = copyRealmToTestPath(largeRealm)
         measure {
             let results = realm.objects(SwiftStringObject.self)
-            for i in 0..<results.count {
-                _ = results[i].stringCol
+            for integer in 0..<results.count {
+                _ = results[integer].stringCol
             }
         }
     }
@@ -253,8 +253,8 @@ class SwiftPerformanceTests: TestCase {
 
         measure {
             let list = arrayPropertyObject.array
-            for i in 0..<list.count {
-                _ = list[i].stringCol
+            for integer in 0..<list.count {
+                _ = list[integer].stringCol
             }
         }
     }
@@ -318,13 +318,13 @@ class SwiftPerformanceTests: TestCase {
     func testUnindexedStringLookup() {
         let realm = realmWithTestPath()
         try! realm.write {
-            for i in 0..<1000 {
-                realm.create(SwiftStringObject.self, value: [i.description])
+            for integer in 0..<1000 {
+                realm.create(SwiftStringObject.self, value: [integer.description])
             }
         }
         measure {
-            for i in 0..<1000 {
-                _ = realm.objects(SwiftStringObject.self).filter("stringCol = %@", i.description).first
+            for integer in 0..<1000 {
+                _ = realm.objects(SwiftStringObject.self).filter("stringCol = %@", integer.description).first
             }
         }
     }
@@ -332,13 +332,13 @@ class SwiftPerformanceTests: TestCase {
     func testIndexedStringLookup() {
         let realm = realmWithTestPath()
         try! realm.write {
-            for i in 0..<1000 {
-                realm.create(SwiftIndexedPropertiesObject.self, value: [i.description, i])
+            for integer in 0..<1000 {
+                realm.create(SwiftIndexedPropertiesObject.self, value: [integer.description, i])
             }
         }
         measure {
-            for i in 0..<1000 {
-                _ = realm.objects(SwiftIndexedPropertiesObject.self).filter("stringCol = %@", i.description).first
+            for integer in 0..<1000 {
+                _ = realm.objects(SwiftIndexedPropertiesObject.self).filter("stringCol = %@", integer.description).first
             }
         }
     }
@@ -347,9 +347,9 @@ class SwiftPerformanceTests: TestCase {
         let realm = realmWithTestPath()
         realm.beginWrite()
         var ids = [Int]()
-        for i in 0..<10000 {
-            realm.create(SwiftIntObject.self, value: [i])
-            if i % 2 != 0 {
+        for integer in 0..<10000 {
+            realm.create(SwiftIntObject.self, value: [integer])
+            if integer % 2 != 0 {
                 ids.append(i)
             }
         }

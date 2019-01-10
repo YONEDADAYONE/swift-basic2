@@ -59,7 +59,7 @@ class SwiftMutualLink2Object: RLMObject {
     }
 }
 
-class IgnoredLinkPropertyObject : RLMObject {
+class IgnoredLinkPropertyObject: RLMObject {
     @objc dynamic var value = 0
     var obj = SwiftIntObject()
 
@@ -68,7 +68,7 @@ class IgnoredLinkPropertyObject : RLMObject {
     }
 }
 
-class SwiftRecursingSchemaTestObject : RLMObject {
+class SwiftRecursingSchemaTestObject: RLMObject {
     @objc dynamic var propertyWithIllegalDefaultValue: SwiftIntObject? = {
         if mayAccessSchema {
             let realm = RLMRealm.default()
@@ -85,7 +85,7 @@ class InvalidArrayType: FakeObject {
     @objc dynamic var array = RLMArray<SwiftIntObject>(objectClassName: "invalid class")
 }
 
-class InitAppendsToArrayProperty : RLMObject {
+class InitAppendsToArrayProperty: RLMObject {
     @objc dynamic var propertyWithIllegalDefaultValue: RLMArray<SwiftIntObject> = {
         if mayAppend {
             let array = RLMArray<SwiftIntObject>(objectClassName: SwiftIntObject.className())
@@ -115,9 +115,9 @@ class SwiftSchemaTests: RLMMultiProcessTestCase {
         let config = RLMRealmConfiguration.default()
         config.objectClasses = [IgnoredLinkPropertyObject.self]
         config.inMemoryIdentifier = #function
-        let r = try! RLMRealm(configuration: config)
-        try! r.transaction {
-            _ = IgnoredLinkPropertyObject.create(in: r, withValue: [1])
+        let rrr = try! RLMRealm(configuration: config)
+        try! rrr.transaction {
+            _ = IgnoredLinkPropertyObject.create(in: rrr, withValue: [1])
         }
     }
 
@@ -174,9 +174,9 @@ class SwiftSchemaTests: RLMMultiProcessTestCase {
         config.objectClasses = [IgnoredLinkPropertyObject.self]
         config.inMemoryIdentifier = #function
         _ = try! RLMRealm(configuration: config)
-        let r = try! RLMRealm(configuration: RLMRealmConfiguration.default())
-        try! r.transaction {
-            _ = IgnoredLinkPropertyObject.create(in: r, withValue: [1])
+        let rrr = try! RLMRealm(configuration: RLMRealmConfiguration.default())
+        try! rrr.transaction {
+            _ = IgnoredLinkPropertyObject.create(in: rrr, withValue: [1])
         }
     }
 

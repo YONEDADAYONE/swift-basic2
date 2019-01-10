@@ -18,7 +18,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 print(Realm.Configuration.defaultConfiguration.fileURL!)
          todoTitleText.delegate = self
         // デフォルトRealmを取得
-        let realm = try! Realm()
+        //swiftLintで指摘されたのでlet realm = try? Realm()を_ = try? Realm()に変更
+        _ = try? Realm()
         button.isEnabled = false
     }
     //文字が入力されていない場合エンターキーを非活性にするメソッド
@@ -37,7 +38,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         let todoTitleTextName = self.todoTitleText!.text
         let todoContentsTextName = self.todoContentsText!.text
         //newCityの箱にクラスCityLibを継承
-        let trTodoBox = trTodo()
+        let trTodoBox = TrTodo()
         //定数newCityのプロパティにsatValueの値を入れる
         //またsetValueの前は値で今回はtextの値をいれて、forKeyでは 別クラスのキーを参照している
         trTodoBox.setValue(self.todoTitleText!.text, forKey: "todoTitle")
@@ -53,13 +54,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }
         //プライマリーキーIDに1ずつ足す方法
         //https://qiita.com/kotala_b/items/68b9608df6c8bac80f67
-        var maxId: Int { return try! Realm().objects(trTodo.self).sorted(byKeyPath: "todoid").last?.todoid ?? 0 }
+        var maxId: Int? { return try? Realm().objects(TrTodo.self).sorted(byKeyPath: "todoid").last?.todoid ?? 0 }
         trTodoBox.setValue(trTodoBox.todoid + 1, forKey: "todoid")
-        trTodoBox.todoid = maxId + 1
+        trTodoBox.todoid = maxId! + 1 //三項演算子の使用のため?? 0 を追加
         //デフォルトのRealmを取得
         //try! は例外を無視するという意味
         //定数realmはRealmを継承している
-        let realm = try! Realm()
+        let realm = try? Realm()
         print(Realm.Configuration.defaultConfiguration.fileURL!)
 
         //do節でエラーを投げる可能性のあるメソッドを呼び出します。
@@ -68,9 +69,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
         do {
             //writeではテキストを指定したファイルに書き込むことができる。
             //ここではrealmに書き込んでいる。
-            try realm.write {
+            try realm?.write {
                 //上で作成したnewCityの変数にデータを書き込んでいる。
-                realm.add(trTodoBox)
+                realm?.add(trTodoBox)
 //                print("Added\(trTodoBox.todoTitle) to Realm DataBase")
 
                 //書き込んだので初期化してる

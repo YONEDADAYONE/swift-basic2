@@ -56,12 +56,12 @@ class SwiftPermissionsAPITests: SwiftSyncTestCase {
     }
 
     func subscribe<T: Object>(realm: Realm, type: T.Type, _ filter: String = "TRUEPREDICATE") {
-        let ex = expectation(description: "Add partial sync query")
+        let exe = expectation(description: "Add partial sync query")
         realm.subscribe(to: type, where: filter) { _, err in
             if let err = err {
                 XCTFail("Partial sync subsription failed: \(err)")
             } else {
-                ex.fulfill()
+                exe.fulfill()
             }
         }
         waitForExpectations(timeout: 2.0, handler: nil)
@@ -111,26 +111,26 @@ class SwiftPermissionsAPITests: SwiftSyncTestCase {
     }
 
     func createDefaultPermisisons(_ permissions: List<Permission>) {
-        var p = permissions.findOrCreate(forRoleNamed: "everyone")
-        p.canCreate = false
-        p.canRead = false
-        p.canQuery = false
-        p.canDelete = false
-        p.canUpdate = false
-        p.canModifySchema = false
-        p.canSetPermissions = false
+        var ppp = permissions.findOrCreate(forRoleNamed: "everyone")
+        ppp.canCreate = false
+        ppp.canRead = false
+        ppp.canQuery = false
+        ppp.canDelete = false
+        ppp.canUpdate = false
+        ppp.canModifySchema = false
+        ppp.canSetPermissions = false
 
-        p = permissions.findOrCreate(forRoleNamed: "reader")
-        p.canRead = true
-        p.canQuery = true
+        ppp = permissions.findOrCreate(forRoleNamed: "reader")
+        ppp.canRead = true
+        ppp.canQuery = true
 
-        p = permissions.findOrCreate(forRoleNamed: "writer")
-        p.canUpdate = true
-        p.canCreate = true
-        p.canDelete = true
+        ppp = permissions.findOrCreate(forRoleNamed: "writer")
+        ppp.canUpdate = true
+        ppp.canCreate = true
+        ppp.canDelete = true
 
-        p = permissions.findOrCreate(forRoleNamed: "admin")
-        p.canSetPermissions = true
+        ppp = permissions.findOrCreate(forRoleNamed: "admin")
+        ppp.canSetPermissions = true
     }
 
     func add(user: SyncUser, toRole roleName: String, inRealm realm: Realm) {

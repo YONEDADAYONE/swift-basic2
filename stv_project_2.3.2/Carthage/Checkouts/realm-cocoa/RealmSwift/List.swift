@@ -354,7 +354,7 @@ public final class List<Element: RealmCollectionValue>: ListBase {
      - parameter from:  The index of the object to be moved.
      - parameter to:    index to which the object at `from` should be moved.
      */
-    public func move(from: Int, to: Int) {
+    public func move(from: Int, too: Int) {
         throwForNegativeIndex(from)
         throwForNegativeIndex(to)
         _rlmArray.moveObject(at: UInt(from), to: UInt(to))
@@ -496,8 +496,8 @@ extension List: RealmCollection {
             for _ in subrange.lowerBound..<subrange.upperBound {
                 remove(at: subrange.lowerBound)
             }
-            for x in newElements.reversed() {
-                insert(x, at: subrange.lowerBound)
+            for xxx in newElements.reversed() {
+                insert(xxx, at: subrange.lowerBound)
             }
     }
 #else
@@ -527,11 +527,11 @@ extension List: RealmCollection {
     /// zero or more applications of successor().
     public var endIndex: Int { return count }
 
-    public func index(after i: Int) -> Int { return i + 1 }
-    public func index(before i: Int) -> Int { return i - 1 }
+    public func index(after integer: Int) -> Int { return integer + 1 }
+    public func index(before integer: Int) -> Int { return integer - 1 }
 
     /// :nodoc:
-    public func _observe(_ block: @escaping (RealmCollectionChange<AnyRealmCollection<Element>>) -> Void) -> NotificationToken {
+    public func observe(_ block: @escaping (RealmCollectionChange<AnyRealmCollection<Element>>) -> Void) -> NotificationToken {
         let anyCollection = AnyRealmCollection(self)
         return _rlmArray.addNotificationBlock { _, change, error in
             block(RealmCollectionChange.fromObjc(value: anyCollection, change: change, error: error))
@@ -606,8 +606,8 @@ extension List: MutableCollection {
 
      - warning: This method may only be called during a write transaction.
      */
-    public func insert<C: Collection>(contentsOf newElements: C, at i: Int) where C.Iterator.Element == Element {
-        var currentIndex = i
+    public func insert<C: Collection>(contentsOf newElements: C, at integer: Int) where C.Iterator.Element == Element {
+        var currentIndex = integer
         for item in newElements {
             insert(item, at: currentIndex)
             currentIndex += 1
