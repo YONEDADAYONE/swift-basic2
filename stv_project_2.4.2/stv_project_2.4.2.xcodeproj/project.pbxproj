@@ -12,9 +12,8 @@
 		EE3843BC21DF59420062F47A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE3843BA21DF59420062F47A /* Main.storyboard */; };
 		EE3843BE21DF59440062F47A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE3843BD21DF59440062F47A /* Assets.xcassets */; };
 		EE3843C121DF59440062F47A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE3843BF21DF59440062F47A /* LaunchScreen.storyboard */; };
-		EE3843CB21DF5B430062F47A /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE3843C921DF5B430062F47A /* SwiftyJSON.framework */; };
-		EE3843CC21DF5B430062F47A /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE3843CA21DF5B430062F47A /* Alamofire.framework */; };
 		EEE4ABE021E5B02000549381 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE4ABDF21E5B02000549381 /* Weather.swift */; };
+		EEE4ABE221E5CE0F00549381 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = EEE4ABE121E5CE0E00549381 /* .swiftlint.yml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,9 +24,8 @@
 		EE3843BD21DF59440062F47A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EE3843C021DF59440062F47A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EE3843C221DF59440062F47A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EE3843C921DF5B430062F47A /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
-		EE3843CA21DF5B430062F47A /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		EEE4ABDF21E5B02000549381 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		EEE4ABE121E5CE0E00549381 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,8 +33,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EE3843CB21DF5B430062F47A /* SwiftyJSON.framework in Frameworks */,
-				EE3843CC21DF5B430062F47A /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,6 +42,7 @@
 		EE3843AA21DF59420062F47A = {
 			isa = PBXGroup;
 			children = (
+				EEE4ABE121E5CE0E00549381 /* .swiftlint.yml */,
 				EE3843B521DF59420062F47A /* stv_project_2.4.2 */,
 				EE3843B421DF59420062F47A /* Products */,
 				EE3843C821DF5B430062F47A /* Frameworks */,
@@ -77,8 +74,6 @@
 		EE3843C821DF5B430062F47A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				EE3843CA21DF5B430062F47A /* Alamofire.framework */,
-				EE3843C921DF5B430062F47A /* SwiftyJSON.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -142,6 +137,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EEE4ABE221E5CE0F00549381 /* .swiftlint.yml in Resources */,
 				EE3843C121DF59440062F47A /* LaunchScreen.storyboard in Resources */,
 				EE3843BE21DF59440062F47A /* Assets.xcassets in Resources */,
 				EE3843BC21DF59420062F47A /* Main.storyboard in Resources */,
@@ -159,8 +155,6 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
 			);
 			outputFileListPaths = (
 			);
@@ -168,7 +162,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"SwiftLint does not exist, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
