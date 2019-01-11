@@ -30,7 +30,7 @@ class ViewController: UIViewController {
     func checkVariablea() {
         let numberResult = (number1 > number2) ? number1 : number2
         //結果はno2のｈ方が....に訂正
-        print("number1は\(number1)、number2は\(number2)、結果は\(numberResult)")
+        print("number1は\(number1)、number2は\(number2)、\(numberResult)の取得者が勝利です")
     }
     
     //for文をを使用
