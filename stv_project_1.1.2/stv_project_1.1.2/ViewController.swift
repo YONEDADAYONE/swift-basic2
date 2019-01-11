@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     
     let user = ["name": "Yoneda"]
-
+    let changeArray: [String]? = ["aa", "bb", "cc", "dd"]
     var number: Int? = 10
     
     override func viewDidLoad() {
@@ -35,7 +35,7 @@ class ViewController: UIViewController {
     }
     //Optional Chainingを使用
     func callChange() {
-        let change = "Optional Chaining"
-        print(change as Any)
+        let change = changeArray?.count ?? 0
+        print(change)
     }
 }
