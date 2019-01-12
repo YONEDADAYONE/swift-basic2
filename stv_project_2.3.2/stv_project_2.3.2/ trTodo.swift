@@ -16,6 +16,7 @@ class TrTodo: Object {
     @objc dynamic var created = Date()  //登録日
     @objc dynamic var modified = Date() //変更日
     @objc dynamic var limitDate = Date()
+    @objc dynamic var deleteFlg = false
 //    // idをプライマリキーに設定
     override static func primaryKey() -> String? {
         return "todoid"

@@ -69,7 +69,7 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let realm = try? Realm()
+        _ = try? Realm()
         //空の配列のCityArrayにrelmeのデータを入れる
 //        todoArray = Array(realm.objects(trTodo.self))
         return todoArray.count

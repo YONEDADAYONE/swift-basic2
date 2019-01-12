@@ -100,6 +100,7 @@
 				EE77663B21DB9FEB008271BA /* Frameworks */,
 				EE77663C21DB9FEB008271BA /* Resources */,
 				EE77665821DBA4AF008271BA /* ShellScript */,
+				EEDED7BD21E88ABA0028232D /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -168,6 +169,23 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+		EEDED7BD21E88ABA0028232D /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
 			);
 			outputFileListPaths = (
 			);
