@@ -56,11 +56,14 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let realm = try? Realm()
         do {
             try realm?.write {
-                realm?.delete(city)
-                todoArray.remove(at: indexPath.row)
+                city.deleteFlg = false
+                if city.deleteFlg == false {
+                    realm?.delete(city)
+                    todoArray.remove(at: indexPath.row)
+                }
             }
         } catch {
-            print(error)
+        print(error)
         }
         tableView.reloadData()
     }
