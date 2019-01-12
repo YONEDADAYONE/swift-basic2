@@ -16,12 +16,19 @@ class ViewController: UIViewController {
     }
     
     @IBAction func onClickMyButton(sender: UIButton) {
-        // 遷移するViewを定義する。
+//        // 遷移するViewを定義する。
+//        let secondViewController: SecondViewController =
+//            self.storyboard?.instantiateViewController(withIdentifier: "segue")
+//                as? SecondViewController ?? SecondViewController()
+//        // Viewの移動する.
+//        self.present(secondViewController, animated: true, completion: nil)
+        
         let secondViewController: SecondViewController =
             self.storyboard?.instantiateViewController(withIdentifier: "segue")
                 as? SecondViewController ?? SecondViewController()
-        // Viewの移動する.
+        
         self.present(secondViewController, animated: true, completion: nil)
+        
     }
     
 }

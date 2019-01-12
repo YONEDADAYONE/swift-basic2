@@ -13,7 +13,7 @@
         <!--Second View Controller-->
         <scene sceneID="hsR-sN-V5l">
             <objects>
-                <viewController id="GEb-fq-XQA" customClass="SecondViewController" customModule="stv_project_2_1_17" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="segue" useStoryboardIdentifierAsRestorationIdentifier="YES" id="GEb-fq-XQA" customClass="SecondViewController" customModule="stv_project_2_1_17" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DqX-qy-aah">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -38,12 +38,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PCl-bg-IFz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1266" y="-120"/>
+            <point key="canvasLocation" x="306" y="-107"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="stv_project_2_1_17" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ViewController" customModule="stv_project_2_1_17" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -53,6 +53,7 @@
                                 <state key="normal" title="Go"/>
                                 <connections>
                                     <action selector="onClickMyButtonWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rqk-nA-FDa"/>
+                                    <segue destination="GEb-fq-XQA" kind="presentation" identifier="segue" id="Lu3-nx-cvx"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -66,13 +67,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="HSA-r0-zpL"/>
-                    <connections>
-                        <segue destination="GEb-fq-XQA" kind="presentation" identifier="segue" id="n41-ed-odE"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="-120.08995502248877"/>
+            <point key="canvasLocation" x="-354" y="-107"/>
         </scene>
     </scenes>
 </document>
