@@ -6,20 +6,14 @@
 //  Copyright © 2018年 hiroya. All rights reserved.
 //
 
+import Alamofire
 import UIKit
 import WebKit
 
 class ViewController: UIViewController, WKUIDelegate {
     
     @IBOutlet private weak var webView: WKWebView!
-    
-    @IBAction func tapButton(_ sender: UIButton) {
-        if let url: URL = URL(string: "https://www.yahoo.co.jp") {
-            let request: URLRequest = URLRequest(url: url)
-            // インスタンスをビューに追加する
-            webView.load(request)
-        }
-    }
+    let net = NetworkReachabilityManager()
     
     @IBAction func goBack(_ sender: UIButton) {
         webView.goBack()
@@ -35,8 +29,34 @@ class ViewController: UIViewController, WKUIDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-         //デリゲートメソッド　これがないと表示されない
-         webView.uiDelegate = self
+        //デリゲートメソッド　これがないと表示されない
+        webView.uiDelegate = self
+        if let url: URL = URL(string: "https://www.google.co.jp/") {
+            let request: URLRequest = URLRequest(url: url)
+            // インスタンスをビューに追加する
+            webView.load(request)
+            chackWifi()
+        }
+    }
+    
+    //Qiita Alamofireでオフライン判定をする方法
+    func chackWifi() {
+        net?.startListening()
+        if  net?.isReachable ?? false {
+            
+            if net?.isReachableOnEthernetOrWiFi != nil {
+                //do some
+                print("isReachableOnEthernetOrWiFi")
+                
+            } else if net?.isReachableOnWWAN ?? false {
+                //do some
+                print("isReachableOnWWAN")
+                
+            }
+        } else {
+            print("エラーです")
+            
+        }
     }
     
     private func webViewDidStartLoad(_ webView: WKWebView) {
