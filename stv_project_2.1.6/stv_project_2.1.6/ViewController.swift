@@ -39,7 +39,7 @@ class ViewController: UIViewController, WKUIDelegate {
         }
     }
     
-    //Qiita Alamofireでオフライン判定をする方法
+    //Qiita Alamofireでオフライン判定をする方法を参照
     func chackWifi() {
         net?.startListening()
         if  net?.isReachable ?? false {
@@ -55,6 +55,26 @@ class ViewController: UIViewController, WKUIDelegate {
             }
         } else {
             print("エラーです")
+            
+//            let alert: UIAlertController =
+//                UIAlertController(title: "アラート表示",
+//                                  message: "保存してもいいですか？",
+//                                  preferredStyle: UIAlertController.Style.alert)
+//            
+//            let defaultAction: UIAlertAction =
+//                UIAlertAction(title: "OK",
+//                              style: UIAlertAction.Style.default,
+//                              handler: { (_: UIAlertAction) -> Void in print("OK") })
+//            
+//            let cancelAction: UIAlertAction = UIAlertAction(title: "cancel" ,
+//                                                            style: UIAlertAction.Style.cancel ,
+//                                                            handler: { (_: UIAlertAction)
+//                -> Void in print("Cancel") })
+//            
+//            alert.addAction(cancelAction)
+//            alert.addAction(defaultAction)
+//            
+//            present(alert, animated: true, completion: nil)
             
         }
     }
