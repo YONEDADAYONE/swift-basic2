@@ -8,49 +8,59 @@
 
 import UIKit
 
-class PageViewController: UIPageViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
-    lazy var subViewControllers: [UIViewController] = {
-        return [
-            UIStoryboard(name: "Main", bundle: nil)
-                .instantiateViewController(withIdentifier: "ViewController1") as? ViewController1,
-            UIStoryboard(name: "Main", bundle: nil)
-                .instantiateViewController(withIdentifier: "ViewController2") as? ViewController2,
-            UIStoryboard(name: "Main", bundle: nil)
-                .instantiateViewController(withIdentifier: "ViewController3") as? ViewController3
-        ]
-        }() as? [UIViewController] ?? [UIViewController()]
-
+class PageViewController: UIPageViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.delegate = self
+        self.setViewControllers([getFirst() ?? UIViewController()],
+                                direction: .forward, animated: true, completion: nil)
         self.dataSource = self
-        
-        setViewControllers([subViewControllers[0]], direction: .forward, animated: true, completion: nil)
-        
     }
     
-    func presentationCount(for pageViewController: UIPageViewController) -> Int {
-        return subViewControllers.count
+    func getFirst() -> ViewController1? {
+        return (storyboard?.instantiateViewController(withIdentifier: "ViewController1") as? ViewController1)
     }
     
-    //デリゲートメソッド
-    func pageViewController(_ pageViewController: UIPageViewController,
-                            viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        let currentIndex: Int = subViewControllers.index(of: viewController) ?? 0
-        if currentIndex <= 0 {
-            return nil
-        }
-    return subViewControllers[currentIndex - 1]
+    func getSecond() -> ViewController2? {
+        return (storyboard?.instantiateViewController(withIdentifier: "ViewController2") as? ViewController2)
     }
     
-    //デリゲートメソッド
-    func pageViewController(_ pageViewController: UIPageViewController,
-                            viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        let currentIndex: Int = subViewControllers.index(of: viewController) ?? 0
-        if currentIndex >= subViewControllers.count {
-            return nil
-        }
-    return subViewControllers[currentIndex + 1]
+    func getThird() -> ViewController3? {
+        return (storyboard?.instantiateViewController(withIdentifier: "ViewController3") as? ViewController3)
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
 }
 
+extension PageViewController: UIPageViewControllerDataSource {
+    
+    func pageViewController(_ pageViewController: UIPageViewController,
+                            viewControllerAfter viewController: UIViewController) -> UIViewController? {
+        if viewController.isKind(of: ViewController3.self) {
+            // 3 -> 2
+            return getSecond()
+        } else if viewController.isKind(of: ViewController2.self) {
+            // 2 -> 1
+            return getFirst()
+        } else {
+            // 1 -> end of the road
+            return nil
+        }
+    }
+    
+    func pageViewController(_ pageViewController: UIPageViewController,
+                            viewControllerBefore viewController: UIViewController) -> UIViewController? {
+        if viewController.isKind(of: ViewController1.self) {
+            // 1 -> 2
+            return getSecond()
+        } else if viewController.isKind(of: ViewController2.self) {
+            // 2 -> 3
+            return getThird()
+        } else {
+            // 3 -> end of the road
+            return nil
+        }
+    }
 }
