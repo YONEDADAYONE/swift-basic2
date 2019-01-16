@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="stv_project_2_5_7" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ieK-qX-qyJ">
+                                <rect key="frame" x="0.0" y="124" width="375" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="5N9-aw-uQB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="LpQ-jw-oW1">
+                                <rect key="frame" x="0.0" y="212" width="375" height="247"/>
+                            </mapView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Ck1-8c-PXX">
+                                <rect key="frame" x="0.0" y="467" width="375" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="JhE-IE-kUM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Ck1-8c-PXX" firstAttribute="top" secondItem="LpQ-jw-oW1" secondAttribute="bottom" constant="8" id="EHE-Nv-9ds"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Ck1-8c-PXX" secondAttribute="bottom" constant="72" id="IDp-2V-JoU"/>
+                            <constraint firstItem="LpQ-jw-oW1" firstAttribute="top" secondItem="ieK-qX-qyJ" secondAttribute="bottom" constant="8" id="J6m-78-cCv"/>
+                            <constraint firstItem="Ck1-8c-PXX" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Vg1-1B-HTs"/>
+                            <constraint firstItem="ieK-qX-qyJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="104" id="You-Sq-dMc"/>
+                            <constraint firstItem="ieK-qX-qyJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="kxk-rh-XMC"/>
+                            <constraint firstItem="Ck1-8c-PXX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="oWE-tH-Tjk"/>
+                            <constraint firstItem="ieK-qX-qyJ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="pmJ-yQ-zGu"/>
+                            <constraint firstItem="LpQ-jw-oW1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="pr6-bi-hdW"/>
+                            <constraint firstItem="LpQ-jw-oW1" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="rQb-Ch-sf7"/>
+                            <constraint firstItem="Ck1-8c-PXX" firstAttribute="top" secondItem="LpQ-jw-oW1" secondAttribute="bottom" constant="8" id="zay-21-8xt"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="detailTextView" destination="Ck1-8c-PXX" id="3YW-3T-gvH"/>
+                        <outlet property="placeMapView" destination="LpQ-jw-oW1" id="jDU-UQ-oLc"/>
+                        <outlet property="titleLabel" destination="ieK-qX-qyJ" id="0bO-VU-vw2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="53.600000000000001" y="79.610194902548727"/>
+        </scene>
+    </scenes>
+</document>

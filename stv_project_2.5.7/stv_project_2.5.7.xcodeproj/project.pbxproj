@@ -7,27 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EE26A5CB21EED98900572BD4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE26A5CA21EED98900572BD4 /* AppDelegate.swift */; };
-		EE26A5CD21EED98900572BD4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE26A5CC21EED98900572BD4 /* ViewController.swift */; };
-		EE26A5D021EED98900572BD4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE26A5CE21EED98900572BD4 /* Main.storyboard */; };
-		EE26A5D221EED98B00572BD4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE26A5D121EED98B00572BD4 /* Assets.xcassets */; };
-		EE26A5D521EED98B00572BD4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE26A5D321EED98B00572BD4 /* LaunchScreen.storyboard */; };
-		EE26A5ED21EF21EC00572BD4 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = EE26A5EC21EF21EC00572BD4 /* .swiftlint.yml */; };
+		EE26A5EF21EF234B00572BD4 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = EE26A5EE21EF234B00572BD4 /* .swiftlint.yml */; };
+		EE30806321ED5942007403F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE30806221ED5942007403F6 /* AppDelegate.swift */; };
+		EE30806521ED5942007403F6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE30806421ED5942007403F6 /* ViewController.swift */; };
+		EE30806821ED5942007403F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE30806621ED5942007403F6 /* Main.storyboard */; };
+		EE30806A21ED5943007403F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE30806921ED5943007403F6 /* Assets.xcassets */; };
+		EE30806D21ED5943007403F6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE30806B21ED5943007403F6 /* LaunchScreen.storyboard */; };
+		EEA39AD121ED6D9600382EA1 /* area.plist in Resources */ = {isa = PBXBuildFile; fileRef = EEA39AD021ED6D9600382EA1 /* area.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		EE26A5C721EED98900572BD4 /* stv_project_2.5.5.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = stv_project_2.5.5.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		EE26A5CA21EED98900572BD4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EE26A5CC21EED98900572BD4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		EE26A5CF21EED98900572BD4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		EE26A5D121EED98B00572BD4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		EE26A5D421EED98B00572BD4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		EE26A5D621EED98B00572BD4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EE26A5EC21EF21EC00572BD4 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
+		EE26A5EE21EF234B00572BD4 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
+		EE30805F21ED5942007403F6 /* stv_project_2.5.7.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = stv_project_2.5.7.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE30806221ED5942007403F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EE30806421ED5942007403F6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EE30806721ED5942007403F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EE30806921ED5943007403F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EE30806C21ED5943007403F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EE30806E21ED5943007403F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EEA39AD021ED6D9600382EA1 /* area.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = area.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		EE26A5C421EED98900572BD4 /* Frameworks */ = {
+		EE30805C21ED5942007403F6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -37,72 +39,74 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		EE26A5BE21EED98900572BD4 = {
+		EE30805621ED5942007403F6 = {
 			isa = PBXGroup;
 			children = (
-				EE26A5EC21EF21EC00572BD4 /* .swiftlint.yml */,
-				EE26A5C921EED98900572BD4 /* stv_project_2.5.5 */,
-				EE26A5C821EED98900572BD4 /* Products */,
+				EE26A5EE21EF234B00572BD4 /* .swiftlint.yml */,
+				EE30806121ED5942007403F6 /* stv_project_2.5.7 */,
+				EE30806021ED5942007403F6 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		EE26A5C821EED98900572BD4 /* Products */ = {
+		EE30806021ED5942007403F6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				EE26A5C721EED98900572BD4 /* stv_project_2.5.5.app */,
+				EE30805F21ED5942007403F6 /* stv_project_2.5.7.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		EE26A5C921EED98900572BD4 /* stv_project_2.5.5 */ = {
+		EE30806121ED5942007403F6 /* stv_project_2.5.7 */ = {
 			isa = PBXGroup;
 			children = (
-				EE26A5CA21EED98900572BD4 /* AppDelegate.swift */,
-				EE26A5CC21EED98900572BD4 /* ViewController.swift */,
-				EE26A5CE21EED98900572BD4 /* Main.storyboard */,
-				EE26A5D121EED98B00572BD4 /* Assets.xcassets */,
-				EE26A5D321EED98B00572BD4 /* LaunchScreen.storyboard */,
-				EE26A5D621EED98B00572BD4 /* Info.plist */,
+				EE30806221ED5942007403F6 /* AppDelegate.swift */,
+				EE30806421ED5942007403F6 /* ViewController.swift */,
+				EE30806621ED5942007403F6 /* Main.storyboard */,
+				EEA39AD021ED6D9600382EA1 /* area.plist */,
+				EE30806921ED5943007403F6 /* Assets.xcassets */,
+				EE30806B21ED5943007403F6 /* LaunchScreen.storyboard */,
+				EE30806E21ED5943007403F6 /* Info.plist */,
 			);
-			path = stv_project_2.5.5;
+			path = stv_project_2.5.7;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		EE26A5C621EED98900572BD4 /* stv_project_2.5.5 */ = {
+		EE30805E21ED5942007403F6 /* stv_project_2.5.7 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EE26A5D921EED98B00572BD4 /* Build configuration list for PBXNativeTarget "stv_project_2.5.5" */;
+			buildConfigurationList = EE30807121ED5943007403F6 /* Build configuration list for PBXNativeTarget "stv_project_2.5.7" */;
 			buildPhases = (
-				EE26A5C321EED98900572BD4 /* Sources */,
-				EE26A5C421EED98900572BD4 /* Frameworks */,
-				EE26A5C521EED98900572BD4 /* Resources */,
+				EE30805B21ED5942007403F6 /* Sources */,
+				EE30805C21ED5942007403F6 /* Frameworks */,
+				EE30805D21ED5942007403F6 /* Resources */,
+				EE26A5F021EF237000572BD4 /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = stv_project_2.5.5;
-			productName = stv_project_2.5.5;
-			productReference = EE26A5C721EED98900572BD4 /* stv_project_2.5.5.app */;
+			name = stv_project_2.5.7;
+			productName = stv_project_2.5.7;
+			productReference = EE30805F21ED5942007403F6 /* stv_project_2.5.7.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		EE26A5BF21EED98900572BD4 /* Project object */ = {
+		EE30805721ED5942007403F6 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = hiroya;
 				TargetAttributes = {
-					EE26A5C621EED98900572BD4 = {
+					EE30805E21ED5942007403F6 = {
 						CreatedOnToolsVersion = 10.1;
 					};
 				};
 			};
-			buildConfigurationList = EE26A5C221EED98900572BD4 /* Build configuration list for PBXProject "stv_project_2.5.5" */;
+			buildConfigurationList = EE30805A21ED5942007403F6 /* Build configuration list for PBXProject "stv_project_2.5.7" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -110,55 +114,76 @@
 				en,
 				Base,
 			);
-			mainGroup = EE26A5BE21EED98900572BD4;
-			productRefGroup = EE26A5C821EED98900572BD4 /* Products */;
+			mainGroup = EE30805621ED5942007403F6;
+			productRefGroup = EE30806021ED5942007403F6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				EE26A5C621EED98900572BD4 /* stv_project_2.5.5 */,
+				EE30805E21ED5942007403F6 /* stv_project_2.5.7 */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		EE26A5C521EED98900572BD4 /* Resources */ = {
+		EE30805D21ED5942007403F6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EE26A5ED21EF21EC00572BD4 /* .swiftlint.yml in Resources */,
-				EE26A5D521EED98B00572BD4 /* LaunchScreen.storyboard in Resources */,
-				EE26A5D221EED98B00572BD4 /* Assets.xcassets in Resources */,
-				EE26A5D021EED98900572BD4 /* Main.storyboard in Resources */,
+				EE26A5EF21EF234B00572BD4 /* .swiftlint.yml in Resources */,
+				EE30806D21ED5943007403F6 /* LaunchScreen.storyboard in Resources */,
+				EEA39AD121ED6D9600382EA1 /* area.plist in Resources */,
+				EE30806A21ED5943007403F6 /* Assets.xcassets in Resources */,
+				EE30806821ED5942007403F6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		EE26A5F021EF237000572BD4 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"SwiftLint does not exist, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
-		EE26A5C321EED98900572BD4 /* Sources */ = {
+		EE30805B21ED5942007403F6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EE26A5CD21EED98900572BD4 /* ViewController.swift in Sources */,
-				EE26A5CB21EED98900572BD4 /* AppDelegate.swift in Sources */,
+				EE30806521ED5942007403F6 /* ViewController.swift in Sources */,
+				EE30806321ED5942007403F6 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		EE26A5CE21EED98900572BD4 /* Main.storyboard */ = {
+		EE30806621ED5942007403F6 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				EE26A5CF21EED98900572BD4 /* Base */,
+				EE30806721ED5942007403F6 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		EE26A5D321EED98B00572BD4 /* LaunchScreen.storyboard */ = {
+		EE30806B21ED5943007403F6 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				EE26A5D421EED98B00572BD4 /* Base */,
+				EE30806C21ED5943007403F6 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -166,7 +191,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		EE26A5D721EED98B00572BD4 /* Debug */ = {
+		EE30806F21ED5943007403F6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -227,7 +252,7 @@
 			};
 			name = Debug;
 		};
-		EE26A5D821EED98B00572BD4 /* Release */ = {
+		EE30807021ED5943007403F6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -282,36 +307,36 @@
 			};
 			name = Release;
 		};
-		EE26A5DA21EED98B00572BD4 /* Debug */ = {
+		EE30807221ED5943007403F6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3HNBAS9RU7;
-				INFOPLIST_FILE = stv_project_2.5.5/Info.plist;
+				INFOPLIST_FILE = stv_project_2.5.7/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ayoih.stv-project-2-5-5";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ayoih.stv-project-2-5-7";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		EE26A5DB21EED98B00572BD4 /* Release */ = {
+		EE30807321ED5943007403F6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3HNBAS9RU7;
-				INFOPLIST_FILE = stv_project_2.5.5/Info.plist;
+				INFOPLIST_FILE = stv_project_2.5.7/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ayoih.stv-project-2-5-5";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ayoih.stv-project-2-5-7";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -321,25 +346,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		EE26A5C221EED98900572BD4 /* Build configuration list for PBXProject "stv_project_2.5.5" */ = {
+		EE30805A21ED5942007403F6 /* Build configuration list for PBXProject "stv_project_2.5.7" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				EE26A5D721EED98B00572BD4 /* Debug */,
-				EE26A5D821EED98B00572BD4 /* Release */,
+				EE30806F21ED5943007403F6 /* Debug */,
+				EE30807021ED5943007403F6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EE26A5D921EED98B00572BD4 /* Build configuration list for PBXNativeTarget "stv_project_2.5.5" */ = {
+		EE30807121ED5943007403F6 /* Build configuration list for PBXNativeTarget "stv_project_2.5.7" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				EE26A5DA21EED98B00572BD4 /* Debug */,
-				EE26A5DB21EED98B00572BD4 /* Release */,
+				EE30807221ED5943007403F6 /* Debug */,
+				EE30807321ED5943007403F6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = EE26A5BF21EED98900572BD4 /* Project object */;
+	rootObject = EE30805721ED5942007403F6 /* Project object */;
 }
