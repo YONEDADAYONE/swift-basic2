@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EE8214B521F0B35C006AE08C /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EEB6AF6A21F0487000AFD3D7 /* Info.plist */; };
-		EE8214B621F0B360006AE08C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EEB6AF8521F0525E00AFD3D7 /* GoogleService-Info.plist */; };
+		EE8214B821F16B80006AE08C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EE8214B721F16B80006AE08C /* GoogleService-Info.plist */; };
 		EEB6AF5F21F0487000AFD3D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB6AF5E21F0487000AFD3D7 /* AppDelegate.swift */; };
 		EEB6AF6121F0487000AFD3D7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB6AF6021F0487000AFD3D7 /* ViewController.swift */; };
 		EEB6AF6421F0487000AFD3D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEB6AF6221F0487000AFD3D7 /* Main.storyboard */; };
@@ -21,6 +20,7 @@
 		736A76604A95A09231759653 /* Pods_stv_project_2_5_8.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_stv_project_2_5_8.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C09D59DD66467B85D093F9E1 /* Pods-stv-project-2-5-8.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-stv-project-2-5-8.debug.xcconfig"; path = "Target Support Files/Pods-stv-project-2-5-8/Pods-stv-project-2-5-8.debug.xcconfig"; sourceTree = "<group>"; };
 		E5733530906E00D65656492F /* Pods-stv-project-2-5-8.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-stv-project-2-5-8.release.xcconfig"; path = "Target Support Files/Pods-stv-project-2-5-8/Pods-stv-project-2-5-8.release.xcconfig"; sourceTree = "<group>"; };
+		EE8214B721F16B80006AE08C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EEB6AF5B21F0487000AFD3D7 /* stv-project-2-5-8.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "stv-project-2-5-8.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEB6AF5E21F0487000AFD3D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EEB6AF6021F0487000AFD3D7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -28,7 +28,6 @@
 		EEB6AF6521F0487000AFD3D7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EEB6AF6821F0487000AFD3D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EEB6AF6A21F0487000AFD3D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EEB6AF8521F0525E00AFD3D7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EEB6AFA521F07A4100AFD3D7 /* stv-project-2-5-8.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "stv-project-2-5-8.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -89,7 +88,7 @@
 				EEB6AF6521F0487000AFD3D7 /* Assets.xcassets */,
 				EEB6AF6721F0487000AFD3D7 /* LaunchScreen.storyboard */,
 				EEB6AF6A21F0487000AFD3D7 /* Info.plist */,
-				EEB6AF8521F0525E00AFD3D7 /* GoogleService-Info.plist */,
+				EE8214B721F16B80006AE08C /* GoogleService-Info.plist */,
 			);
 			path = "stv-project-2-5-8";
 			sourceTree = "<group>";
@@ -164,8 +163,7 @@
 			files = (
 				EEB6AF6921F0487000AFD3D7 /* LaunchScreen.storyboard in Resources */,
 				EEB6AF6621F0487000AFD3D7 /* Assets.xcassets in Resources */,
-				EE8214B621F0B360006AE08C /* GoogleService-Info.plist in Resources */,
-				EE8214B521F0B35C006AE08C /* Info.plist in Resources */,
+				EE8214B821F16B80006AE08C /* GoogleService-Info.plist in Resources */,
 				EEB6AF6421F0487000AFD3D7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
