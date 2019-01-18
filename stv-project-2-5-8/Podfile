@@ -7,4 +7,5 @@ target 'stv-project-2-5-8' do
 
   # Pods for stv-project-2-5-8
   pod 'Firebase/Core'
+  pod 'Firebase/Messaging'
 end

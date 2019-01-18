@@ -7,14 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EE8214B521F0B35C006AE08C /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EEB6AF6A21F0487000AFD3D7 /* Info.plist */; };
+		EE8214B621F0B360006AE08C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EEB6AF8521F0525E00AFD3D7 /* GoogleService-Info.plist */; };
 		EEB6AF5F21F0487000AFD3D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB6AF5E21F0487000AFD3D7 /* AppDelegate.swift */; };
 		EEB6AF6121F0487000AFD3D7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB6AF6021F0487000AFD3D7 /* ViewController.swift */; };
 		EEB6AF6421F0487000AFD3D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEB6AF6221F0487000AFD3D7 /* Main.storyboard */; };
 		EEB6AF6621F0487000AFD3D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEB6AF6521F0487000AFD3D7 /* Assets.xcassets */; };
 		EEB6AF6921F0487000AFD3D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEB6AF6721F0487000AFD3D7 /* LaunchScreen.storyboard */; };
 		EEB6AF7521F04A4D00AFD3D7 /* Pods_stv_project_2_5_8.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 736A76604A95A09231759653 /* Pods_stv_project_2_5_8.framework */; };
-		EEB6AF7C21F04F1200AFD3D7 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EEB6AF6A21F0487000AFD3D7 /* Info.plist */; };
-		EEB6AF8621F0525E00AFD3D7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EEB6AF8521F0525E00AFD3D7 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +29,7 @@
 		EEB6AF6821F0487000AFD3D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EEB6AF6A21F0487000AFD3D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EEB6AF8521F0525E00AFD3D7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		EEB6AFA521F07A4100AFD3D7 /* stv-project-2-5-8.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "stv-project-2-5-8.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +82,7 @@
 		EEB6AF5D21F0487000AFD3D7 /* stv-project-2-5-8 */ = {
 			isa = PBXGroup;
 			children = (
+				EEB6AFA521F07A4100AFD3D7 /* stv-project-2-5-8.entitlements */,
 				EEB6AF5E21F0487000AFD3D7 /* AppDelegate.swift */,
 				EEB6AF6021F0487000AFD3D7 /* ViewController.swift */,
 				EEB6AF6221F0487000AFD3D7 /* Main.storyboard */,
@@ -126,6 +128,14 @@
 				TargetAttributes = {
 					EEB6AF5A21F0487000AFD3D7 = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -152,10 +162,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EEB6AF7C21F04F1200AFD3D7 /* Info.plist in Resources */,
 				EEB6AF6921F0487000AFD3D7 /* LaunchScreen.storyboard in Resources */,
-				EEB6AF8621F0525E00AFD3D7 /* GoogleService-Info.plist in Resources */,
 				EEB6AF6621F0487000AFD3D7 /* Assets.xcassets in Resources */,
+				EE8214B621F0B360006AE08C /* GoogleService-Info.plist in Resources */,
+				EE8214B521F0B35C006AE08C /* Info.plist in Resources */,
 				EEB6AF6421F0487000AFD3D7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -173,6 +183,7 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-stv-project-2-5-8/Pods-stv-project-2-5-8-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -180,6 +191,7 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -298,6 +310,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CODE_SIGN_FLAGS = "";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -352,6 +365,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				OTHER_CODE_SIGN_FLAGS = "";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -364,8 +378,9 @@
 			baseConfigurationReference = C09D59DD66467B85D093F9E1 /* Pods-stv-project-2-5-8.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "stv-project-2-5-8/stv-project-2-5-8.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3HNBAS9RU7;
+				DEVELOPMENT_TEAM = PCCZJUYRT6;
 				INFOPLIST_FILE = "stv-project-2-5-8/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -383,8 +398,9 @@
 			baseConfigurationReference = E5733530906E00D65656492F /* Pods-stv-project-2-5-8.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "stv-project-2-5-8/stv-project-2-5-8.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3HNBAS9RU7;
+				DEVELOPMENT_TEAM = PCCZJUYRT6;
 				INFOPLIST_FILE = "stv-project-2-5-8/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
