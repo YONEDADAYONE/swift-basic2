@@ -1,0 +1,6 @@
+framework module Pods_stv_project_2_4_7 {
+  umbrella header "Pods-stv_project_2.4.7-umbrella.h"
+
+  export *
+  module * { export * }
+}
