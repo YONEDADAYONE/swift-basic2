@@ -6,12 +6,10 @@
 //  Copyright © 2019 hiroya. All rights reserved.
 //
 
-import UIKit
 import CoreLocation  // 現在地取得用
+import UIKit
 
-class ViewController: UIViewController
-    ,CLLocationManagerDelegate
-{
+class ViewController: UIViewController, CLLocationManagerDelegate {
     
     // 現在地取得用
     var locationManager = CLLocationManager()
@@ -23,15 +21,15 @@ class ViewController: UIViewController
         let filePath = Bundle.main.path(forResource: "area", ofType: "plist")
         
         // Plistの中身をDictionary型で取り出す。
-        let dics = NSDictionary(contentsOfFile: filePath!)
+        let dics = NSDictionary(contentsOfFile: filePath ?? "")
         
-        for (_,data) in dics! {
+        for (_, data) in dics ?? NSDictionary() {
             
-            let dic = data as! NSDictionary
+            let dic = data as? NSDictionary
             
             // dataの中身を取り出しましょう
-            print(dic["longitude"]!)
-            print(dic["latitude"]!)
+            print(dic?["longitude"] ?? [""])
+            print(dic?["latitude"] ?? [""])
             
             // 位置情報使用開始
             locationManager.startUpdatingLocation()
@@ -46,4 +44,3 @@ class ViewController: UIViewController
     }
     
 }
-
