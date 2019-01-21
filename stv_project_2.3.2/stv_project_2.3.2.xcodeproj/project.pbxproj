@@ -16,7 +16,7 @@
 		EE77664C21DB9FEC008271BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE77664A21DB9FEC008271BA /* LaunchScreen.storyboard */; };
 		EE77665621DBA3AE008271BA /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE77665421DBA3AE008271BA /* Realm.framework */; };
 		EE77665721DBA3AE008271BA /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE77665521DBA3AE008271BA /* RealmSwift.framework */; };
-		EE84306A21E6D40400390AB9 /* swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = EE84306921E6D40400390AB9 /* swiftlint.yml */; };
+		EEABBC0121F5824900FE53C0 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = EEABBC0021F5824900FE53C0 /* .swiftlint.yml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,7 +31,7 @@
 		EE77664D21DB9FEC008271BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EE77665421DBA3AE008271BA /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		EE77665521DBA3AE008271BA /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
-		EE84306921E6D40400390AB9 /* swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = swiftlint.yml; sourceTree = "<group>"; };
+		EEABBC0021F5824900FE53C0 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,7 +50,7 @@
 		EE77663521DB9FEB008271BA = {
 			isa = PBXGroup;
 			children = (
-				EE84306921E6D40400390AB9 /* swiftlint.yml */,
+				EEABBC0021F5824900FE53C0 /* .swiftlint.yml */,
 				EE77664021DB9FEB008271BA /* stv_project_2.3.2 */,
 				EE77663F21DB9FEB008271BA /* Products */,
 				EE77665321DBA3AE008271BA /* Frameworks */,
@@ -149,8 +149,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EEABBC0121F5824900FE53C0 /* .swiftlint.yml in Resources */,
 				EE77664C21DB9FEC008271BA /* LaunchScreen.storyboard in Resources */,
-				EE84306A21E6D40400390AB9 /* swiftlint.yml in Resources */,
 				EE77664921DB9FEC008271BA /* Assets.xcassets in Resources */,
 				EE77664721DB9FEB008271BA /* Main.storyboard in Resources */,
 			);

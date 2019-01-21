@@ -56,7 +56,7 @@ class SwiftArrayPropertyTests: RLMTestCase {
         let realm = realmWithTestPath()
 
         realm.beginWriteTransaction()
-        let array = SwiftArrayPropertyObject.create(in: realm, withValue: ["arrayObject", [], []])
+        let array = SwiftArrayPropertyObject.create(in: realm, withValue: ["arrayObject", [], []]);
         XCTAssertNotNil(array.array, "Should be able to get an empty array")
         XCTAssertEqual(array.array.count, UInt(0), "Should start with no array elements")
 
@@ -167,7 +167,7 @@ class SwiftArrayPropertyTests: RLMTestCase {
         let realm = realmWithTestPath()
 
         realm.beginWriteTransaction()
-        let array = ArrayPropertyObject.create(in: realm, withValue: ["arrayObject", [], []])
+        let array = ArrayPropertyObject.create(in: realm, withValue: ["arrayObject", [], []]);
         XCTAssertNotNil(array.array, "Should be able to get an empty array")
         XCTAssertEqual(array.array.count, UInt(0), "Should start with no array elements")
 

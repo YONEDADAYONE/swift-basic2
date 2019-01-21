@@ -18,11 +18,8 @@
 
 extension RLMTestCase {
     func assertThrowsWithReasonMatching<T>(_ block: @autoclosure @escaping () -> T, _ regexString: String,
-         // swiftlint:disable (vertical_parameter_alignment)
-        _ message: String? = nil, fileName: String = #file, lineNumber: UInt = #line)
-         // swiftlint:disable:previous vertical_parameter_alignment
-    {
-        RLMAssertThrowsWithReasonMatchingSwift(self, { _ = block() }, regexString, message, fileName, lineNumber)
+        _ message: String? = nil, fileName: String = #file, lineNumber: UInt = #line) {
+            RLMAssertThrowsWithReasonMatchingSwift(self, { _ = block() }, regexString, message, fileName, lineNumber)
     }
 }
 

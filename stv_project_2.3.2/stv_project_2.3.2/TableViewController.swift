@@ -6,8 +6,8 @@
 //  Copyright © 2019 hiroya. All rights reserved.
 //
 
-import UIKit
 import RealmSwift
+import UIKit
 
 class TableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -17,7 +17,7 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        print(Realm.Configuration.defaultConfiguration.fileURL!)
+        print(Realm.Configuration.defaultConfiguration.fileURL ?? "")
         tableview.delegate = self
         tableview.dataSource = self
         fetchDate()
@@ -27,6 +27,7 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
 //        tableview.reloadData()
         viewDidLoad()
     }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //ここで自分で指定したCellを呼んでる。
         let cell = tableview.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
@@ -45,8 +46,16 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
 //        let date1:Date = name.limitDate
 //        let  limitDateString = (formatter.string(from: date1))
         //Cellに表示する内容
-        cell.textLabel!.text = "\(name.todoTitle) + \(limitDateString)"
+        cell.textLabel?.text = "\(name.todoTitle) + \(limitDateString)"
         cell.textLabel?.lineBreakMode = .byTruncatingTail
+        
+        if name.deleteFlg == false {
+//            cell.isHidden = true
+            tableView.rowHeight = 0
+        } else {
+            tableView.rowHeight = UITableView.automaticDimension
+        }
+        
         return cell
     }
     //スワイプで削除
@@ -57,15 +66,23 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
         do {
             try realm?.write {
                 city.deleteFlg = false
-                if city.deleteFlg == false {
-                    realm?.delete(city)
-                    todoArray.remove(at: indexPath.row)
-                }
+                
+//                let name = todoArray[indexPath.row]
+//                if city.deleteFlg == false {
+//                cell.isHidden = true
+//                    realm?.delete(city)
+//                    todoArray.remove(at: indexPath.row)
+
+//
+//                }
+            
             }
         } catch {
         print(error)
         }
+        
         tableView.reloadData()
+        viewDidLoad()
     }
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -80,8 +97,7 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
     //自作関数
     func fetchDate() {
         let realm = try? Realm()
-        //空の配列のCityArrayにrelmeのデータを入れる
-        todoArray = Array(realm!.objects(TrTodo.self).sorted(byKeyPath: "limitDate", ascending: false))
+        //空の配列todoArrayにrelmeのデータを入れる
+        todoArray = Array((realm?.objects(TrTodo.self).sorted(byKeyPath: "limitDate", ascending: true))!)
     }
-
 }

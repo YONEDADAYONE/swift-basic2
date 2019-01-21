@@ -46,14 +46,14 @@ class SwiftPermissionsAPITests: SwiftSyncTestCase {
                                       expected: Int,
                                       file: StaticString = #file,
                                       line: UInt = #line) {
-        let exe = expectation(description: "Checking permission count")
+        let ex = expectation(description: "Checking permission count")
         let token = results.observe { (change) in
             if case let .error(theError) = change {
                 XCTFail("Notification returned error '\(theError)' when running test at \(file):\(line)")
                 return
             }
             if results.count == expected {
-                exe.fulfill()
+                ex.fulfill()
             }
         }
         waitForExpectations(timeout: 2.0, handler: nil)
@@ -64,7 +64,7 @@ class SwiftPermissionsAPITests: SwiftSyncTestCase {
                      from results: SyncPermissionResults,
                      file: StaticString = #file,
                      line: UInt = #line) -> SyncPermission? {
-        let exe = expectation(description: "Retrieving permission")
+        let ex = expectation(description: "Retrieving permission")
         var finalValue: SyncPermission?
         let token = results.observe { (change) in
             if case let .error(theError) = change {
@@ -90,7 +90,7 @@ class SwiftPermissionsAPITests: SwiftSyncTestCase {
                                after wait: Double = 0.5,
                                file: StaticString = #file,
                                line: UInt = #line) {
-        let exe = expectation(description: "Looking for permission")
+        let ex = expectation(description: "Looking for permission")
         var isPresent = false
         let token = results.observe { (change) in
             if case let .error(theError) = change {
@@ -116,12 +116,12 @@ class SwiftPermissionsAPITests: SwiftSyncTestCase {
     /// Setting a permission should work, and then that permission should be able to be retrieved.
     func testSettingPermissions() {
         // First, there should be no permissions.
-        let exp = expectation(description: "No permissions for newly created user.")
+        let ex = expectation(description: "No permissions for newly created user.")
         var results: SyncPermissionResults!
-        userB.retrievePermissions { (rrr, error) in
+        userB.retrievePermissions { (r, error) in
             XCTAssertNil(error)
             XCTAssertNotNil(r)
-            results = rrr
+            results = r
             ex.fulfill()
         }
         waitForExpectations(timeout: 2.0, handler: nil)
@@ -133,7 +133,7 @@ class SwiftPermissionsAPITests: SwiftSyncTestCase {
         _ = try! synchronouslyOpenRealm(url: url, user: userA)
 
         // Give user B read permissions to that Realm.
-        let ppp = SyncPermission(realmPath: tildeSubstitutedURL(for: url, user: userA).path,
+        let p = SyncPermission(realmPath: tildeSubstitutedURL(for: url, user: userA).path,
                                identity: userB.identity!,
                                accessLevel: .read)
 
@@ -147,10 +147,10 @@ class SwiftPermissionsAPITests: SwiftSyncTestCase {
 
         // Now retrieve the permissions again and make sure the new permission is properly set.
         let ex3 = expectation(description: "One permission in results after setting the permission.")
-        userB.retrievePermissions { (rrr, error) in
+        userB.retrievePermissions { (r, error) in
             XCTAssertNil(error)
             XCTAssertNotNil(r)
-            results = rrr
+            results = r
             ex3.fulfill()
         }
         waitForExpectations(timeout: 2.0, handler: nil)
@@ -167,12 +167,12 @@ class SwiftPermissionsAPITests: SwiftSyncTestCase {
     /// Observing permission changes should work.
     func testObservingPermissions() {
         // Get a reference to the permission results.
-        let exp = expectation(description: "Retrieve permission results.")
+        let ex = expectation(description: "Retrieve permission results.")
         var results: SyncPermissionResults!
-        userB.retrievePermissions { (rrr, error) in
+        userB.retrievePermissions { (r, error) in
             XCTAssertNil(error)
-            XCTAssertNotNil(rrr)
-            results = rrr
+            XCTAssertNotNil(r)
+            results = r
             ex.fulfill()
         }
         waitForExpectations(timeout: 2.0, handler: nil)
@@ -195,7 +195,7 @@ class SwiftPermissionsAPITests: SwiftSyncTestCase {
         }
 
         // Give user B read permissions to that Realm.
-        let ppp = SyncPermission(realmPath: tildeSubstitutedURL(for: url, user: userA).path,
+        let p = SyncPermission(realmPath: tildeSubstitutedURL(for: url, user: userA).path,
                                identity: userB.identity!,
                                accessLevel: .read)
 
@@ -222,11 +222,11 @@ class SwiftPermissionsAPITests: SwiftSyncTestCase {
         _ = try! synchronouslyOpenRealm(url: url, user: userA)
 
         // Try to have user B give user C permissions to that Realm.
-        let ppp = SyncPermission(realmPath: url.path, identity: userC.identity!, accessLevel: .read)
+        let p = SyncPermission(realmPath: url.path, identity: userC.identity!, accessLevel: .read)
 
         // Attempt to set the permission.
         let ex2 = expectation(description: "Setting an invalid permission should fail.")
-        userB.apply(ppp) { (error) in
+        userB.apply(p) { (error) in
             XCTAssertNotNil(error)
             ex2.fulfill()
         }
@@ -235,10 +235,10 @@ class SwiftPermissionsAPITests: SwiftSyncTestCase {
         // Now retrieve the permissions again and make sure the new permission was not set.
         var results: SyncPermissionResults!
         let ex3 = expectation(description: "Retrieving the results should work.")
-        userB.retrievePermissions { (rrr, error) in
+        userB.retrievePermissions { (r, error) in
             XCTAssertNil(error)
-            XCTAssertNotNil(rrr)
-            results = rrr
+            XCTAssertNotNil(r)
+            results = r
             ex3.fulfill()
         }
         waitForExpectations(timeout: 2.0, handler: nil)
@@ -252,12 +252,12 @@ class SwiftPermissionsAPITests: SwiftSyncTestCase {
         var token: String?
 
         // Create an offer.
-        let exe = expectation(description: "A new permission offer will be processed by the server.")
-        userA.createOfferForRealm(at: realmURL, accessLevel: .write) { (ttt, error) in
+        let ex = expectation(description: "A new permission offer will be processed by the server.")
+        userA.createOfferForRealm(at: realmURL, accessLevel: .write) { (t, error) in
             XCTAssertNil(error)
-            XCTAssertNotNil(ttt)
-            token = ttt
-            exe.fulfill()
+            XCTAssertNotNil(t)
+            token = t
+            ex.fulfill()
         }
         waitForExpectations(timeout: 10.0, handler: nil)
         XCTAssertGreaterThan(token!.lengthOfBytes(using: .utf8), 0)
@@ -268,12 +268,12 @@ class SwiftPermissionsAPITests: SwiftSyncTestCase {
         var token: String?
 
         // Create an offer.
-        let exe = expectation(description: "A new permission offer will be processed by the server.")
-        userA.createOfferForRealm(at: realmURL, accessLevel: .write) { (ttt, error) in
+        let ex = expectation(description: "A new permission offer will be processed by the server.")
+        userA.createOfferForRealm(at: realmURL, accessLevel: .write) { (t, error) in
             XCTAssertNil(error)
             XCTAssertNotNil(t)
-            token = ttt
-            exe.fulfill()
+            token = t
+            ex.fulfill()
         }
         waitForExpectations(timeout: 10.0, handler: nil)
         guard let theToken = token else {
@@ -285,10 +285,10 @@ class SwiftPermissionsAPITests: SwiftSyncTestCase {
         // Accept the offer.
         let ex2 = expectation(description: "A permission offer response will be processed by the server.")
         var url: URL?
-        userB.acceptOffer(forToken: theToken) { (uuu, error) in
+        userB.acceptOffer(forToken: theToken) { (u, error) in
             XCTAssertNil(error)
             XCTAssertNotNil(u)
-            url = uuu
+            url = u
             ex2.fulfill()
         }
         waitForExpectations(timeout: 10.0, handler: nil)

@@ -693,7 +693,7 @@ class ListRRCMethodsTests: XCTestCase {
             XCTFail("Array and list have different sizes (\(array.count) and \(list.count), respectively).")
             return
         }
-        for integer in 0..<array.count {
+        for i in 0..<array.count {
             XCTAssertEqual(array[i], list[i].intCol,
                            "Mistmatched array value (\(array[i])) and list value (\(list[i].intCol)) at index \(i)")
         }

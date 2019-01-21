@@ -1,6 +1,10 @@
+# 対象にするパス
+included:
+  - stv_project_2.3.2
+  - <Project Name>Tests
+
 # 対象から除外するパス
 excluded:
-  - Carthage
   - Pods
   - Tests/SwiftLintFrameworkTests/Resources
 
@@ -60,3 +64,4 @@ force_try: error
 disabled_rules:
   - leading_whitespace
   - trailing_whitespace
+

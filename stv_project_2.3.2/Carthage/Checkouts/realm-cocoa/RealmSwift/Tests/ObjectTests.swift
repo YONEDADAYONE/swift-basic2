@@ -613,18 +613,18 @@ class ObjectTests: TestCase {
 
     func testEqualityForObjectTypeWithPrimaryKey() {
         let realm = try! Realm()
-        let primaryKey = "123456"
+        let pk = "123456"
 
         let testObject = SwiftPrimaryStringObject()
-        testObject.stringCol = primaryKey
+        testObject.stringCol = pk
         testObject.intCol = 12345
 
         let unmanaged = SwiftPrimaryStringObject()
-        unmanaged.stringCol = primaryKey
+        unmanaged.stringCol = pk
         unmanaged.intCol = 12345
 
         let otherObject = SwiftPrimaryStringObject()
-        otherObject.stringCol = "not" + primaryKey
+        otherObject.stringCol = "not" + pk
         otherObject.intCol = 12345
 
         try! realm.write {
@@ -638,7 +638,7 @@ class ObjectTests: TestCase {
         XCTAssertNotEqual(testObject, unmanaged)
 
         // Should match an object that represents the same row.
-        let retrievedObject = realm.object(ofType: SwiftPrimaryStringObject.self, forPrimaryKey: primaryKey)!
+        let retrievedObject = realm.object(ofType: SwiftPrimaryStringObject.self, forPrimaryKey: pk)!
         XCTAssertEqual(testObject, retrievedObject)
         XCTAssertEqual(testObject.hash, retrievedObject.hash)
         XCTAssertTrue(testObject.isSameObject(as: retrievedObject))
@@ -646,7 +646,7 @@ class ObjectTests: TestCase {
 
     func testEqualityForObjectTypeWithoutPrimaryKey() {
         let realm = try! Realm()
-        let primaryKey = "123456"
+        let pk = "123456"
         XCTAssertNil(SwiftStringObject.primaryKey())
 
         let testObject = SwiftStringObject()

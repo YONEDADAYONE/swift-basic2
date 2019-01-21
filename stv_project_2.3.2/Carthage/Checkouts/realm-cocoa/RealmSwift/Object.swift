@@ -69,7 +69,7 @@ import Realm.Private
 @objc(RealmSwiftObject)
 open class Object: RLMObjectBase, ThreadConfined, RealmCollectionValue {
     /// :nodoc:
-    public static func rlmArray() -> RLMArray<AnyObject> {
+    public static func _rlmArray() -> RLMArray<AnyObject> {
         return RLMArray(objectClassName: className())
     }
 
@@ -237,8 +237,8 @@ open class Object: RLMObjectBase, ThreadConfined, RealmCollectionValue {
                 return
             }
 
-            block(.change((0..<newValues.count).map { integer in
-                PropertyChange(name: names[integer], oldValue: oldValues?[integer], newValue: newValues[integer])
+            block(.change((0..<newValues.count).map { i in
+                PropertyChange(name: names[i], oldValue: oldValues?[i], newValue: newValues[i])
             }))
         })
     }
@@ -529,8 +529,8 @@ public class ObjectUtil: NSObject {
 // MARK: AssistedObjectiveCBridgeable
 
 // FIXME: Remove when `as! Self` can be written
-private func forceCastToInferred<T, V>(_ xxx: T) -> V {
-    return xxx as! V
+private func forceCastToInferred<T, V>(_ x: T) -> V {
+    return x as! V
 }
 
 extension Object: AssistedObjectiveCBridgeable {

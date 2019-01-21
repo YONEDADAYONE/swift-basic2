@@ -87,7 +87,7 @@ class ObjectAccessorTests: TestCase {
     func testIntSizes() {
         let realm = realmWithTestPath()
 
-        let vv8  = Int8(1)  << 6
+        let v8  = Int8(1)  << 6
         let v16 = Int16(1) << 12
         let v32 = Int32(1) << 30
         // 1 << 40 doesn't auto-promote to Int64 on 32-bit platforms

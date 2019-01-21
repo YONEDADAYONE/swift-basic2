@@ -51,7 +51,7 @@ class SwiftPropertyTypeTest: RLMTestCase {
     func testIntSizes() {
         let realm = realmWithTestPath()
 
-        let vv8  = Int8(1)  << 5
+        let v8  = Int8(1)  << 5
         let v16 = Int16(1) << 12
         let v32 = Int32(1) << 30
         // 1 << 40 doesn't auto-promote to Int64 on 32-bit platforms
@@ -59,8 +59,8 @@ class SwiftPropertyTypeTest: RLMTestCase {
         try! realm.transaction {
             let obj = SwiftAllIntSizesObject()
 
-            obj.int8  = vv8
-            XCTAssertEqual(obj.int8, vv8)
+            obj.int8  = v8
+            XCTAssertEqual(obj.int8, v8)
             obj.int16 = v16
             XCTAssertEqual(obj.int16, v16)
             obj.int32 = v32
@@ -106,7 +106,7 @@ class SwiftPropertyTypeTest: RLMTestCase {
 
     func testLazyVarProperties() {
         let realm = realmWithTestPath()
-        let succeeded: Void? = try? realm.transaction {
+        let succeeded : Void? = try? realm.transaction {
             realm.add(SwiftLazyVarObject())
         }
         XCTAssertNotNil(succeeded, "Writing an NSObject-based object with an lazy property should work.")
@@ -114,7 +114,7 @@ class SwiftPropertyTypeTest: RLMTestCase {
 
     func testIgnoredLazyVarProperties() {
         let realm = realmWithTestPath()
-        let succeeded: Void? = try? realm.transaction {
+        let succeeded : Void? = try? realm.transaction {
             realm.add(SwiftIgnoredLazyVarObject())
         }
         XCTAssertNotNil(succeeded, "Writing an object with an ignored lazy property should work.")

@@ -49,7 +49,7 @@ class CTTNullableStringObjectWithLink: Object {
 }
 
 class CTTLinkTarget: Object {
-    @objc dynamic var realmid = 0
+    @objc dynamic var id = 0
     let stringObjects = LinkingObjects(fromType: CTTNullableStringObjectWithLink.self, property: "linkCol")
     let aggregateObjects = LinkingObjects(fromType: CTTAggregateObject.self, property: "linkCol")
 }

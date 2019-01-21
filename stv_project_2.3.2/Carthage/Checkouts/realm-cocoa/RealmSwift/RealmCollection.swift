@@ -43,7 +43,7 @@ public struct RLMIterator<Element: RealmCollectionValue>: IteratorProtocol {
             }
             return unsafeBitCast(next, to: Optional<Element>.self)
         }
-        return next as! Element?
+        return dynamicBridgeCast(fromObjectiveC: next as Any)
     }
 }
 
@@ -143,9 +143,9 @@ private func forceCast<A, U>(_ from: A, to type: U.Type) -> U {
 /// supporting more types.
 public protocol RealmCollectionValue: Equatable {
     /// :nodoc:
-    static func rlmArray() -> RLMArray<AnyObject>
+    static func _rlmArray() -> RLMArray<AnyObject>
     /// :nodoc:
-    static func nilValue() -> Self
+    static func _nilValue() -> Self
 }
 #else
 /// A type which can be stored in a Realm List or Results
@@ -162,11 +162,11 @@ public protocol RealmCollectionValue {
 
 extension RealmCollectionValue {
     /// :nodoc:
-    public static func rlmArray() -> RLMArray<AnyObject> {
+    public static func _rlmArray() -> RLMArray<AnyObject> {
         return RLMArray(objectType: .int, optional: false)
     }
     /// :nodoc:
-    public static func nilValue() -> Self {
+    public static func _nilValue() -> Self {
         fatalError("unexpected NSNull for non-Optional type")
     }
 }
@@ -188,11 +188,11 @@ private func arrayType<T>(_ type: T.Type) -> RLMArray<AnyObject> {
 #if swift(>=3.4) && (swift(>=4.1.50) || !swift(>=4))
 extension Optional: RealmCollectionValue where Wrapped: RealmCollectionValue {
     /// :nodoc:
-    public static func rlmArray() -> RLMArray<AnyObject> {
+    public static func _rlmArray() -> RLMArray<AnyObject> {
         return arrayType(Wrapped.self)
     }
     /// :nodoc:
-    public static func nilValue() -> Optional {
+    public static func _nilValue() -> Optional {
         return nil
     }
 }
@@ -216,38 +216,38 @@ extension Int32: RealmCollectionValue {}
 extension Int64: RealmCollectionValue {}
 extension Float: RealmCollectionValue {
     /// :nodoc:
-    public static func rlmArray() -> RLMArray<AnyObject> {
+    public static func _rlmArray() -> RLMArray<AnyObject> {
         return RLMArray(objectType: .float, optional: false)
     }
 }
 extension Double: RealmCollectionValue {
     /// :nodoc:
-    public static func rlmArray() -> RLMArray<AnyObject> {
+    public static func _rlmArray() -> RLMArray<AnyObject> {
         return RLMArray(objectType: .double, optional: false)
     }
 }
 extension Bool: RealmCollectionValue {
     /// :nodoc:
-    public static func rlmArray() -> RLMArray<AnyObject> {
+    public static func _rlmArray() -> RLMArray<AnyObject> {
         return RLMArray(objectType: .bool, optional: false)
     }
 }
 
 extension String: RealmCollectionValue {
     /// :nodoc:
-    public static func rlmArray() -> RLMArray<AnyObject> {
+    public static func _rlmArray() -> RLMArray<AnyObject> {
         return RLMArray(objectType: .string, optional: false)
     }
 }
 extension Date: RealmCollectionValue {
     /// :nodoc:
-    public static func rlmArray() -> RLMArray<AnyObject> {
+    public static func _rlmArray() -> RLMArray<AnyObject> {
         return RLMArray(objectType: .date, optional: false)
     }
 }
 extension Data: RealmCollectionValue {
     /// :nodoc:
-    public static func rlmArray() -> RLMArray<AnyObject> {
+    public static func _rlmArray() -> RLMArray<AnyObject> {
         return RLMArray(objectType: .data, optional: false)
     }
 }
@@ -493,7 +493,7 @@ public protocol RealmCollection: RealmCollectionBase {
     func observe(_ block: @escaping (RealmCollectionChange<Self>) -> Void) -> NotificationToken
 
     /// :nodoc:
-    func observe(_ block: @escaping (RealmCollectionChange<AnyRealmCollection<ElementType>>) -> Void) -> NotificationToken
+    func _observe(_ block: @escaping (RealmCollectionChange<AnyRealmCollection<ElementType>>) -> Void) -> NotificationToken
 }
 
 /// :nodoc:
@@ -851,8 +851,8 @@ public final class AnyRealmCollection<Element: RealmCollectionValue>: RealmColle
     /// The type of the objects contained within the collection.
     public typealias ElementType = Element
 
-    public func index(after integer: Int) -> Int { return integer  + 1 }
-    public func index(before integer: Int) -> Int { return integer - 1 }
+    public func index(after i: Int) -> Int { return i + 1 }
+    public func index(before i: Int) -> Int { return i - 1 }
 
     /// The type of the objects contained in the collection.
     fileprivate let base: _AnyRealmCollectionBase<Element>
@@ -1126,7 +1126,7 @@ public final class AnyRealmCollection<Element: RealmCollectionValue>: RealmColle
         -> NotificationToken { return base._observe(block) }
 
     /// :nodoc:
-    public func observe(_ block: @escaping (RealmCollectionChange<AnyRealmCollection>) -> Void)
+    public func _observe(_ block: @escaping (RealmCollectionChange<AnyRealmCollection>) -> Void)
         -> NotificationToken { return base._observe(block) }
 }
 

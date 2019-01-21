@@ -58,9 +58,7 @@ class TableViewController: UITableViewController {
             case .initial:
                 // Results are now populated and can be accessed without blocking the UI
                 self.tableView.reloadData()
-                // swiftlint:disable (unneeded_break_in_switch)
                 break
-                // swiftlint:disable:previous unneeded_break_in_switch
             case .update(_, let deletions, let insertions, let modifications):
                 // Query results have changed, so apply them to the TableView
                 self.tableView.beginUpdates()
@@ -68,14 +66,11 @@ class TableViewController: UITableViewController {
                 self.tableView.deleteRows(at: deletions.map { IndexPath(row: $0, section: 0) }, with: .automatic)
                 self.tableView.reloadRows(at: modifications.map { IndexPath(row: $0, section: 0) }, with: .automatic)
                 self.tableView.endUpdates()
-                // swiftlint:disable (unneeded_break_in_switch)
                 break
-                // swiftlint:disable:previous unneeded_break_in_switch
             case .error(let err):
                 // An error occurred while opening the Realm file on the background worker thread
                 fatalError("\(err)")
                 break
-                // swiftlint:disable:previous unneeded_break_in_switch
             }
         }
     }

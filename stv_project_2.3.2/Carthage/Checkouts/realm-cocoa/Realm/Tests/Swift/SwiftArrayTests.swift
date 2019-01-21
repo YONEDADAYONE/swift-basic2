@@ -51,8 +51,8 @@ class SwiftArrayTests: RLMTestCase {
         var totalSum = 0
 
         for obj in result {
-            if let aoo = obj as? SwiftAggregateObject {
-                totalSum += aoo.intCol
+            if let ao = obj as? SwiftAggregateObject {
+                totalSum += ao.intCol
             }
         }
 
@@ -278,8 +278,8 @@ class SwiftArrayTests: RLMTestCase {
         var totalSum: CInt = 0
 
         for obj in result {
-            if let aao = obj as? AggregateObject {
-                totalSum += aao.intCol
+            if let ao = obj as? AggregateObject {
+                totalSum += ao.intCol
             }
         }
 
@@ -473,9 +473,9 @@ class SwiftArrayTests: RLMTestCase {
 
         let results = EmployeeObject.objects(in: realm, where: "hired = YES")
         XCTAssertEqual(UInt(2), results.count)
-        XCTAssertEqual(UInt(0), results.index(of: po1))
-        XCTAssertEqual(UInt(1), results.index(of: po3))
-        XCTAssertEqual(NSNotFound, Int(results.index(of: po2)))
+        XCTAssertEqual(UInt(0), results.index(of: po1));
+        XCTAssertEqual(UInt(1), results.index(of: po3));
+        XCTAssertEqual(NSNotFound, Int(results.index(of: po2)));
     }
 
     func testIndexOfObjectWhere_objc() {

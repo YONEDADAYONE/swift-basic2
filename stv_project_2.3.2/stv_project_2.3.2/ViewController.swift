@@ -6,8 +6,8 @@
 //  Copyright © 2019 hiroya. All rights reserved.
 //
 
-import UIKit
 import RealmSwift
+import UIKit
 
 class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var todoTitleText: UITextField!
