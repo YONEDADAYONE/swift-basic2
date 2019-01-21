@@ -10,12 +10,12 @@ import RealmSwift
 import UIKit
 
 class ViewController: UIViewController, UITextFieldDelegate {
-    @IBOutlet weak var todoTitleText: UITextField!
-    @IBOutlet weak var todoContentsText: UITextField!
-    @IBOutlet weak var button: UIButton!
+    @IBOutlet private weak var todoTitleText: UITextField!
+    @IBOutlet private weak var todoContentsText: UITextField!
+    @IBOutlet private weak var button: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-                print(Realm.Configuration.defaultConfiguration.fileURL!)
+        print(Realm.Configuration.defaultConfiguration.fileURL ?? "")
          todoTitleText.delegate = self
         // デフォルトRealmを取得
         //swiftLintで指摘されたのでlet realm = try? Realm()を_ = try? Realm()に変更
@@ -35,14 +35,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     @IBAction func saveBtn(_ sender: UIButton) {
         //それぞれの箱の中にtextFieldに入力された文字をいれる
-        let todoTitleTextName = self.todoTitleText!.text
-        let todoContentsTextName = self.todoContentsText!.text
+        let todoTitleTextName = self.todoTitleText?.text
+        let todoContentsTextName = self.todoContentsText?.text
         //newCityの箱にクラスCityLibを継承
         let trTodoBox = TrTodo()
         //定数newCityのプロパティにsatValueの値を入れる
         //またsetValueの前は値で今回はtextの値をいれて、forKeyでは 別クラスのキーを参照している
-        trTodoBox.setValue(self.todoTitleText!.text, forKey: "todoTitle")
-        trTodoBox.setValue(self.todoContentsText!.text, forKey: "todoContents")
+        trTodoBox.setValue(self.todoTitleText?.text, forKey: "todoTitle")
+        trTodoBox.setValue(self.todoContentsText?.text, forKey: "todoContents")
         var calendar = Calendar.current
         var compornets = DateComponents()
         compornets.year = 2019
@@ -56,12 +56,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
         //https://qiita.com/kotala_b/items/68b9608df6c8bac80f67
         var maxId: Int? { return try? Realm().objects(TrTodo.self).sorted(byKeyPath: "todoid").last?.todoid ?? 0 }
         trTodoBox.setValue(trTodoBox.todoid + 1, forKey: "todoid")
-        trTodoBox.todoid = maxId! + 1 //三項演算子の使用のため?? 0 を追加
+        trTodoBox.todoid = maxId ?? 0 + 1//三項演算子の使用のため?? 0 を追加
         //デフォルトのRealmを取得
         //try! は例外を無視するという意味
         //定数realmはRealmを継承している
         let realm = try? Realm()
-        print(Realm.Configuration.defaultConfiguration.fileURL!)
+        print(Realm.Configuration.defaultConfiguration.fileURL ?? "")
 
         //do節でエラーを投げる可能性のあるメソッドを呼び出します。
         //tryはメソッドの呼び出し
@@ -75,8 +75,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
 //                print("Added\(trTodoBox.todoTitle) to Realm DataBase")
 
                 //書き込んだので初期化してる
-                self.todoTitleText!.text = ""
-                self.todoContentsText!.text = ""
+                self.todoTitleText?.text = ""
+                self.todoContentsText?.text = ""
                 //登録画面に戻る
                 self.dismiss(animated: true, completion: nil)
             }
