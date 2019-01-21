@@ -18,29 +18,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FWZ-lz-ihm">
-                                <rect key="frame" x="40" y="112" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3mJ-Tl-OzK">
+                                <rect key="frame" x="40" y="105" width="240" height="358"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9VB-9N-sNy">
-                                <rect key="frame" x="137" y="369" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EEc-Ba-nzZ">
+                                <rect key="frame" x="40" y="518" width="31" height="30"/>
+                                <state key="normal" title="撮影"/>
                                 <connections>
-                                    <action selector="startCamera:" destination="vTA-YT-ycW" eventType="touchUpInside" id="aKV-uH-52Y"/>
+                                    <action selector="startCamera:" destination="vTA-YT-ycW" eventType="touchUpInside" id="MwD-MG-Lto"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="STX-FF-uLk">
+                                <rect key="frame" x="249" y="518" width="31" height="30"/>
+                                <state key="normal" title="加工"/>
+                                <connections>
+                                    <action selector="monochromeButton:" destination="vTA-YT-ycW" eventType="touchUpInside" id="9zN-Q0-S4B"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="3mJ-Tl-OzK" firstAttribute="leading" secondItem="EEc-Ba-nzZ" secondAttribute="leading" id="0q0-ib-cm8"/>
+                            <constraint firstItem="STX-FF-uLk" firstAttribute="top" secondItem="3mJ-Tl-OzK" secondAttribute="bottom" constant="55" id="2Y9-YZ-tGm"/>
+                            <constraint firstItem="Thx-rm-Alx" firstAttribute="trailing" secondItem="STX-FF-uLk" secondAttribute="trailing" constant="40" id="9FN-8M-74A"/>
+                            <constraint firstItem="3mJ-Tl-OzK" firstAttribute="centerX" secondItem="yRb-Y1-eZK" secondAttribute="centerX" id="9MG-uh-bCv"/>
+                            <constraint firstAttribute="bottom" secondItem="STX-FF-uLk" secondAttribute="bottom" constant="20" symbolic="YES" id="Vdt-bN-0ee"/>
+                            <constraint firstItem="3mJ-Tl-OzK" firstAttribute="centerY" secondItem="yRb-Y1-eZK" secondAttribute="centerY" id="clT-vb-1BP"/>
+                            <constraint firstItem="STX-FF-uLk" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="EEc-Ba-nzZ" secondAttribute="trailing" constant="8" symbolic="YES" id="dU1-LB-SkN"/>
+                            <constraint firstItem="STX-FF-uLk" firstAttribute="trailing" secondItem="3mJ-Tl-OzK" secondAttribute="trailing" id="ojV-SL-ew2"/>
+                            <constraint firstItem="STX-FF-uLk" firstAttribute="baseline" secondItem="EEc-Ba-nzZ" secondAttribute="baseline" id="uvq-4z-C7t"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Thx-rm-Alx"/>
                     </view>
                     <connections>
-                        <outlet property="cameraView" destination="FWZ-lz-ihm" id="tFI-1k-4wB"/>
+                        <outlet property="cameraView" destination="3mJ-Tl-OzK" id="4Eo-r9-GfE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lvY-fu-6oi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-343" y="-181"/>
+            <point key="canvasLocation" x="-1014" y="-612"/>
         </scene>
     </scenes>
 </document>

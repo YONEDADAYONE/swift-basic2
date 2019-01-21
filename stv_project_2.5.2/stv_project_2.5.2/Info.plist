@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>カメラ使います</string>
+	<string>アルバム使います</string>
 	<key>NSCameraUsageDescription</key>
 	<string>カメラ使います</string>
 	<key>CFBundleDevelopmentRegion</key>
