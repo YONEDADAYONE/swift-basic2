@@ -15,10 +15,12 @@ class ViewController: UIViewController , UITableViewDelegate, UITableViewDataSou
     
     var forecasts = [ForecastList]()
     
-    var tableArray = ["予報日" , "天気" , "天気アイコンのURL"]
+    var image:ImageList?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -27,9 +29,12 @@ class ViewController: UIViewController , UITableViewDelegate, UITableViewDataSou
             self.forecasts = result.forecasts
             print(self.forecasts)
             
+
             DispatchQueue.main.async {
                 self.tableVIew.reloadData()
             }
+            
+        
             
         }
     }
@@ -43,32 +48,40 @@ class ViewController: UIViewController , UITableViewDelegate, UITableViewDataSou
         
     }
     
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // セルを取得する
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
-        cell.textLabel?.text = "\(self.forecasts[indexPath.row].dateLabel)"
+//        cell.textLabel?.text = "\(self.forecasts[indexPath.row].dateLabel + self.forecasts[indexPath.row].date + self.forecasts[indexPath.row].telop)"
+        
+        //今日・明日・明後日を表示するラベル
+        let label1 = cell.viewWithTag(1) as! UILabel
+        label1.text = self.forecasts[indexPath.row].dateLabel
+        
+        //予報日を表示するラベル
+        let label2 = cell.viewWithTag(2) as! UILabel
+        label2.text = self.forecasts[indexPath.row].date
+        
+        //天気を表示するラベル
+        let label3 = cell.viewWithTag(3) as! UILabel
+        label3.text = self.forecasts[indexPath.row].telop
+        
+        
+        let label4 = cell.viewWithTag(4) as! UILabel
+//        label4.text =
+        
+//        let imge = cell.viewWithTag(5) as! UIImage
+//        imageView.image = self.forecasts[indexPath.row].image
+        
+        //tableViewを可変にする。
+        tableView.rowHeight = UITableView.automaticDimension
         
         return cell
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let detaiVC = segue.destination as? DetailViewController {
-            detaiVC.forecasts = sender as? String
-            print(sender)
-        }
-        
-    }
-    
-    //tableviewをタップしたら遷移する。 //
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "segue", sender: forecasts[indexPath.row].dateLabel)
-        
-    }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 30
+        return 300
     }
     
 }

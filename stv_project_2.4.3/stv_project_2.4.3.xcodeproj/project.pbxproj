@@ -13,7 +13,6 @@
 		EEABBC3A21F58DEA00FE53C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEABBC3921F58DEA00FE53C0 /* Assets.xcassets */; };
 		EEABBC3D21F58DEA00FE53C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEABBC3B21F58DEA00FE53C0 /* LaunchScreen.storyboard */; };
 		EEABBC4521F58E4100FE53C0 /* weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEABBC4421F58E4100FE53C0 /* weather.swift */; };
-		EEABBC4721F58E7200FE53C0 /* DetailViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEABBC4621F58E7200FE53C0 /* DetailViewViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +24,6 @@
 		EEABBC3C21F58DEA00FE53C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EEABBC3E21F58DEA00FE53C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EEABBC4421F58E4100FE53C0 /* weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = weather.swift; sourceTree = "<group>"; };
-		EEABBC4621F58E7200FE53C0 /* DetailViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +59,6 @@
 				EEABBC3221F58DE900FE53C0 /* AppDelegate.swift */,
 				EEABBC3421F58DE900FE53C0 /* ViewController.swift */,
 				EEABBC4421F58E4100FE53C0 /* weather.swift */,
-				EEABBC4621F58E7200FE53C0 /* DetailViewViewController.swift */,
 				EEABBC3621F58DE900FE53C0 /* Main.storyboard */,
 				EEABBC3921F58DEA00FE53C0 /* Assets.xcassets */,
 				EEABBC3B21F58DEA00FE53C0 /* LaunchScreen.storyboard */,
@@ -143,7 +140,6 @@
 			files = (
 				EEABBC3521F58DE900FE53C0 /* ViewController.swift in Sources */,
 				EEABBC3321F58DE900FE53C0 /* AppDelegate.swift in Sources */,
-				EEABBC4721F58E7200FE53C0 /* DetailViewViewController.swift in Sources */,
 				EEABBC4521F58E4100FE53C0 /* weather.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
