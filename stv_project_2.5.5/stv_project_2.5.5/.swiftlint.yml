@@ -1,6 +1,6 @@
 # 対象にするパス
 included:
-  - stv_project_2.5.6
+  - stv_project_2.5.5
   - <Project Name>Tests
 
 # 対象から除外するパス

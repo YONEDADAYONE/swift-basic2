@@ -61,22 +61,27 @@ UINavigationControllerDelegate {
     
     //https://qiita.com/toshiakiokano@github/items/92a96ad669df067de3fc を参照
     
-    
     //CIFilterの導入
     @IBAction func monochromeButton(_ sender: UIButton) {
+        //CIFilterの導入
         
-        let filteredImage = CIImage(image: self.cameraView.image!)
+        let filteredImage = CIImage(image: self.cameraView.image ?? UIImage())
         let filter = CIFilter(name: "CIVignette")
         
-        filter!.setValue(filteredImage, forKey: "inputImage")
-        filter!.setValue(NSNumber(value: 9.0), forKey: "inputIntensity")
-        
+        filter?.setValue(filteredImage, forKey: "inputImage")
+        filter?.setValue(NSNumber(value: 9.0), forKey: "inputIntensity")
         
         let ciContext = CIContext(options: nil)
-        let imageRef = ciContext.createCGImage((filter?.outputImage)!, from: (filter?.outputImage!.extent)!)
-        let outputImage = UIImage(cgImage: imageRef!)
-        self.cameraView.image = outputImage
-    }
-    
-    
+        
+        guard let imageRef = ciContext.createCGImage((filter?.outputImage ?? CIImage()),
+                                                     from: (filter?.outputImage?.extent ?? CGRect())) else {
+                                                        return
+        }
+        //空の配列todoArrayにrelmeのデータを入れてフィルターをかける
+        
+        do {
+            let outputImage = UIImage(cgImage: imageRef)
+            self.cameraView.image = outputImage
+        }
+}
 }
