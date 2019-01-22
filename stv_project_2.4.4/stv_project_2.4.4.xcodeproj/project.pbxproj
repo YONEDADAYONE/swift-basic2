@@ -13,7 +13,6 @@
 		EEDED7A921E72BCA0028232D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEDED7A821E72BCA0028232D /* Assets.xcassets */; };
 		EEDED7AC21E72BCA0028232D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEDED7AA21E72BCA0028232D /* LaunchScreen.storyboard */; };
 		EEDED7B421E72C0D0028232D /* weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDED7B321E72C0D0028232D /* weather.swift */; };
-		EEDED7B821E81F6A0028232D /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDED7B721E81F6A0028232D /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +24,6 @@
 		EEDED7AB21E72BCA0028232D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EEDED7AD21E72BCA0028232D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EEDED7B321E72C0D0028232D /* weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = weather.swift; sourceTree = "<group>"; };
-		EEDED7B721E81F6A0028232D /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +58,6 @@
 			children = (
 				EEDED7A121E72BC90028232D /* AppDelegate.swift */,
 				EEDED7A321E72BC90028232D /* ViewController.swift */,
-				EEDED7B721E81F6A0028232D /* DetailViewController.swift */,
 				EEDED7B321E72C0D0028232D /* weather.swift */,
 				EEDED7A521E72BC90028232D /* Main.storyboard */,
 				EEDED7A821E72BCA0028232D /* Assets.xcassets */,
@@ -144,7 +141,6 @@
 				EEDED7A421E72BC90028232D /* ViewController.swift in Sources */,
 				EEDED7A221E72BC90028232D /* AppDelegate.swift in Sources */,
 				EEDED7B421E72C0D0028232D /* weather.swift in Sources */,
-				EEDED7B821E81F6A0028232D /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
