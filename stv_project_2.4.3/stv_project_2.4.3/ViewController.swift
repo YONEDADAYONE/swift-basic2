@@ -13,6 +13,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak private var tableVIew: UITableView!
     
     var forecasts = [ForecastList]()
+    var descriptions = [DescriptionList]()
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,16 +27,18 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         Forecaster.forecast { result in
             self.forecasts = result.forecasts
             
-            //ここに画像の処理を記載
-        
+//            self.descriptions = [result.description]
             
             print(self.forecasts)
+            print(self.descriptions)
             
             DispatchQueue.main.async {
                 self.tableVIew.reloadData()
             }
             
         }
+        
+        
     }
     
     
@@ -63,13 +68,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         label3.text = self.forecasts[indexPath.row].telop
         
         let label4 = cell.viewWithTag(4) as! UILabel
-        //        label4.text =
+//        label4.text = self.descriptions[indexPath.row].text
         
-        //        let imge = cell.viewWithTag(5) as! UIImage
-        //        imageView.image = self.forecasts[indexPath.row].image
+//        let imageView = cell.viewWithTag(5) as? UIImageView
+//        imageView?.image = self.forecasts[indexPath.row].
         
         //tableViewを可変にする。
         tableView.rowHeight = UITableView.automaticDimension
+        
+    print(self.forecasts[indexPath.row].dateLabel)
+    print(self.forecasts[indexPath.row].image)
         
         return cell
     }

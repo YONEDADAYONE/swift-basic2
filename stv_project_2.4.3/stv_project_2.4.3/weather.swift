@@ -43,10 +43,7 @@ class Forecaster: NSObject {
 struct ForecastResult: Codable {
     //超重要　変数名はAPIのサイト通りに必ずしなければならない
     var forecasts: [ForecastList]
-}
-
-struct ImageResult: Codable {
-    var imagelist: [ImageList]
+    var description: DescriptionList
 }
 
 //区別するためにForecastにListを加え、ForecastListにした
@@ -55,11 +52,12 @@ struct ForecastList: Codable {
     var dateLabel: String //日付
     var date:String //予報日
     var telop:String //天気
-}
-
-struct ImageList: Codable {
-    var url:String
-    var link:String
+    var image:image
+    
+    struct image: Codable {
+        var url:String
+    }
+    
 }
 
 struct DescriptionList: Codable {
