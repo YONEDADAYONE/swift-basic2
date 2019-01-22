@@ -18,24 +18,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IPS-Vw-ALM">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IPS-Vw-ALM">
                                 <rect key="frame" x="0.0" y="268" width="320" height="204"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="204" id="8Ho-AN-KaK"/>
+                                </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3k7-wy-Yvf">
-                                <rect key="frame" x="137" y="491" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yC8-3Q-K2Y">
+                                <rect key="frame" x="0.0" y="20" width="320" height="195"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mzi-9F-Ld8">
+                                <rect key="frame" x="258" y="491" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="monochrome:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jEe-KP-9AA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3k7-wy-Yvf">
+                                <rect key="frame" x="16" y="491" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="takePhoto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Pgw-XY-DSx"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yC8-3Q-K2Y">
-                                <rect key="frame" x="0.0" y="20" width="320" height="195"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="IPS-Vw-ALM" firstAttribute="trailing" secondItem="yC8-3Q-K2Y" secondAttribute="trailing" id="9dL-Vu-HWo"/>
+                            <constraint firstItem="yC8-3Q-K2Y" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="9jB-yk-s86"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Mzi-9F-Ld8" secondAttribute="trailing" constant="16" id="L86-eO-h9g"/>
+                            <constraint firstItem="3k7-wy-Yvf" firstAttribute="top" secondItem="IPS-Vw-ALM" secondAttribute="bottom" constant="19" id="SWH-SF-Obb"/>
+                            <constraint firstItem="Mzi-9F-Ld8" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="3k7-wy-Yvf" secondAttribute="trailing" constant="8" symbolic="YES" id="Vnu-zU-8V3"/>
+                            <constraint firstItem="3k7-wy-Yvf" firstAttribute="baseline" secondItem="Mzi-9F-Ld8" secondAttribute="baseline" id="bxH-Ak-H4p"/>
+                            <constraint firstAttribute="trailing" secondItem="IPS-Vw-ALM" secondAttribute="trailing" id="pl0-oH-eeq"/>
+                            <constraint firstItem="IPS-Vw-ALM" firstAttribute="top" secondItem="yC8-3Q-K2Y" secondAttribute="bottom" constant="53" id="qdK-88-dre"/>
+                            <constraint firstItem="IPS-Vw-ALM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="smI-pc-IhC"/>
+                            <constraint firstItem="3k7-wy-Yvf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="t18-ic-HVM"/>
+                            <constraint firstItem="IPS-Vw-ALM" firstAttribute="leading" secondItem="yC8-3Q-K2Y" secondAttribute="leading" id="uhp-xG-Zne"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="3k7-wy-Yvf" secondAttribute="bottom" constant="47" id="wTy-zr-cxy"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
@@ -45,7 +66,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-668" y="-37"/>
+            <point key="canvasLocation" x="-2426" y="-488"/>
         </scene>
     </scenes>
 </document>
