@@ -6,5 +6,5 @@ target 'stv_project_2.4.7' do
   use_frameworks!
 
   # Pods for stv_project_2.4.7
-  pod 'TwitterKit'
+pod 'TwitterKit'
 end
