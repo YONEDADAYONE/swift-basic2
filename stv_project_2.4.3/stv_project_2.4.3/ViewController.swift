@@ -15,14 +15,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var forecasts = [ForecastList]()
     var descriptions: DescriptionList?
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
         Forecaster.forecast { result in
             self.forecasts = result.forecasts
@@ -38,9 +36,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             
         }
         
-        
     }
-    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
@@ -53,33 +49,42 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         // セルを取得する
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
-        //        cell.textLabel?.text = "\(self.forecasts[indexPath.row].dateLabel + self.forecasts[indexPath.row].date + self.forecasts[indexPath.row].telop)"
-        
         //今日・明日・明後日を表示するラベル
-        let label1 = cell.viewWithTag(1) as! UILabel
-        label1.text = self.forecasts[indexPath.row].dateLabel
+        let label1 = cell.viewWithTag(1) as? UILabel
+        label1?.text = self.forecasts[indexPath.row].dateLabel
         
         //予報日を表示するラベル
-        let label2 = cell.viewWithTag(2) as! UILabel
-        label2.text = self.forecasts[indexPath.row].date
+        let label2 = cell.viewWithTag(2) as? UILabel
+        label2?.text = self.forecasts[indexPath.row].date
         
         //天気を表示するラベル
-        let label3 = cell.viewWithTag(3) as! UILabel
-        label3.text = self.forecasts[indexPath.row].telop
+        let label3 = cell.viewWithTag(3) as? UILabel
+        label3?.text = self.forecasts[indexPath.row].telop
         
-       let label4 = cell.viewWithTag(4) as! UILabel
-        label4.text = self.descriptions?.text
+        let label4 = cell.viewWithTag(4) as? UILabel
+        label4?.text = self.descriptions?.text
+        
+        print("aaaaa")
+        
+        DispatchQueue.main.async {
+            
+            guard let url = URL(string: self.forecasts[indexPath.row].image.url) else {
+                return
+            }
+            
+            do {
+                let data = try Data(contentsOf: url)
+                let image = UIImage(data: data)
+                let imageView = cell.viewWithTag(5) as? UIImageView
+                imageView?.image = image
+                print("ccccc")
                 
-        let url = URL(string: self.forecasts[indexPath.row].image.url)
-        do {
-            let data = try Data(contentsOf: url!)
-            let image = UIImage(data: data)
-            let imageView = cell.viewWithTag(5) as? UIImageView
-            imageView?.image = image
-        }catch let err {
-            print("Error : \(err.localizedDescription)")
+            } catch let err {
+                print("Error : \(err.localizedDescription)")
+            }
         }
         
+        print("bbbbb")
         //tableViewを可変にする。
         tableView.rowHeight = UITableView.automaticDimension
         
@@ -94,4 +99,3 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
 }
-

@@ -50,16 +50,17 @@ struct ForecastResult: Codable {
 struct ForecastList: Codable {
     //超重要 この変数も必ずAPIのサイト通りにすること!
     var dateLabel: String //日付
-    var date:String //予報日
-    var telop:String //天気
-    var image:image
+    var date: String //予報日
+    var telop: String //天気
+    var image: Image
     
-    struct image: Codable {
-        var url:String
+    //当初のクラス名はImageの「I」が小文字の「i」だったがswiftLintの指摘により訂正
+    struct Image: Codable {
+        var url: String
     }
     
 }
 
 struct DescriptionList: Codable {
-    var text:String
+    var text: String
 }

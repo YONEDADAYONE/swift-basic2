@@ -13,6 +13,7 @@
 		EEABBC3A21F58DEA00FE53C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEABBC3921F58DEA00FE53C0 /* Assets.xcassets */; };
 		EEABBC3D21F58DEA00FE53C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEABBC3B21F58DEA00FE53C0 /* LaunchScreen.storyboard */; };
 		EEABBC4521F58E4100FE53C0 /* weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEABBC4421F58E4100FE53C0 /* weather.swift */; };
+		EEFCE90F21F7186F0034FD3A /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = EEFCE90E21F7186F0034FD3A /* .swiftlint.yml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		EEABBC3C21F58DEA00FE53C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EEABBC3E21F58DEA00FE53C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EEABBC4421F58E4100FE53C0 /* weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = weather.swift; sourceTree = "<group>"; };
+		EEFCE90E21F7186F0034FD3A /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = .swiftlint.yml; path = ../stv_project_2.4.4/.swiftlint.yml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +42,7 @@
 		EEABBC2621F58DE900FE53C0 = {
 			isa = PBXGroup;
 			children = (
+				EEFCE90E21F7186F0034FD3A /* .swiftlint.yml */,
 				EEABBC3121F58DE900FE53C0 /* stv_project_2.4.3 */,
 				EEABBC3021F58DE900FE53C0 /* Products */,
 			);
@@ -126,6 +129,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EEFCE90F21F7186F0034FD3A /* .swiftlint.yml in Resources */,
 				EEABBC3D21F58DEA00FE53C0 /* LaunchScreen.storyboard in Resources */,
 				EEABBC3A21F58DEA00FE53C0 /* Assets.xcassets in Resources */,
 				EEABBC3821F58DE900FE53C0 /* Main.storyboard in Resources */,
@@ -150,8 +154,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "
-";
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"SwiftLint does not exist, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
