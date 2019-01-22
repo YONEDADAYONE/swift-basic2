@@ -13,7 +13,7 @@
 		EE4C033E21F2F18500E48FF9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE4C033C21F2F18500E48FF9 /* Main.storyboard */; };
 		EE4C034021F2F18700E48FF9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE4C033F21F2F18700E48FF9 /* Assets.xcassets */; };
 		EE4C034321F2F18700E48FF9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE4C034121F2F18700E48FF9 /* LaunchScreen.storyboard */; };
-		EE9B99F621F47AD80087942F /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = EE9B99F521F47AD80087942F /* .swiftlint.yml */; };
+		EEABBC0521F5890F00FE53C0 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = EEABBC0421F5890F00FE53C0 /* .swiftlint.yml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,7 +26,7 @@
 		EE4C033F21F2F18700E48FF9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EE4C034221F2F18700E48FF9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EE4C034421F2F18700E48FF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EE9B99F521F47AD80087942F /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
+		EEABBC0421F5890F00FE53C0 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
 		F2DEA52CF230DAB272BF7F8B /* Pods-stv_project_2.4.7.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-stv_project_2.4.7.debug.xcconfig"; path = "Target Support Files/Pods-stv_project_2.4.7/Pods-stv_project_2.4.7.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -62,7 +62,7 @@
 		EE4C032C21F2F18500E48FF9 = {
 			isa = PBXGroup;
 			children = (
-				EE9B99F521F47AD80087942F /* .swiftlint.yml */,
+				EEABBC0421F5890F00FE53C0 /* .swiftlint.yml */,
 				EE4C033721F2F18500E48FF9 /* stv_project_2.4.7 */,
 				EE4C033621F2F18500E48FF9 /* Products */,
 				75FF91DD6A8DC39C54B5B8CE /* Pods */,
@@ -153,7 +153,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EE9B99F621F47AD80087942F /* .swiftlint.yml in Resources */,
+				EEABBC0521F5890F00FE53C0 /* .swiftlint.yml in Resources */,
 				EE4C034321F2F18700E48FF9 /* LaunchScreen.storyboard in Resources */,
 				EE4C034021F2F18700E48FF9 /* Assets.xcassets in Resources */,
 				EE4C033E21F2F18500E48FF9 /* Main.storyboard in Resources */,

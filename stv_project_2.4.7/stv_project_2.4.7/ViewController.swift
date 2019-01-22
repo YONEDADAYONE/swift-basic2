@@ -14,8 +14,8 @@ import UIKit
 class ViewController: UIViewController, TWTRComposerViewControllerDelegate {
 
     //空の変数の入れ物を用意
-    var imgTweet: UIImageView!
-    var tvTweet: UITextView!
+    var imgTweet: UIImageView?
+    var tvTweet: UITextView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,9 +26,9 @@ class ViewController: UIViewController, TWTRComposerViewControllerDelegate {
     
     @IBAction func button(_ sender: UIButton) {
         
-        if (TWTRTwitter.sharedInstance().sessionStore.hasLoggedInUsers()) {
+        if TWTRTwitter.sharedInstance().sessionStore.hasLoggedInUsers() {
             
-            guard let shareImg2 = UIImage.init(named: "megane_sagasu_odeko_woman") else{
+            guard let shareImg2 = UIImage.init(named: "megane_sagasu_odeko_woman") else {
                 print("メガネを探す女性")
                 return
             }
@@ -37,21 +37,25 @@ class ViewController: UIViewController, TWTRComposerViewControllerDelegate {
             present(composer, animated: true, completion: nil)
             
         } else {
-            TWTRTwitter.sharedInstance().logIn { session, error in
+            TWTRTwitter.sharedInstance().logIn { session, _ in
                 if session != nil { 
                     
-                    guard let shareImg2 = UIImage.init(named: "sweets_shave_ice") else{
+                    guard let shareImg2 = UIImage.init(named: "sweets_shave_ice") else {
                         print("すごい色のアイス")
                         return
                     }
                     //let shareImg = UIImage.init(named: "mountain")!
-                    let composer = TWTRComposerViewController.init(initialText: "着色料のすごいアイスです、。", image: shareImg2, videoURL: nil)
+                    let composer =
+                        TWTRComposerViewController.init(initialText: "着色料のすごいアイスです、。",
+                                                        image: shareImg2,
+                                                        videoURL: nil)
                     composer.delegate = self
                     self.present(composer, animated: true, completion: nil)
                     
-                    
                 } else {
-                    let alert = UIAlertController(title: "Twitterアカウントがありません。", message: "アカウントを作成してください。", preferredStyle: .alert)
+                    let alert = UIAlertController(title: "Twitterアカウントがありません。",
+                                                  message: "アカウントを作成してください。",
+                                                  preferredStyle: .alert)
                     self.present(alert, animated: false, completion: nil)
                 }
             }
