@@ -27,7 +27,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         Forecaster.forecast { result in
             self.forecasts = result.forecasts
             
-//            self.descriptions = [result.description]
+            self.descriptions = [result.description]
             
             print(self.forecasts)
             print(self.descriptions)
@@ -67,17 +67,26 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let label3 = cell.viewWithTag(3) as! UILabel
         label3.text = self.forecasts[indexPath.row].telop
         
-        let label4 = cell.viewWithTag(4) as! UILabel
-//        label4.text = self.descriptions[indexPath.row].text
+       let label4 = cell.viewWithTag(4) as! UILabel
+//        label4.text = self.descriptions[indexPath.row].text //Stringと配列のい違い
         
-//        let imageView = cell.viewWithTag(5) as? UIImageView
-//        imageView?.image = self.forecasts[indexPath.row].
+        print(self.descriptions.count)
+        
+        let url = URL(string: self.forecasts[indexPath.row].image.url)
+        do {
+            let data = try Data(contentsOf: url!)
+            let image = UIImage(data: data)
+            let imageView = cell.viewWithTag(5) as? UIImageView
+            imageView?.image = image
+        }catch let err {
+            print("Error : \(err.localizedDescription)")
+        }
         
         //tableViewを可変にする。
         tableView.rowHeight = UITableView.automaticDimension
         
-    print(self.forecasts[indexPath.row].dateLabel)
-    print(self.forecasts[indexPath.row].image)
+        print(self.forecasts[indexPath.row].dateLabel)
+        print(self.forecasts[indexPath.row].image)
         
         return cell
     }
@@ -87,3 +96,4 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
 }
+
