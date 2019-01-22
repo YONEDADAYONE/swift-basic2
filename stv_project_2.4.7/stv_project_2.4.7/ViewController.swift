@@ -28,38 +28,24 @@ class ViewController: UIViewController, TWTRComposerViewControllerDelegate {
         
         if TWTRTwitter.sharedInstance().sessionStore.hasLoggedInUsers() {
             
-            guard let shareImg2 = UIImage.init(named: "megane_sagasu_odeko_woman") else {
-                print("メガネを探す女性")
-                return
-            }
-            let composer = TWTRComposerViewController.init(initialText: "メガネを探す女性です。", image: shareImg2, videoURL: nil)
-            composer.delegate = self
-            present(composer, animated: true, completion: nil)
+        let shareImg2: UIImage = #imageLiteral(resourceName: "megane_sagasu_odeko_woman")
+        print("メガネを探す女性")
             
-        } else {
-            TWTRTwitter.sharedInstance().logIn { session, _ in
-                if session != nil { 
-                    
-                    guard let shareImg2 = UIImage.init(named: "sweets_shave_ice") else {
-                        print("すごい色のアイス")
-                        return
-                    }
-                    //let shareImg = UIImage.init(named: "mountain")!
-                    let composer =
-                        TWTRComposerViewController.init(initialText: "着色料のすごいアイスです、。",
-                                                        image: shareImg2,
-                                                        videoURL: nil)
-                    composer.delegate = self
-                    self.present(composer, animated: true, completion: nil)
-                    
-                } else {
-                    let alert = UIAlertController(title: "Twitterアカウントがありません。",
-                                                  message: "アカウントを作成してください。",
-                                                  preferredStyle: .alert)
-                    self.present(alert, animated: false, completion: nil)
-                }
+//            let overView = Overview.init(initialText: "メガネを探す女性です。", image: shareImg2, videoURL: nil)
+            
+        let composer = TWTRComposerViewController(initialText: "メガネを探す女性です。", image: shareImg2, videoURL: nil)
+            
+        composer.delegate = self
+        present(composer, animated: true, completion: nil)
+            
+//        } else {
+//                    let alert = UIAlertController(title: "Twitterアカウントがありません。",
+//                                                  message: "アカウントを作成してください。",
+//                                                  preferredStyle: .alert)
+//                    self.present(alert, animated: false, completion: nil)
+//                }
             }
-        }
+                        return
     }
     
     func composerDidCancel(_ controller: TWTRComposerViewController) {
