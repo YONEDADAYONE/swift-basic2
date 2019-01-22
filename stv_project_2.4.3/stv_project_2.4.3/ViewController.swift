@@ -13,7 +13,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak private var tableVIew: UITableView!
     
     var forecasts = [ForecastList]()
-    var descriptions = [DescriptionList]()
+    var descriptions: DescriptionList?
     
     
     
@@ -27,10 +27,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         Forecaster.forecast { result in
             self.forecasts = result.forecasts
             
-            self.descriptions = [result.description]
+            self.descriptions = result.description
             
             print(self.forecasts)
-            print(self.descriptions)
+            print(self.description)
             
             DispatchQueue.main.async {
                 self.tableVIew.reloadData()
@@ -68,10 +68,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         label3.text = self.forecasts[indexPath.row].telop
         
        let label4 = cell.viewWithTag(4) as! UILabel
-//        label4.text = self.descriptions[indexPath.row].text //Stringと配列のい違い
-        
-        print(self.descriptions.count)
-        
+        label4.text = self.descriptions?.text
+                
         let url = URL(string: self.forecasts[indexPath.row].image.url)
         do {
             let data = try Data(contentsOf: url!)
