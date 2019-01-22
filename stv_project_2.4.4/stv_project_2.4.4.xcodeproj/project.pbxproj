@@ -7,27 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EEABBC3321F58DE900FE53C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEABBC3221F58DE900FE53C0 /* AppDelegate.swift */; };
-		EEABBC3521F58DE900FE53C0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEABBC3421F58DE900FE53C0 /* ViewController.swift */; };
-		EEABBC3821F58DE900FE53C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEABBC3621F58DE900FE53C0 /* Main.storyboard */; };
-		EEABBC3A21F58DEA00FE53C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEABBC3921F58DEA00FE53C0 /* Assets.xcassets */; };
-		EEABBC3D21F58DEA00FE53C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEABBC3B21F58DEA00FE53C0 /* LaunchScreen.storyboard */; };
-		EEABBC4521F58E4100FE53C0 /* weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEABBC4421F58E4100FE53C0 /* weather.swift */; };
+		EEDED7A221E72BC90028232D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDED7A121E72BC90028232D /* AppDelegate.swift */; };
+		EEDED7A421E72BC90028232D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDED7A321E72BC90028232D /* ViewController.swift */; };
+		EEDED7A721E72BC90028232D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEDED7A521E72BC90028232D /* Main.storyboard */; };
+		EEDED7A921E72BCA0028232D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEDED7A821E72BCA0028232D /* Assets.xcassets */; };
+		EEDED7AC21E72BCA0028232D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEDED7AA21E72BCA0028232D /* LaunchScreen.storyboard */; };
+		EEDED7B421E72C0D0028232D /* weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDED7B321E72C0D0028232D /* weather.swift */; };
+		EEDED7B821E81F6A0028232D /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDED7B721E81F6A0028232D /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		EEABBC2F21F58DE900FE53C0 /* stv_project_2.4.3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = stv_project_2.4.3.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		EEABBC3221F58DE900FE53C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EEABBC3421F58DE900FE53C0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		EEABBC3721F58DE900FE53C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		EEABBC3921F58DEA00FE53C0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		EEABBC3C21F58DEA00FE53C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		EEABBC3E21F58DEA00FE53C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EEABBC4421F58E4100FE53C0 /* weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = weather.swift; sourceTree = "<group>"; };
+		EEDED79E21E72BC80028232D /* stv_project_2.4.4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = stv_project_2.4.4.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EEDED7A121E72BC90028232D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EEDED7A321E72BC90028232D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EEDED7A621E72BC90028232D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EEDED7A821E72BCA0028232D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EEDED7AB21E72BCA0028232D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EEDED7AD21E72BCA0028232D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EEDED7B321E72C0D0028232D /* weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = weather.swift; sourceTree = "<group>"; };
+		EEDED7B721E81F6A0028232D /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		EEABBC2C21F58DE900FE53C0 /* Frameworks */ = {
+		EEDED79B21E72BC80028232D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -37,73 +39,73 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		EEABBC2621F58DE900FE53C0 = {
+		EEDED79521E72BC80028232D = {
 			isa = PBXGroup;
 			children = (
-				EEABBC3121F58DE900FE53C0 /* stv_project_2.4.3 */,
-				EEABBC3021F58DE900FE53C0 /* Products */,
+				EEDED7A021E72BC80028232D /* stv_project_2.4.4 */,
+				EEDED79F21E72BC80028232D /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		EEABBC3021F58DE900FE53C0 /* Products */ = {
+		EEDED79F21E72BC80028232D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				EEABBC2F21F58DE900FE53C0 /* stv_project_2.4.3.app */,
+				EEDED79E21E72BC80028232D /* stv_project_2.4.4.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		EEABBC3121F58DE900FE53C0 /* stv_project_2.4.3 */ = {
+		EEDED7A021E72BC80028232D /* stv_project_2.4.4 */ = {
 			isa = PBXGroup;
 			children = (
-				EEABBC3221F58DE900FE53C0 /* AppDelegate.swift */,
-				EEABBC4421F58E4100FE53C0 /* weather.swift */,
-				EEABBC3421F58DE900FE53C0 /* ViewController.swift */,
-				EEABBC3621F58DE900FE53C0 /* Main.storyboard */,
-				EEABBC3921F58DEA00FE53C0 /* Assets.xcassets */,
-				EEABBC3B21F58DEA00FE53C0 /* LaunchScreen.storyboard */,
-				EEABBC3E21F58DEA00FE53C0 /* Info.plist */,
+				EEDED7A121E72BC90028232D /* AppDelegate.swift */,
+				EEDED7A321E72BC90028232D /* ViewController.swift */,
+				EEDED7B721E81F6A0028232D /* DetailViewController.swift */,
+				EEDED7B321E72C0D0028232D /* weather.swift */,
+				EEDED7A521E72BC90028232D /* Main.storyboard */,
+				EEDED7A821E72BCA0028232D /* Assets.xcassets */,
+				EEDED7AA21E72BCA0028232D /* LaunchScreen.storyboard */,
+				EEDED7AD21E72BCA0028232D /* Info.plist */,
 			);
-			path = stv_project_2.4.3;
+			path = stv_project_2.4.4;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		EEABBC2E21F58DE900FE53C0 /* stv_project_2.4.3 */ = {
+		EEDED79D21E72BC80028232D /* stv_project_2.4.4 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EEABBC4121F58DEA00FE53C0 /* Build configuration list for PBXNativeTarget "stv_project_2.4.3" */;
+			buildConfigurationList = EEDED7B021E72BCA0028232D /* Build configuration list for PBXNativeTarget "stv_project_2.4.4" */;
 			buildPhases = (
-				EEABBC2B21F58DE900FE53C0 /* Sources */,
-				EEABBC2C21F58DE900FE53C0 /* Frameworks */,
-				EEABBC2D21F58DE900FE53C0 /* Resources */,
-				EEFCE90521F6BDD10034FD3A /* ShellScript */,
+				EEDED79A21E72BC80028232D /* Sources */,
+				EEDED79B21E72BC80028232D /* Frameworks */,
+				EEDED79C21E72BC80028232D /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = stv_project_2.4.3;
-			productName = stv_project_2.4.3;
-			productReference = EEABBC2F21F58DE900FE53C0 /* stv_project_2.4.3.app */;
+			name = stv_project_2.4.4;
+			productName = stv_project_2.4.4;
+			productReference = EEDED79E21E72BC80028232D /* stv_project_2.4.4.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		EEABBC2721F58DE900FE53C0 /* Project object */ = {
+		EEDED79621E72BC80028232D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = hiroya;
 				TargetAttributes = {
-					EEABBC2E21F58DE900FE53C0 = {
+					EEDED79D21E72BC80028232D = {
 						CreatedOnToolsVersion = 10.1;
 					};
 				};
 			};
-			buildConfigurationList = EEABBC2A21F58DE900FE53C0 /* Build configuration list for PBXProject "stv_project_2.4.3" */;
+			buildConfigurationList = EEDED79921E72BC80028232D /* Build configuration list for PBXProject "stv_project_2.4.4" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -111,76 +113,56 @@
 				en,
 				Base,
 			);
-			mainGroup = EEABBC2621F58DE900FE53C0;
-			productRefGroup = EEABBC3021F58DE900FE53C0 /* Products */;
+			mainGroup = EEDED79521E72BC80028232D;
+			productRefGroup = EEDED79F21E72BC80028232D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				EEABBC2E21F58DE900FE53C0 /* stv_project_2.4.3 */,
+				EEDED79D21E72BC80028232D /* stv_project_2.4.4 */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		EEABBC2D21F58DE900FE53C0 /* Resources */ = {
+		EEDED79C21E72BC80028232D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EEABBC3D21F58DEA00FE53C0 /* LaunchScreen.storyboard in Resources */,
-				EEABBC3A21F58DEA00FE53C0 /* Assets.xcassets in Resources */,
-				EEABBC3821F58DE900FE53C0 /* Main.storyboard in Resources */,
+				EEDED7AC21E72BCA0028232D /* LaunchScreen.storyboard in Resources */,
+				EEDED7A921E72BCA0028232D /* Assets.xcassets in Resources */,
+				EEDED7A721E72BC90028232D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		EEFCE90521F6BDD10034FD3A /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "
-";
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
-		EEABBC2B21F58DE900FE53C0 /* Sources */ = {
+		EEDED79A21E72BC80028232D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EEABBC3521F58DE900FE53C0 /* ViewController.swift in Sources */,
-				EEABBC3321F58DE900FE53C0 /* AppDelegate.swift in Sources */,
-				EEABBC4521F58E4100FE53C0 /* weather.swift in Sources */,
+				EEDED7A421E72BC90028232D /* ViewController.swift in Sources */,
+				EEDED7A221E72BC90028232D /* AppDelegate.swift in Sources */,
+				EEDED7B421E72C0D0028232D /* weather.swift in Sources */,
+				EEDED7B821E81F6A0028232D /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		EEABBC3621F58DE900FE53C0 /* Main.storyboard */ = {
+		EEDED7A521E72BC90028232D /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				EEABBC3721F58DE900FE53C0 /* Base */,
+				EEDED7A621E72BC90028232D /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		EEABBC3B21F58DEA00FE53C0 /* LaunchScreen.storyboard */ = {
+		EEDED7AA21E72BCA0028232D /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				EEABBC3C21F58DEA00FE53C0 /* Base */,
+				EEDED7AB21E72BCA0028232D /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -188,7 +170,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		EEABBC3F21F58DEA00FE53C0 /* Debug */ = {
+		EEDED7AE21E72BCA0028232D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -249,7 +231,7 @@
 			};
 			name = Debug;
 		};
-		EEABBC4021F58DEA00FE53C0 /* Release */ = {
+		EEDED7AF21E72BCA0028232D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -304,36 +286,36 @@
 			};
 			name = Release;
 		};
-		EEABBC4221F58DEA00FE53C0 /* Debug */ = {
+		EEDED7B121E72BCA0028232D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3HNBAS9RU7;
-				INFOPLIST_FILE = stv_project_2.4.3/Info.plist;
+				INFOPLIST_FILE = stv_project_2.4.4/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ayoih.stv-project-2-4-3";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ayoih.stv-project-2-4-4";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		EEABBC4321F58DEA00FE53C0 /* Release */ = {
+		EEDED7B221E72BCA0028232D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3HNBAS9RU7;
-				INFOPLIST_FILE = stv_project_2.4.3/Info.plist;
+				INFOPLIST_FILE = stv_project_2.4.4/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ayoih.stv-project-2-4-3";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ayoih.stv-project-2-4-4";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -343,25 +325,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		EEABBC2A21F58DE900FE53C0 /* Build configuration list for PBXProject "stv_project_2.4.3" */ = {
+		EEDED79921E72BC80028232D /* Build configuration list for PBXProject "stv_project_2.4.4" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				EEABBC3F21F58DEA00FE53C0 /* Debug */,
-				EEABBC4021F58DEA00FE53C0 /* Release */,
+				EEDED7AE21E72BCA0028232D /* Debug */,
+				EEDED7AF21E72BCA0028232D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EEABBC4121F58DEA00FE53C0 /* Build configuration list for PBXNativeTarget "stv_project_2.4.3" */ = {
+		EEDED7B021E72BCA0028232D /* Build configuration list for PBXNativeTarget "stv_project_2.4.4" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				EEABBC4221F58DEA00FE53C0 /* Debug */,
-				EEABBC4321F58DEA00FE53C0 /* Release */,
+				EEDED7B121E72BCA0028232D /* Debug */,
+				EEDED7B221E72BCA0028232D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = EEABBC2721F58DE900FE53C0 /* Project object */;
+	rootObject = EEDED79621E72BC80028232D /* Project object */;
 }

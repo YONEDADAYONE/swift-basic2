@@ -1,8 +1,8 @@
 //
 //  weather.swift
-//  stv_project_2.4.3
+//  stv_project_2.4.4
 //
-//  Created by 米田大弥 on 2019/01/21.
+//  Created by 米田大弥 on 2019/01/10.
 //  Copyright © 2019 hiroya. All rights reserved.
 //
 
@@ -44,6 +44,7 @@ struct ForecastResult: Codable {
     //超重要　変数名はAPIのサイト通りに必ずしなければならない
     var forecasts: [ForecastList]
     var description: DescriptionList
+    
 }
 
 //区別するためにForecastにListを加え、ForecastListにした
@@ -52,14 +53,14 @@ struct ForecastList: Codable {
     var dateLabel: String //日付
     var date:String //予報日
     var telop:String //天気
-    var image:image
-    
-    struct image: Codable {
-        var url:String
-    }
-    
+    var image:ImageList
+}
+
+struct ImageList: Codable {
+    var url:String
 }
 
 struct DescriptionList: Codable {
     var text:String
 }
+
