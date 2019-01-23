@@ -16,6 +16,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var forecasts = [ForecastList]()
     var descriptions: DescriptionList?
     
+    //userDefaultsの使用のため
+    let userDefaults = UserDefaults.standard
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -33,6 +38,26 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             
             DispatchQueue.main.async {
                 self.tableVIew.reloadData()
+                
+                
+                //ここでを保存
+                self.userDefaults.set(self.forecasts[0].telop, forKey: "Save1")
+                self.userDefaults.set(self.forecasts[0].date, forKey: "Save2")
+                self.userDefaults.set(self.forecasts[0].image.url, forKey: "Save3")
+                //読み込む
+                let saveTelop = UserDefaults.standard.string(forKey: "Save1")
+                let saveDate = UserDefaults.standard.string(forKey: "Save2")
+                let saveurl = UserDefaults.standard.string(forKey: "Save3")
+                
+                
+                // UserDefaultsへの値の保存を明示的に行う
+                self.userDefaults.synchronize()
+                
+                print("PATH: \((describing: NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last))")
+                
+                if UserDefaults.standard.object(forKey: "Save1") != nil {
+                    print("保存されているのは\(saveTelop ?? "エラー")と\(saveDate ?? "エラー")と\(saveurl ?? "エラー")です。")
+                }
             }
             
         }
@@ -53,6 +78,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         //今日・明日・明後日を表示するラベル
         let label1 = cell.viewWithTag(1) as? UILabel
         label1?.text = self.forecasts[indexPath.row].dateLabel
+        
         
         //予報日を表示するラベル
         let label2 = cell.viewWithTag(2) as? UILabel
@@ -91,6 +117,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         print(self.forecasts[indexPath.row].dateLabel)
         print(self.forecasts[indexPath.row].image)
+
         
         return cell
     }
@@ -98,5 +125,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 300
     }
+    
+
     
 }
