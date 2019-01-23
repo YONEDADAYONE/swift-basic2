@@ -9,9 +9,9 @@
 import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
 
-
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak private var tableVIew: UITableView!
     
     var forecasts = [ForecastList]()
     var descriptions: DescriptionList?
@@ -32,7 +32,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             print(self.description)
             
             DispatchQueue.main.async {
-                self.tableView.reloadData()
+                self.tableVIew.reloadData()
             }
             
         }
