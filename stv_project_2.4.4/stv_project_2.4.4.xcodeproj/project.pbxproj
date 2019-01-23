@@ -13,6 +13,8 @@
 		EEDED7A921E72BCA0028232D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEDED7A821E72BCA0028232D /* Assets.xcassets */; };
 		EEDED7AC21E72BCA0028232D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEDED7AA21E72BCA0028232D /* LaunchScreen.storyboard */; };
 		EEDED7B421E72C0D0028232D /* weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDED7B321E72C0D0028232D /* weather.swift */; };
+		EEFCE91321F73CE50034FD3A /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEFCE91121F73CE50034FD3A /* RealmSwift.framework */; };
+		EEFCE91421F73CE50034FD3A /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEFCE91221F73CE50034FD3A /* Realm.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		EEDED7AB21E72BCA0028232D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EEDED7AD21E72BCA0028232D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EEDED7B321E72C0D0028232D /* weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = weather.swift; sourceTree = "<group>"; };
+		EEFCE91121F73CE50034FD3A /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
+		EEFCE91221F73CE50034FD3A /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +35,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EEFCE91321F73CE50034FD3A /* RealmSwift.framework in Frameworks */,
+				EEFCE91421F73CE50034FD3A /* Realm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +48,7 @@
 			children = (
 				EEDED7A021E72BC80028232D /* stv_project_2.4.4 */,
 				EEDED79F21E72BC80028232D /* Products */,
+				EEFCE91021F73CE40034FD3A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +74,15 @@
 			path = stv_project_2.4.4;
 			sourceTree = "<group>";
 		};
+		EEFCE91021F73CE40034FD3A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EEFCE91221F73CE50034FD3A /* Realm.framework */,
+				EEFCE91121F73CE50034FD3A /* RealmSwift.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -77,6 +93,7 @@
 				EEDED79A21E72BC80028232D /* Sources */,
 				EEDED79B21E72BC80028232D /* Frameworks */,
 				EEDED79C21E72BC80028232D /* Resources */,
+				EEFCE91521F73CE90034FD3A /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -132,6 +149,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		EEFCE91521F73CE90034FD3A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		EEDED79A21E72BC80028232D /* Sources */ = {
@@ -288,6 +327,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3HNBAS9RU7;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = stv_project_2.4.4/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -306,6 +349,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3HNBAS9RU7;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = stv_project_2.4.4/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
