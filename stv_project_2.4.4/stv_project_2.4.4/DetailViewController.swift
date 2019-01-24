@@ -9,54 +9,56 @@
 import UIKit
 
 class DetailViewController: UIViewController {
-
-    //データをもらう
-     var forecastList:ForecastList?
     
-    @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var weekdateLabel: UILabel!
-    @IBOutlet weak var telopLabel: UILabel!
-    @IBOutlet weak var imageurlLabel: UILabel!
-    @IBOutlet weak var imageView: UIImageView!
+    //データをもらう
+    var forecastList: ForecastList?
+    
+    @IBOutlet weak private var dateLabel: UILabel!
+    @IBOutlet weak private var weekdateLabel: UILabel!
+    @IBOutlet weak private var telopLabel: UILabel!
+    @IBOutlet weak private var imageurlLabel: UILabel!
+    @IBOutlet weak private var imageView: UIImageView!
     
     var imgString: String?
     
     //ユーザーデフォルツを使用する
     let userDefaults = UserDefaults.standard
     
-    
     @IBAction func button(_ sender: UIButton) {
         
         loadView()
         
-        dateLabel.text = userDefaults.string(forKey: "save1")!
-        weekdateLabel.text = userDefaults.string(forKey: "save2")!
-        telopLabel.text = userDefaults.string(forKey: "save3")!
-        imageurlLabel.text = userDefaults.string(forKey: "save4")!
-
-        imgString = forecastList?.image.url ?? "https://2.bp.blogspot.com/-K7iU90zhGf0/XBRfNSR2sVI/AAAAAAABQ3E/6wvDgHZYBSA__vHh8-dpRqFhZRHMjPdnwCLcBGAs/s800/sweets_kaichu_shiruko_oshiruko.png"
-
-        print(imgString!)
-
-        imageView.cacheImage(imageUrlString: imgString!)
+        dateLabel.text = userDefaults.string(forKey: "save1")
+        weekdateLabel.text = userDefaults.string(forKey: "save2")
+        telopLabel.text = userDefaults.string(forKey: "save3")
+        imageurlLabel.text = userDefaults.string(forKey: "save4")
+        
+        imgString =
+            forecastList?.image.url
+            ??
+        "http://www.gibe-on.info/wp-content/uploads/2016/05/%E3%83%8A%E3%83%9E%E3%82%B1%E3%83%A2%E3%83%8E.jpg"
+        
+        print(imgString ?? "")
+        
+        imageView.cacheImage(imageUrlString: imgString ?? "")
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //画像を表示する。
-//        guard let url = URL(string: forecastList?.image.url ?? "") else {
-//            return
-//        }
-//
-//        do {
-//            let data = try Data(contentsOf: url)
-//            let image = UIImage(data: data)
-//            imageView?.image = image
-//
-//        } catch let err {
-//            print("Error : \(err.localizedDescription)")
-//        }
+        //        guard let url = URL(string: forecastList?.image.url ?? "") else {
+        //            return
+        //        }
+        //
+        //        do {
+        //            let data = try Data(contentsOf: url)
+        //            let image = UIImage(data: data)
+        //            imageView?.image = image
+        //
+        //        } catch let err {
+        //            print("Error : \(err.localizedDescription)")
+        //        }
         //ここまで画像の設定
         
         //もしユーザーデフォルツでに値があればそれをいれる。これをオフラインにできないものか...
@@ -70,7 +72,6 @@ class DetailViewController: UIViewController {
         telopLabel.text = forecastList?.telop
         imageurlLabel.text = forecastList?.image.url
         
-        
         //ラベルの文字列を保存する。
         userDefaults.set(dateLabel.text, forKey: "save1")
         userDefaults.set(weekdateLabel.text, forKey: "save2")
@@ -83,42 +84,29 @@ class DetailViewController: UIViewController {
         //内容確認
         if UserDefaults.standard.object(forKey: "save1") != nil {
             print("値はあるよ")
-            print(userDefaults.string(forKey: "save1")!)
-//            if dateLabel.text != "" {
-//                dateLabel.text = userDefaults.string(forKey: "save1")
-//            }
+            print(userDefaults.string(forKey: "save1") ?? "")
+            //            if dateLabel.text != "" {
+            //                dateLabel.text = userDefaults.string(forKey: "save1")
+            //            }
         }
     }
     
-//    func cash(url: String) {
-//
-//        let url = URL(string: (forecastList?.image.url)!)
-//        print(url!)
-//
-//
-//        //引数で渡されたimageUrlStringがすでにキャッシュとして保存されている場合は、キャッシュからそのimageを取り出し、self.imageに代入し、returnで抜ける。
-//        if let imageFromCache = UIImageView.imageCache.object(forKey: url as AnyObject) as? UIImage {
-//            self.imageView = imageFromCache
-//            return
-//    }
-//    }
-    
-    
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
-        imgString = forecastList?.image.url ?? "https://2.bp.blogspot.com/-K7iU90zhGf0/XBRfNSR2sVI/AAAAAAABQ3E/6wvDgHZYBSA__vHh8-dpRqFhZRHMjPdnwCLcBGAs/s800/sweets_kaichu_shiruko_oshiruko.png"
         
-        print(imgString!)
+        imgString = forecastList?.image.url
+            ??
+        "http://www.gibe-on.info/wp-content/uploads/2016/05/%E3%83%8A%E3%83%9E%E3%82%B1%E3%83%A2%E3%83%8E.jpg"
         
-        imageView.cacheImage(imageUrlString: imgString!)
+        print(imgString ?? "")
+        
+        imageView.cacheImage(imageUrlString: imgString ?? "")
         
     }
     
 }
 extension UIImageView {
-
+    
     //まず入れ物を用意します
     //NSCacheのインスタンスを生成しておく。ここに、どんどんキャッシュ化されたものが保存されていく。
     static let imageCache = NSCache<AnyObject, AnyObject>()
@@ -138,30 +126,35 @@ extension UIImageView {
         //上記のifに引っかからないということは、キャッシュとして保存されていないということなので、以下でキャッシュ化をしていく。
         //URLSessionクラスのdataTaskメソッドで、urlを元にして、バックグランドでサーバーと通信を行う。
         //{ 以降はcompletionHandler(クロージャー)で、通信処理が終わってから実行される。
-        //dataはサーバーからの返り値。urlResponseは。HTTPヘッダーやHTTPステータスコードなどの情報。リクエストが失敗したときに、errorに値が入力される。失敗しない限り、nilとなる。
-        URLSession.shared.dataTask(with: url!) { (data, urlResponse, error) in
+        //dataはサーバーからの返り値。urlResponseは。HTTPヘッダーやHTTPステータスコードなどの情報。リクエストが失敗したときに、errorに値が入力される。失敗しない限り、nilとなる。¥
+        
+        if let bindString = url {
+            print(bindString)
             
-            //errorがnilじゃないということは、リクエストに失敗しているということ。returnで抜け出す。
-            if error != nil {
-                print("error")
-                return
-            }
-            
-            //リクエストが成功して、サーバーからのresponseがある状態。
-            //しかし、UIKitのオブジェクトは必ずメインスレッドで実行しなければならないので、DispatchQueue.mainでメインキューに処理を追加する。非同期で登録するので、asyncで実装。
-            DispatchQueue.main.async {
+            URLSession.shared.dataTask(with: bindString) { data, _, error in
                 
-                //サーバーからのレスポンスのdataを元にして、UIImageを取得し、imageToCacheに代入。
-                let imageToCache = UIImage(data:data!)
+                //errorがnilじゃないということは、リクエストに失敗しているということ。returnで抜け出す。
+                if error != nil {
+                    print("error")
+                    return
+                }
                 
-                //self.imageにimageToCacheを代入。
-                self.image = imageToCache
-                
-                //keyをimageUrlStringとして、imageToCacheをキャッシュとして保存する。
-                UIImageView.imageCache.setObject(imageToCache!, forKey: imageUrlString as AnyObject)
-            }
+                //リクエストが成功して、サーバーからのresponseがある状態。
+                //しかし、UIKitのオブジェクトは必ずメインスレッドで実行しなければならないので、DispatchQueue.mainでメインキューに処理を追加する。非同期で登録するので、asyncで実装。
+                DispatchQueue.main.async {
+                    
+                    //サーバーからのレスポンスのdataを元にして、UIImageを取得し、imageToCacheに代入。
+                    let imageToCache = UIImage(data: data ?? Data())
+                    
+                    //self.imageにimageToCacheを代入。
+                    self.image = imageToCache
+                    
+                    //keyをimageUrlStringとして、imageToCacheをキャッシュとして保存する。
+                    UIImageView.imageCache.setObject(imageToCache ?? UIImage(), forKey: imageUrlString as AnyObject)
+                }
             }.resume()
+        }
+        
     }
-    
     
 }
