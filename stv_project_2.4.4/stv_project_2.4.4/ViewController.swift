@@ -69,6 +69,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let label4 = cell.viewWithTag(4) as? UILabel
         label4?.text = self.descriptions?.text
         
+        
+        
+        
         print("非同期処理チェック1")
         
         DispatchQueue.main.async {

@@ -19,15 +19,26 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var imageurlLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     
-    let imgString = "https://2.bp.blogspot.com/-K7iU90zhGf0/XBRfNSR2sVI/AAAAAAABQ3E/6wvDgHZYBSA__vHh8-dpRqFhZRHMjPdnwCLcBGAs/s800/sweets_kaichu_shiruko_oshiruko.png"
+    var imgString: String?
     
     //ユーザーデフォルツを使用する
     let userDefaults = UserDefaults.standard
     
+    
+    @IBAction func button(_ sender: UIButton) {
+        
+
+//        if dateLabel.text != "" {
+//            print(weekdateLabel.text = userDefaults.object(forKey: "save2") as? String)
+//            weekdateLabel.text = userDefaults.object(forKey: "save2") as? String
+//        } else {
+//            print("b")
+//            weekdateLabel.text = userDefaults.object(forKey: "save2") as? String
+//        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        imageView.cacheImage(imageUrlString: imgString)
         
         //画像を表示する。
 //        guard let url = URL(string: forecastList?.image.url ?? "") else {
@@ -54,6 +65,7 @@ class DetailViewController: UIViewController {
         weekdateLabel.text = forecastList?.dateLabel
         telopLabel.text = forecastList?.telop
         imageurlLabel.text = forecastList?.image.url
+        
         
         //ラベルの文字列を保存する。
         userDefaults.set(dateLabel.text, forKey: "save1")
@@ -83,10 +95,16 @@ class DetailViewController: UIViewController {
 //    }
 //    }
     
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
+        imgString = forecastList?.image.url ?? "https://2.bp.blogspot.com/-K7iU90zhGf0/XBRfNSR2sVI/AAAAAAABQ3E/6wvDgHZYBSA__vHh8-dpRqFhZRHMjPdnwCLcBGAs/s800/sweets_kaichu_shiruko_oshiruko.png"
         
+        print(imgString!)
+        
+        imageView.cacheImage(imageUrlString: imgString!)
         
     }
     
@@ -136,4 +154,6 @@ extension UIImageView {
             }
             }.resume()
     }
+    
+    
 }
