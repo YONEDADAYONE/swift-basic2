@@ -27,14 +27,18 @@ class DetailViewController: UIViewController {
     
     @IBAction func button(_ sender: UIButton) {
         
+        loadView()
+        
+        dateLabel.text = userDefaults.string(forKey: "save1")!
+        weekdateLabel.text = userDefaults.string(forKey: "save2")!
+        telopLabel.text = userDefaults.string(forKey: "save3")!
+        imageurlLabel.text = userDefaults.string(forKey: "save4")!
 
-//        if dateLabel.text != "" {
-//            print(weekdateLabel.text = userDefaults.object(forKey: "save2") as? String)
-//            weekdateLabel.text = userDefaults.object(forKey: "save2") as? String
-//        } else {
-//            print("b")
-//            weekdateLabel.text = userDefaults.object(forKey: "save2") as? String
-//        }
+        imgString = forecastList?.image.url ?? "https://2.bp.blogspot.com/-K7iU90zhGf0/XBRfNSR2sVI/AAAAAAABQ3E/6wvDgHZYBSA__vHh8-dpRqFhZRHMjPdnwCLcBGAs/s800/sweets_kaichu_shiruko_oshiruko.png"
+
+        print(imgString!)
+
+        imageView.cacheImage(imageUrlString: imgString!)
     }
     
     override func viewDidLoad() {
@@ -71,7 +75,7 @@ class DetailViewController: UIViewController {
         userDefaults.set(dateLabel.text, forKey: "save1")
         userDefaults.set(weekdateLabel.text, forKey: "save2")
         userDefaults.set(telopLabel.text, forKey: "save3")
-        userDefaults.set(telopLabel.text, forKey: "save4")
+        userDefaults.set(imageurlLabel.text, forKey: "save4")
         
         //plistファイルへの出力と同期する。
         userDefaults.synchronize()
@@ -79,6 +83,10 @@ class DetailViewController: UIViewController {
         //内容確認
         if UserDefaults.standard.object(forKey: "save1") != nil {
             print("値はあるよ")
+            print(userDefaults.string(forKey: "save1")!)
+//            if dateLabel.text != "" {
+//                dateLabel.text = userDefaults.string(forKey: "save1")
+//            }
         }
     }
     
@@ -135,7 +143,7 @@ extension UIImageView {
             
             //errorがnilじゃないということは、リクエストに失敗しているということ。returnで抜け出す。
             if error != nil {
-                print(error)
+                print("error")
                 return
             }
             
