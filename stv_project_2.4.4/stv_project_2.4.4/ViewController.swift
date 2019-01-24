@@ -10,16 +10,12 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-
     @IBOutlet weak private var tableVIew: UITableView!
     
+    //ForecastListの配列が入っている
     var forecasts = [ForecastList]()
+    //descriptionのstringが入っている
     var descriptions: DescriptionList?
-    
-    //userDefaultsの使用のため
-    let userDefaults = UserDefaults.standard
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,35 +25,18 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.viewWillAppear(animated)
         
         Forecaster.forecast { result in
+            //上で宣言したforecastsはweatherクラスの定数resultのプロパティforecasts
             self.forecasts = result.forecasts
-            
+            //上で宣言したdescriptionはweatherクラスの定数resultのプロパティdescription
             self.descriptions = result.description
             
             print(self.forecasts)
             print(self.description)
             
+            //非同期処理
             DispatchQueue.main.async {
+                //ViewControllerのtableviewをリロードしている。
                 self.tableVIew.reloadData()
-                
-                
-                //ここでを保存
-                self.userDefaults.set(self.forecasts[0].telop, forKey: "Save1")
-                self.userDefaults.set(self.forecasts[0].date, forKey: "Save2")
-                self.userDefaults.set(self.forecasts[0].image.url, forKey: "Save3")
-                //読み込む
-                let saveTelop = UserDefaults.standard.string(forKey: "Save1")
-                let saveDate = UserDefaults.standard.string(forKey: "Save2")
-                let saveurl = UserDefaults.standard.string(forKey: "Save3")
-                
-                
-                // UserDefaultsへの値の保存を明示的に行う
-                self.userDefaults.synchronize()
-                
-                print("PATH: \((describing: NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last))")
-                
-                if UserDefaults.standard.object(forKey: "Save1") != nil {
-                    print("保存されているのは\(saveTelop ?? "エラー")と\(saveDate ?? "エラー")と\(saveurl ?? "エラー")です。")
-                }
             }
             
         }
@@ -79,7 +58,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let label1 = cell.viewWithTag(1) as? UILabel
         label1?.text = self.forecasts[indexPath.row].dateLabel
         
-        
         //予報日を表示するラベル
         let label2 = cell.viewWithTag(2) as? UILabel
         label2?.text = self.forecasts[indexPath.row].date
@@ -91,7 +69,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let label4 = cell.viewWithTag(4) as? UILabel
         label4?.text = self.descriptions?.text
         
-        print("aaaaa")
+        print("非同期処理チェック1")
         
         DispatchQueue.main.async {
             
@@ -104,28 +82,39 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 let image = UIImage(data: data)
                 let imageView = cell.viewWithTag(5) as? UIImageView
                 imageView?.image = image
-                print("ccccc")
+                print("非同期処理チェック最後")
                 
             } catch let err {
                 print("Error : \(err.localizedDescription)")
             }
         }
         
-        print("bbbbb")
-        //tableViewを可変にする。
+        print("非同期処理チェック2")
+        //tableViewを可変にする。ができていない?
         tableView.rowHeight = UITableView.automaticDimension
         
-        print(self.forecasts[indexPath.row].dateLabel)
-        print(self.forecasts[indexPath.row].image)
-
-        
         return cell
+    }
+    
+    //各々のtableviewをタップしたらDetailViewControllerに飛ぶ
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //cellのwithIdentifierをMainToDetailにした。indexPathは上記のMainToDetailの行数を返す。今回だと3になる。
+        performSegue(withIdentifier: "MainToDetail", sender: forecasts[indexPath.row])
+    }
+    
+    //データを送る
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //オプショナルバインディングで定数dataiVCがDetailViewControllerに遷移するのであれば...。
+        //destinationは「先」という意味
+        //ForecastListで値を渡す。
+        if let detaiViewController = segue.destination as? DetailViewController {
+            //detaiViewControllerの変数forecastListにweatherクラスのForecastListの情報を送る
+            detaiViewController.forecastList = sender as? ForecastList
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 300
     }
-    
-
     
 }

@@ -64,4 +64,3 @@ struct ForecastList: Codable {
 struct DescriptionList: Codable {
     var text: String
 }
-

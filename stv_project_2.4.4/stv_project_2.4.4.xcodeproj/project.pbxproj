@@ -7,17 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EE35E66E21F9420300B08688 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE35E66D21F9420300B08688 /* DetailViewController.swift */; };
 		EEDED7A221E72BC90028232D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDED7A121E72BC90028232D /* AppDelegate.swift */; };
 		EEDED7A421E72BC90028232D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDED7A321E72BC90028232D /* ViewController.swift */; };
 		EEDED7A721E72BC90028232D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEDED7A521E72BC90028232D /* Main.storyboard */; };
 		EEDED7A921E72BCA0028232D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEDED7A821E72BCA0028232D /* Assets.xcassets */; };
 		EEDED7AC21E72BCA0028232D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEDED7AA21E72BCA0028232D /* LaunchScreen.storyboard */; };
 		EEDED7B421E72C0D0028232D /* weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDED7B321E72C0D0028232D /* weather.swift */; };
-		EEFCE91321F73CE50034FD3A /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEFCE91121F73CE50034FD3A /* RealmSwift.framework */; };
-		EEFCE91421F73CE50034FD3A /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEFCE91221F73CE50034FD3A /* Realm.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EE13206021F853BE00F6ADCE /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		EE35E66D21F9420300B08688 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		EEDED79E21E72BC80028232D /* stv_project_2.4.4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = stv_project_2.4.4.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEDED7A121E72BC90028232D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EEDED7A321E72BC90028232D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -35,8 +36,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EEFCE91321F73CE50034FD3A /* RealmSwift.framework in Frameworks */,
-				EEFCE91421F73CE50034FD3A /* Realm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +64,7 @@
 			children = (
 				EEDED7A121E72BC90028232D /* AppDelegate.swift */,
 				EEDED7A321E72BC90028232D /* ViewController.swift */,
+				EE35E66D21F9420300B08688 /* DetailViewController.swift */,
 				EEDED7B321E72C0D0028232D /* weather.swift */,
 				EEDED7A521E72BC90028232D /* Main.storyboard */,
 				EEDED7A821E72BCA0028232D /* Assets.xcassets */,
@@ -77,6 +77,7 @@
 		EEFCE91021F73CE40034FD3A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EE13206021F853BE00F6ADCE /* Alamofire.framework */,
 				EEFCE91221F73CE50034FD3A /* Realm.framework */,
 				EEFCE91121F73CE50034FD3A /* RealmSwift.framework */,
 			);
@@ -159,8 +160,6 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
 			);
 			outputFileListPaths = (
 			);
@@ -168,7 +167,8 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+			shellScript = "
+";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -180,6 +180,7 @@
 				EEDED7A421E72BC90028232D /* ViewController.swift in Sources */,
 				EEDED7A221E72BC90028232D /* AppDelegate.swift in Sources */,
 				EEDED7B421E72C0D0028232D /* weather.swift in Sources */,
+				EE35E66E21F9420300B08688 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
