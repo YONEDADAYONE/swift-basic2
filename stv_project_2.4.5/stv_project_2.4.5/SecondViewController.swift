@@ -8,8 +8,11 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
+class SecondViewController: UIViewController, MVCModelDelegate {
 
+    //定数mvcModelにクラスを継承 ★
+    let mvcModel = MVCModel()
+    
     //データをもらう
     var forecastList: ForecastList?
     
@@ -20,6 +23,9 @@ class SecondViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     
     var imgString: String?
+    
+    //★
+    @IBOutlet weak var countLabel: UILabel!
     
     //ユーザーデフォルツを使用する
     let userDefaults = UserDefaults.standard
@@ -42,15 +48,18 @@ class SecondViewController: UIViewController {
         print(imgString ?? "")
         
         imageView.cacheImage(imageUrlString: imgString ?? "")
+        
+        
+        //③Modelのカウントを1足すメソッドを呼ぶ ★
+        mvcModel.inc()
+        //デリゲートメソッドを使用するために必要　★
+        mvcModel.delegate = self
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //もしユーザーデフォルツでに値があればそれをいれる。これをオフラインにできないものか...
-        if userDefaults.object(forKey: "save1") != nil {
-            dateLabel.text = userDefaults.object(forKey: "save1") as? String
-        }
+        
         
         //データラベルをforecastListの値にする。
         dateLabel.text = forecastList?.date
@@ -88,6 +97,16 @@ class SecondViewController: UIViewController {
         
         imageView.cacheImage(imageUrlString: imgString ?? "")
         
+        
+        
+        didChange()
+        mvcModel.delegate = self //デリゲートメソッドを使用するために ★
+    }
+    
+    //fixでMVCModelの関数を呼び出した。 ★
+    func didChange() {
+        //countLabelテキストにmvcModelで当初はnilが入っていた変数の値の増減をlabelに表示。
+        countLabel.text = String(mvcModel.count)
     }
     
 }
