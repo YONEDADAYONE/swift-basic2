@@ -8,10 +8,10 @@
 
 import UIKit
 
-class SecondViewController: UIViewController, MVCModelDelegate {
-
-    //定数mvcModelにクラスを継承 ★
-    let mvcModel = MVCModel()
+class SecondViewController: UIViewController {
+    
+    let storage = Storage()
+    
     
     //データをもらう
     var forecastList: ForecastList?
@@ -49,17 +49,10 @@ class SecondViewController: UIViewController, MVCModelDelegate {
         
         imageView.cacheImage(imageUrlString: imgString ?? "")
         
-        
-        //③Modelのカウントを1足すメソッドを呼ぶ ★
-        mvcModel.inc()
-        //デリゲートメソッドを使用するために必要　★
-        mvcModel.delegate = self
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
         
         //データラベルをforecastListの値にする。
         dateLabel.text = forecastList?.date
@@ -80,10 +73,10 @@ class SecondViewController: UIViewController, MVCModelDelegate {
         if UserDefaults.standard.object(forKey: "save1") != nil {
             print("値はあるよ")
             print(userDefaults.string(forKey: "save1") ?? "")
-            //            if dateLabel.text != "" {
-            //                dateLabel.text = userDefaults.string(forKey: "save1")
-            //            }
         }
+        
+        
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -98,15 +91,7 @@ class SecondViewController: UIViewController, MVCModelDelegate {
         imageView.cacheImage(imageUrlString: imgString ?? "")
         
         
-        
-        didChange()
-        mvcModel.delegate = self //デリゲートメソッドを使用するために ★
-    }
-    
-    //fixでMVCModelの関数を呼び出した。 ★
-    func didChange() {
-        //countLabelテキストにmvcModelで当初はnilが入っていた変数の値の増減をlabelに表示。
-        countLabel.text = String(mvcModel.count)
+//        mvcModel.delegate = self //デリゲートメソッドを使用するために ★
     }
     
 }
