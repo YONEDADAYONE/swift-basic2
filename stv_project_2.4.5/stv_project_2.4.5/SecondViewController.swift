@@ -24,21 +24,14 @@ class SecondViewController: UIViewController {
     
     var imgString: String?
     
-    //★
-    @IBOutlet weak var countLabel: UILabel!
-    
-    //ユーザーデフォルツを使用する
-    let userDefaults = UserDefaults.standard
-    
-    
     @IBAction func button(_ sender: UIButton) {
         
         loadView()
         
-        dateLabel.text = userDefaults.string(forKey: "save1")
-        weekdateLabel.text = userDefaults.string(forKey: "save2")
-        telopLabel.text = userDefaults.string(forKey: "save3")
-        imageurlLabel.text = userDefaults.string(forKey: "save4")
+        dateLabel.text = storage.weatherDate
+        weekdateLabel.text = storage.weatherDatelabel
+        telopLabel.text = storage.weatherTelop
+        imageurlLabel.text = storage.weatherImageurl
         
         imgString =
             forecastList?.image.url
@@ -51,31 +44,22 @@ class SecondViewController: UIViewController {
         
     }
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //データラベルをforecastListの値にする。
-        dateLabel.text = forecastList?.date
-        weekdateLabel.text = forecastList?.dateLabel
-        telopLabel.text = forecastList?.telop
-        imageurlLabel.text = forecastList?.image.url
+        storage.weatherDate = forecastList?.date ?? "エラー"
+        storage.weatherDatelabel = forecastList?.dateLabel ?? "エラー"
+        storage.weatherTelop = forecastList?.telop ?? "エラー"
+        storage.weatherImageurl = forecastList?.image.url ?? "エラー"
         
-        //ラベルの文字列を保存する。
-        userDefaults.set(dateLabel.text, forKey: "save1")
-        userDefaults.set(weekdateLabel.text, forKey: "save2")
-        userDefaults.set(telopLabel.text, forKey: "save3")
-        userDefaults.set(imageurlLabel.text, forKey: "save4")
+        storage.ddd()
         
-        //plistファイルへの出力と同期する。
-        userDefaults.synchronize()
-        
-        //内容確認
-        if UserDefaults.standard.object(forKey: "save1") != nil {
-            print("値はあるよ")
-            print(userDefaults.string(forKey: "save1") ?? "")
-        }
-        
-        
+        dateLabel.text = storage.weatherDate
+        weekdateLabel.text = storage.weatherDatelabel
+        telopLabel.text = storage.weatherTelop
+        imageurlLabel.text = storage.weatherImageurl
         
     }
     
@@ -90,8 +74,6 @@ class SecondViewController: UIViewController {
         
         imageView.cacheImage(imageUrlString: imgString ?? "")
         
-        
-//        mvcModel.delegate = self //デリゲートメソッドを使用するために ★
     }
     
 }

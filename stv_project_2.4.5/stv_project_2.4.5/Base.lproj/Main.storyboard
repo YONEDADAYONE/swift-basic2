@@ -83,7 +83,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="92" y="-107.49625187406298"/>
+            <point key="canvasLocation" x="-922" y="-446"/>
         </scene>
         <!--Title-->
         <scene sceneID="1kT-gc-cw7">
@@ -125,6 +125,14 @@
                                 <rect key="frame" x="67" y="422" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fKz-2U-SEy">
+                                <rect key="frame" x="164" y="558" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="button:" destination="Xvb-sg-P76" eventType="touchUpInside" id="mDn-xw-Kld"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="viI-kc-JUK"/>
@@ -144,7 +152,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GlV-JP-ouE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="30" y="-980"/>
+            <point key="canvasLocation" x="-1374" y="-1115"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Vid-OD-iDN">
@@ -162,7 +170,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cO6-Qf-jsx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-847.20000000000005" y="-107.49625187406298"/>
+            <point key="canvasLocation" x="-2745" y="-630"/>
         </scene>
     </scenes>
 </document>
