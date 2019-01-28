@@ -7,11 +7,39 @@
 //
 
 import Foundation
+import UIKit
 
 class Cachemodel {
     
+    let imageCache = NSCache<AnyObject, UIImage>()
+    
+    //ユーザーデフォルツを使用する
+    let userDefaults = UserDefaults.standard
+    
+    var url = URL(string: "")
+    
+    
+    func ccc() {
+        
+        userDefaults.set(url, forKey: "save20")
+        
+        //plistファイルへの出力と同期する。
+        userDefaults.synchronize()
+        
+        //内容確認
+        if UserDefaults.standard.object(forKey: "save20") != nil {
+            print("値はあるよんんん")
+            print(userDefaults.string(forKey: "save20") ?? "")
+        }
+        
+    }
+    
+    
+
     //まず入れ物を用意します
-    //NSCacheのインスタンスを生成しておく。ここに、どんどんキャッシュ化されたものが保存されていく。
-    let imageCache = NSCache<AnyObject, AnyObject>()
+//    //NSCacheのインスタンスを生成しておく。ここに、どんどんキャッシュ化されたものが保存されていく。
+//    let imageCache = NSCache<AnyObject, AnyObject>()
+//
+//    let url = URL(string: "")
     
 }
