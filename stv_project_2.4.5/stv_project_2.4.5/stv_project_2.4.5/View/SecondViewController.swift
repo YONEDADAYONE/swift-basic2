@@ -61,7 +61,16 @@ class SecondViewController: UIViewController {
                 print("gggggggggggggggg")
                 
                 if self.imageView.image == image {
-                    print("あああああああ")
+                    guard let image = UIImage(data: Data()) else {
+                        return
+                    }
+                    myCache.setObject(image, forKey: requestURL as AnyObject)
+                    
+                    //リクエストが成功して、サーバーからのresponseがある状態。
+                    DispatchQueue.main.async {
+                        self.imageView.image = image
+                        print("kkkkkkkkkkkkkkkkkkkkk")
+                    }
                 }
             }
         }
