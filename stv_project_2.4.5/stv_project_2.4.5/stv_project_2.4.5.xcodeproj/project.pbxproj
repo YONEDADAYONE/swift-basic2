@@ -65,18 +65,42 @@
 			isa = PBXGroup;
 			children = (
 				EE5D74E421FACF09008D3E1F /* AppDelegate.swift */,
-				EEAE520721FAE0D000F22EE5 /* APImodel.swift */,
-				EEAE527921FDCE8C00F22EE5 /* Controller.swift */,
-				EEAE520321FADD1A00F22EE5 /* View.swift */,
-				EEAE520F21FAE83900F22EE5 /* DBmodel.swift */,
-				EEAE520D21FAE72B00F22EE5 /* SecondViewController.swift */,
-				EEAE527B21FDCFDC00F22EE5 /* Cachemodel.swift */,
+				EE5FB61421FEC72C00D39132 /* Controller */,
+				EE5FB61321FEC6F400D39132 /* View */,
+				EE5FB61221FEC6B800D39132 /* Model */,
 				EE5D74E821FACF09008D3E1F /* Main.storyboard */,
 				EE5D74EB21FACF0A008D3E1F /* Assets.xcassets */,
 				EE5D74ED21FACF0A008D3E1F /* LaunchScreen.storyboard */,
 				EE5D74F021FACF0A008D3E1F /* Info.plist */,
 			);
 			path = stv_project_2.4.5;
+			sourceTree = "<group>";
+		};
+		EE5FB61221FEC6B800D39132 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EEAE520721FAE0D000F22EE5 /* APImodel.swift */,
+				EEAE520F21FAE83900F22EE5 /* DBmodel.swift */,
+				EEAE527B21FDCFDC00F22EE5 /* Cachemodel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EE5FB61321FEC6F400D39132 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EEAE520321FADD1A00F22EE5 /* View.swift */,
+				EEAE520D21FAE72B00F22EE5 /* SecondViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EE5FB61421FEC72C00D39132 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				EEAE527921FDCE8C00F22EE5 /* Controller.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
