@@ -36,10 +36,4 @@ class Cachemodel {
     
     
 
-    //まず入れ物を用意します
-//    //NSCacheのインスタンスを生成しておく。ここに、どんどんキャッシュ化されたものが保存されていく。
-//    let imageCache = NSCache<AnyObject, AnyObject>()
-//
-//    let url = URL(string: "")
-    
 }

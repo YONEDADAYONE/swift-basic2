@@ -34,13 +34,6 @@ class SecondViewController: UIViewController {
         telopLabel.text = storage.weatherTelop
         imageurlLabel.text = storage.weatherImageurl
         
-        imgString =
-            forecastList?.image.url
-            ??
-        "http://www.gibe-on.info/wp-content/uploads/2016/05/%E3%83%8A%E3%83%9E%E3%82%B1%E3%83%A2%E3%83%8E.jpg"
-        
-        print(imgString ?? "")
-        
         aaa()
     }
     
@@ -48,23 +41,22 @@ class SecondViewController: UIViewController {
     func aaa() {
 
         //キャッシュの入れ物
-        cachemodel.imageCache
+        let myCache = cachemodel.imageCache
         //キャッシュクラスに値を登録
         cachemodel.url = URL(string: (forecastList?.image.url)!)
         //ユーザーデフォルツの登録
         cachemodel.ccc()
         
+        //achemodelクラスからもらってきたURLRequest型にする。
         let req = URLRequest(url: cachemodel.url!)
         
         NSURLConnection.sendAsynchronousRequest(req, queue:OperationQueue.main){(res, data, err) in
-            
             let image = UIImage(data:data!)
             self.imageView.image = image
         }
+
         
-        
-        
-        if let imageFromCache = cachemodel.imageCache.object(forKey: cachemodel.url as AnyObject) as? UIImage {
+        if let imageFromCache = myCache.object(forKey: cachemodel.url as AnyObject) {
             imageView.image = imageFromCache
         }
         
@@ -80,7 +72,7 @@ class SecondViewController: UIViewController {
             return
         }
         
-        self.cachemodel.imageCache.setObject(image, forKey: erfl as AnyObject)
+        myCache.setObject(image, forKey: erfl as AnyObject)
         
         DispatchQueue.main.async {
             self.imageView.image = image
@@ -109,10 +101,9 @@ class SecondViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        imgString = forecastList?.image.url
-            ??
-        "http://www.gibe-on.info/wp-conFtent/uploads/2016/05/%E3%83%8A%E3%83%9E%E3%82%B1%E3%83%A2%E3%83%8E.jpg"
-        
+//        imgString = forecastList?.image.url
+//            ??
+//        "http://www.gibe-on.info/wp-conFtent/uploads/2016/05/%E3%83%8A%E3%83%9E%E3%82%B1%E3%83%A2%E3%83%8E.jpg"
         
         
     }
