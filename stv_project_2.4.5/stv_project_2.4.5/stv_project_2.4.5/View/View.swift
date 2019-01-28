@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet private weak var tableView: UITableView!
     
     //ForecastListの配列が入っている
     var forecasts = [ForecastList]()
@@ -103,8 +103,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     //下のがAPIになるはず
-    
-    
     
     //データを送る
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

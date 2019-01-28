@@ -18,8 +18,7 @@ class Cachemodel {
     
     var url = URL(string: "")
     
-    
-    func ccc() {
+    func addUserdefaultsUrl() {
         
         userDefaults.set(url, forKey: "save20")
         
@@ -28,12 +27,10 @@ class Cachemodel {
         
         //内容確認
         if UserDefaults.standard.object(forKey: "save20") != nil {
-            print("値はあるよんんん")
+            print("urlの値はあります")
             print(userDefaults.string(forKey: "save20") ?? "")
         }
         
     }
     
-    
-
 }

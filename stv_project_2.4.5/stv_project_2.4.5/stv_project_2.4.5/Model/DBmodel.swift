@@ -18,8 +18,7 @@ class Storage {
     var weatherTelop = ""
     var weatherImageurl = ""
     
-    
-    func ddd() {
+    func addUserdefaults() {
         
     userDefaults.set(weatherDate, forKey: "save10")
     userDefaults.set(weatherDatelabel, forKey: "save11")
@@ -31,8 +30,7 @@ class Storage {
         
         //内容確認
     if UserDefaults.standard.object(forKey: "save10") != nil {
-            print("値はあるよん")
-            print(userDefaults.string(forKey: "save10") ?? "")
+            print("テキストの内容はあります")
         }
     }
 }

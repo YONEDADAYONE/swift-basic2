@@ -11,6 +11,7 @@
 		EE5D74EA21FACF09008D3E1F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE5D74E821FACF09008D3E1F /* Main.storyboard */; };
 		EE5D74EC21FACF0A008D3E1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE5D74EB21FACF0A008D3E1F /* Assets.xcassets */; };
 		EE5D74EF21FACF0A008D3E1F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE5D74ED21FACF0A008D3E1F /* LaunchScreen.storyboard */; };
+		EE5FB61621FEC97500D39132 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = EE5FB61521FEC97500D39132 /* .swiftlint.yml */; };
 		EEAE520421FADD1A00F22EE5 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAE520321FADD1A00F22EE5 /* View.swift */; };
 		EEAE520821FAE0D000F22EE5 /* APImodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAE520721FAE0D000F22EE5 /* APImodel.swift */; };
 		EEAE520E21FAE72B00F22EE5 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAE520D21FAE72B00F22EE5 /* SecondViewController.swift */; };
@@ -26,6 +27,7 @@
 		EE5D74EB21FACF0A008D3E1F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EE5D74EE21FACF0A008D3E1F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EE5D74F021FACF0A008D3E1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EE5FB61521FEC97500D39132 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
 		EEAE520321FADD1A00F22EE5 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		EEAE520721FAE0D000F22EE5 /* APImodel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APImodel.swift; sourceTree = "<group>"; };
 		EEAE520D21FAE72B00F22EE5 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
@@ -48,6 +50,7 @@
 		EE5D74D821FACF09008D3E1F = {
 			isa = PBXGroup;
 			children = (
+				EE5FB61521FEC97500D39132 /* .swiftlint.yml */,
 				EE5D74E321FACF09008D3E1F /* stv_project_2.4.5 */,
 				EE5D74E221FACF09008D3E1F /* Products */,
 			);
@@ -113,6 +116,7 @@
 				EE5D74DD21FACF09008D3E1F /* Sources */,
 				EE5D74DE21FACF09008D3E1F /* Frameworks */,
 				EE5D74DF21FACF09008D3E1F /* Resources */,
+				EE5FB61721FEC99400D39132 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -161,6 +165,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE5FB61621FEC97500D39132 /* .swiftlint.yml in Resources */,
 				EE5D74EF21FACF0A008D3E1F /* LaunchScreen.storyboard in Resources */,
 				EE5D74EC21FACF0A008D3E1F /* Assets.xcassets in Resources */,
 				EE5D74EA21FACF09008D3E1F /* Main.storyboard in Resources */,
@@ -168,6 +173,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		EE5FB61721FEC99400D39132 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"SwiftLint does not exist, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		EE5D74DD21FACF09008D3E1F /* Sources */ = {
