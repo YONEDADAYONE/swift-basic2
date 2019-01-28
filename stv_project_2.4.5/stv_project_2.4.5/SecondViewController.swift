@@ -12,7 +12,6 @@ class SecondViewController: UIViewController {
     
     let storage = Storage()
     
-    
     //データをもらう
     var forecastList: ForecastList?
     
@@ -55,6 +54,7 @@ class SecondViewController: UIViewController {
         storage.weatherImageurl = forecastList?.image.url ?? "エラー"
         
         storage.ddd()
+
         
         dateLabel.text = storage.weatherDate
         weekdateLabel.text = storage.weatherDatelabel
@@ -79,8 +79,6 @@ class SecondViewController: UIViewController {
 }
 extension UIImageView {
     
-    //まず入れ物を用意します
-    //NSCacheのインスタンスを生成しておく。ここに、どんどんキャッシュ化されたものが保存されていく。
     static let imageCache = NSCache<AnyObject, AnyObject>()
     
     //読み込むURLのstringを引数にする。
