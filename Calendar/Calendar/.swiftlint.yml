@@ -1,6 +1,6 @@
 # 対象にするパス
 included:
-  - Calender
+  - Calendar
   - <Project Name>Tests
 
 # 対象から除外するパス

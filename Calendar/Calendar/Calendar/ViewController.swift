@@ -15,10 +15,9 @@ UICollectionViewDelegateFlowLayout {
     
     @IBOutlet weak private var dateLabel: UILabel!
     @IBOutlet weak private var myCollectionView: UICollectionView!
-    // Todo : naming
-    @IBOutlet weak private var zengetsuButton: UIBarButtonItem!
-    // Todo : naming
-    @IBOutlet weak private var jigetsuButton: UIBarButtonItem!
+    
+    //モデルの継承
+    let timeModel = TimeModel()
     
     //定数nowでDate型を継承
     let now = Date()
@@ -52,7 +51,7 @@ UICollectionViewDelegateFlowLayout {
     func calculation() {
         //定数firstDayOfMonthにcalの情報を入れる
         let firstDayOfMonth = cal.date(from: components)
-        dateLabel.text = dateFormatter.string(from: firstDayOfMonth!)
+        dateLabel.text = dateFormatter.string(from: firstDayOfMonth ?? Date())
     }
     
     //いらないのでいったんコメントアウト
@@ -66,14 +65,15 @@ UICollectionViewDelegateFlowLayout {
     }
     
     //コレクションビューメソッド　表示する内容
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView,
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         //アイデンティティファイアCellの値を定数cellにいれる
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath)
         //firstDayOfMonthには2019年01月01日(水) 00:00を入れる。
         let firstDayOfMonth = cal.date(from: components)
         //firstDayOfMonthを元に現在の曜日を取得し、定数firstWeekday 3が入っている。
         //1月1日が水曜なので3である
-        let firstWeekday = cal.component(.weekday, from: firstDayOfMonth!)
+        let firstWeekday = cal.component(.weekday, from: firstDayOfMonth ?? Date())
         //weekdayAdding: 1日が何曜日かで変わるindexPath.rowに加える値
         let weekdayAdding = 2 - firstWeekday
         
@@ -90,14 +90,20 @@ UICollectionViewDelegateFlowLayout {
         cell.contentView.addSubview(label)
         
         switch label.text {
-        case "0","-1","-2","-3","-4","-5":
+        case "0", "-1", "-2", "-3", "-4", "-5" :
             label.text = ""
         default:
             print("")
         }
         
         //1月・3月・5月・7月・8月・10月・12月の処理
-        switch (dateLabel.text?.contains("年1月"))! || (dateLabel.text?.contains("年3月"))! || (dateLabel.text?.contains("年5月"))! || (dateLabel.text?.contains("年7月"))! || (dateLabel.text?.contains("年8月"))! || (dateLabel.text?.contains("年10月"))! || (dateLabel.text?.contains("年12月"))!{
+        switch dateLabel.text?.contains("年1月") ?? true
+            || dateLabel.text?.contains("年3月") ?? true
+            || dateLabel.text?.contains("年5月") ?? true
+            || dateLabel.text?.contains("年7月") ?? true
+            || dateLabel.text?.contains("年8月") ?? true
+            || dateLabel.text?.contains("年10月") ?? true
+            || dateLabel.text?.contains("年12月") ?? true {
         case true:
             switch label.text {
             case "32":
@@ -125,7 +131,7 @@ UICollectionViewDelegateFlowLayout {
             print("")
         }
         
-        switch (dateLabel.text?.contains("年2月"))! {
+        switch dateLabel.text?.contains("年2月") {
         case true:
             switch label.text {
             case "29":
@@ -162,26 +168,32 @@ UICollectionViewDelegateFlowLayout {
             print("")
         }
         
-        switch (dateLabel.text?.contains("年4月"))! || (dateLabel.text?.contains("年6月"))! || (dateLabel.text?.contains("年9月"))! || (dateLabel.text?.contains("年11月"))! {
+        switch dateLabel.text?.contains("年4月") ?? true
+            || dateLabel.text?.contains("年6月") ?? true
+            || dateLabel.text?.contains("年9月") ?? true
+            || dateLabel.text?.contains("年11月") ?? true {
         case true:
             switch label.text {
-            case "32":
+            case "31":
                 label.text = "1"
                 label.alpha = 0.3
-            case "33":
+            case "32":
                 label.text = "2"
                 label.alpha = 0.3
-            case "34":
+            case "33":
                 label.text = "3"
                 label.alpha = 0.3
-            case "35":
+            case "34":
                 label.text = "4"
                 label.alpha = 0.3
-            case "36":
+            case "35":
                 label.text = "5"
                 label.alpha = 0.3
-            case "37":
+            case "36":
                 label.text = "6"
+                label.alpha = 0.3
+            case "37":
+                label.text = "7"
                 label.alpha = 0.3
             default:
                 print("")
@@ -192,44 +204,50 @@ UICollectionViewDelegateFlowLayout {
         
         print(indexPath.row)
         
-
         return cell
     
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
         let myBoundSize: CGFloat = UIScreen.main.bounds.size.width
-        let cellSize : CGFloat = myBoundSize / 7.5
+        let cellSize: CGFloat = myBoundSize / 7.5
         return CGSize(width: cellSize, height: cellSize)
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 1
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
+                        minimumInteritemSpacingForSectionAt section: Int)
+        -> CGFloat {
         return 1
     }
     
     //<前月 を押した時のAction
-    @IBAction func myActionZengetsu(){
-        components.month = components.month! - 1
+    @IBAction func myActionZengetsu() {
+
+        components.month = components.month!  - 1
         calculation()
         myCollectionView.reloadData()
     }
     
     //次月> を押した時のAction
-    @IBAction func myActionJigetsu(){
-        components.month = components.month! + 1
+    @IBAction func myActionJigetsu() {
+    
+        
+        components.month = components.month!  - 1
         calculation()
         myCollectionView.reloadData()
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
     }
 }
