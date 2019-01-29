@@ -12,7 +12,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var myCollectionView: UICollectionView!
+    // Todo : naming
     @IBOutlet weak var zengetsuButton: UIBarButtonItem!
+    // Todo : naming
     @IBOutlet weak var jigetsuButton: UIBarButtonItem!
     
     //定数nowでDate型を継承
@@ -76,62 +78,142 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         for subview in cell.contentView.subviews {
             subview.removeFromSuperview()
         }
-        //今現在daysCountInMonthにはその月の日数が入っている
-        //1月なら31 2月なら28 もっというなら、うるう年なら2月は29
-        let daysCountInMonth = cal.range(of: .day, in: .month, for: firstDayOfMonth!)?.count
         
-        //1日〜月末まで表示し、余ったCellは空白にする
-        if (indexPath.row + weekdayAdding) >= 1 && (indexPath.row + weekdayAdding) <= daysCountInMonth! {
-            cell.backgroundColor =  _ColorLiteralType(red: 0.937254902, green: 0.937254902, blue: 0.9568627451, alpha: 1)
-            let label = UILabel()
-            label.font = UIFont(name: "Arial", size: 17)
-            label.text = "\(indexPath.row + weekdayAdding)"
-            label.sizeToFit()
-            label.center = cell.contentView.center
-            cell.contentView.addSubview(label)
-            
-            print(indexPath)
+        let label = UILabel()
+        label.font = UIFont(name: "Arial", size: 17)
+        label.text = "\(indexPath.row + weekdayAdding)"
+        
+        print(label.text!)
+        
+        label.sizeToFit()
+        label.center = cell.contentView.center
+        cell.contentView.addSubview(label)
+        
+        switch label.text {
+        case "0","-1","-2","-3","-4","-5":
+            label.text = ""
+        default:
+            print("")
         }
-        else{
-            cell.backgroundColor =  _ColorLiteralType(red: 0, green: 0.937254902, blue: 0.9568627451, alpha: 1)
-            
+        
+        //1月・3月・5月・7月・8月・10月・12月の処理
+        switch (dateLabel.text?.contains("年1月"))! || (dateLabel.text?.contains("年3月"))! || (dateLabel.text?.contains("年5月"))! || (dateLabel.text?.contains("年7月"))! || (dateLabel.text?.contains("年8月"))! || (dateLabel.text?.contains("年10月"))! || (dateLabel.text?.contains("年12月"))!{
+        case true:
+            switch label.text {
+            case "32":
+                label.text = "1"
+                label.alpha = 0.3
+            case "33":
+                label.text = "2"
+                label.alpha = 0.3
+            case "34":
+                label.text = "3"
+                label.alpha = 0.3
+            case "35":
+                label.text = "4"
+                label.alpha = 0.3
+            case "36":
+                label.text = "5"
+                label.alpha = 0.3
+            case "37":
+                label.text = "6"
+                label.alpha = 0.3
+            default:
+                print("")
+            }
+        default:
+            print("")
         }
+        
+        switch (dateLabel.text?.contains("年2月"))! {
+        case true:
+            switch label.text {
+            case "29":
+                label.text = "1"
+                label.alpha = 0.3
+            case "30":
+                label.text = "2"
+                label.alpha = 0.3
+            case "31":
+                label.text = "3"
+                label.alpha = 0.3
+            case "32":
+                label.text = "4"
+                label.alpha = 0.3
+            case "33":
+                label.text = "5"
+                label.alpha = 0.3
+            case "34":
+                label.text = "6"
+                label.alpha = 0.3
+            case "35":
+                label.text = "7"
+                label.alpha = 0.3
+            case "36":
+                label.text = "8"
+                label.alpha = 0.3
+            case "37":
+                label.text = "9"
+                label.alpha = 0.3
+            default:
+                print("")
+            }
+        default:
+            print("")
+        }
+        
+        switch (dateLabel.text?.contains("年4月"))! || (dateLabel.text?.contains("年6月"))! || (dateLabel.text?.contains("年9月"))! || (dateLabel.text?.contains("年11月"))! {
+        case true:
+            switch label.text {
+            case "32":
+                label.text = "1"
+                label.alpha = 0.3
+            case "33":
+                label.text = "2"
+                label.alpha = 0.3
+            case "34":
+                label.text = "3"
+                label.alpha = 0.3
+            case "35":
+                label.text = "4"
+                label.alpha = 0.3
+            case "36":
+                label.text = "5"
+                label.alpha = 0.3
+            case "37":
+                label.text = "6"
+                label.alpha = 0.3
+            default:
+                print("")
+            }
+        default:
+            print("")
+        }
+        
+        print(indexPath.row)
+        
+
+        
         return cell
+    
     }
-    
-//ここから
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-//        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        let myBoundSize: CGFloat = UIScreen.main.bounds.size.width
-//        let cellSize : CGFloat = myBoundSize / 7.5
-//        return CGSize(width: cellSize, height: cellSize)
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-//        return 1
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-//        return 1
-//    }
-//ここまで　一時保留
-    
     
     //<前月 を押した時のAction
     @IBAction func myActionZengetsu(){
         components.month = components.month! - 1
         calculation()
         myCollectionView.reloadData()
+        
     }
-
+    
     //次月> を押した時のAction
     @IBAction func myActionJigetsu(){
         components.month = components.month! + 1
         calculation()
         myCollectionView.reloadData()
     }
-
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
 }
