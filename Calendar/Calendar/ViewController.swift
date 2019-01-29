@@ -8,14 +8,17 @@
 
 import UIKit
 
-class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class ViewController: UIViewController,
+UICollectionViewDelegate,
+UICollectionViewDataSource,
+UICollectionViewDelegateFlowLayout {
     
-    @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var myCollectionView: UICollectionView!
+    @IBOutlet weak private var dateLabel: UILabel!
+    @IBOutlet weak private var myCollectionView: UICollectionView!
     // Todo : naming
-    @IBOutlet weak var zengetsuButton: UIBarButtonItem!
+    @IBOutlet weak private var zengetsuButton: UIBarButtonItem!
     // Todo : naming
-    @IBOutlet weak var jigetsuButton: UIBarButtonItem!
+    @IBOutlet weak private var jigetsuButton: UIBarButtonItem!
     
     //定数nowでDate型を継承
     let now = Date()
@@ -46,7 +49,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
     
     //ラベルに今現在の月日を表示する&最初のページ(初期位置)を今現在の月日にする関数
-    func calculation(){
+    func calculation() {
         //定数firstDayOfMonthにcalの情報を入れる
         let firstDayOfMonth = cal.date(from: components)
         dateLabel.text = dateFormatter.string(from: firstDayOfMonth!)
@@ -56,7 +59,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
-    
     
     //コレクションビューの要素を返す。今の状態だと37個のコレクションビューがある
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -82,8 +84,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         let label = UILabel()
         label.font = UIFont(name: "Arial", size: 17)
         label.text = "\(indexPath.row + weekdayAdding)"
-        
-        print(label.text!)
         
         label.sizeToFit()
         label.center = cell.contentView.center
@@ -193,9 +193,26 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         print(indexPath.row)
         
 
-        
         return cell
     
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let myBoundSize: CGFloat = UIScreen.main.bounds.size.width
+        let cellSize : CGFloat = myBoundSize / 7.5
+        return CGSize(width: cellSize, height: cellSize)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 1
     }
     
     //<前月 を押した時のAction
@@ -203,7 +220,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         components.month = components.month! - 1
         calculation()
         myCollectionView.reloadData()
-        
     }
     
     //次月> を押した時のAction
