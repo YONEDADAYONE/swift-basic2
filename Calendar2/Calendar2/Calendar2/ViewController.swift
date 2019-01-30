@@ -101,8 +101,9 @@ UICollectionViewDelegateFlowLayout {
             cell?.textLabel?.textColor = UIColor.lightRed()
         } else if indexPath.row % 7 == 6 {
             cell?.textLabel?.textColor = UIColor.lightBlue()
+            print(indexPath.row)
         } else {
-            cell?.textLabel?.textColor = UIColor.gray
+            cell?.textLabel?.textColor = UIColor.black
         }
         //テキスト配置
         if indexPath.section == 0 {
@@ -111,14 +112,26 @@ UICollectionViewDelegateFlowLayout {
             cell?.textLabel?.text = dateManager.conversionDateFormat(indexPath: indexPath)
             //月によって1日の場所は異なる
         }
-
-//        switch indexPath.section {
-//        case 0:
-//            cell.textLabel.text = weekArray[indexPath.row]
-//        default:
-//            cell.textLabel.text = dateManager.conversionDateFormat(indexPath: indexPath)
-//        }
-
+        
+        switch indexPath.row {
+        case 0...5:
+            if cell?.textLabel?.text?.count == 2 {
+                cell?.textLabel?.textColor = UIColor.gray
+//                cell?.textLabel?.alpha = 0.3
+            }
+        case 29...35:
+            if cell?.textLabel?.text?.count == 1 {
+                cell?.textLabel?.textColor = UIColor.gray
+//                cell?.textLabel?.alpha = 0.3
+            }
+        case 36...42:
+            if cell?.textLabel?.text?.count == 1 {
+                cell?.textLabel?.textColor = UIColor.gray
+//                cell?.textLabel?.alpha = 0.3
+            }
+        default:
+            print("a")
+        }
         return cell ?? CalendarCell()
     }
     
@@ -200,4 +213,8 @@ extension UIColor {
         //UIColorに色をつける
         return color
     }
+}
+
+extension IndexPath {
+    
 }
