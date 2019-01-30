@@ -8,24 +8,25 @@
 
 import UIKit
 
-class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+class ViewController: UIViewController,
+UICollectionViewDataSource,
+UICollectionViewDelegate,
+UICollectionViewDelegateFlowLayout {
     
     //ここ確認
-    let dateManager =  DateManager()
+    let dateManager = DateManager()
     let daysPerWeek: Int = 7
     let cellMargin: CGFloat = 2.0
     var selectedDate = NSDate()
-    var today: NSDate!
+    var today: NSDate?
     let weekArray = ["日", "月", "火", "水", "木", "金", "土"]
 
+    @IBOutlet weak private var headerTitle: UILabel!
+    @IBOutlet weak private var calenderHeaderView: UIView!
+    @IBOutlet weak private var calenderCollectionView: UICollectionView!
 
-    @IBOutlet weak var headerTitle: UILabel!
-    @IBOutlet weak var calenderHeaderView: UIView!
-    @IBOutlet weak var calenderCollectionView: UICollectionView!
-
-    
-    @IBOutlet weak var backButton: UIBarButtonItem!
-    @IBOutlet weak var goButton: UIBarButtonItem!
+    @IBOutlet weak private var backButton: UIBarButtonItem!
+    @IBOutlet weak private var goButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -77,7 +78,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
 //        }
         
         // Section毎にCellの総数を変える.
-        switch section{
+        switch section {
         case 0:
             return 7
             
@@ -92,21 +93,22 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     }
 
     //3
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CalendarCell
+    func collectionView(_ collectionView: UICollectionView,
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? CalendarCell
         //テキストカラー
-        if (indexPath.row % 7 == 0) {
-            cell.textLabel.textColor = UIColor.lightRed()
-        } else if (indexPath.row % 7 == 6) {
-            cell.textLabel.textColor = UIColor.lightBlue()
+        if indexPath.row % 7 == 0 {
+            cell?.textLabel?.textColor = UIColor.lightRed()
+        } else if indexPath.row % 7 == 6 {
+            cell?.textLabel?.textColor = UIColor.lightBlue()
         } else {
-            cell.textLabel.textColor = UIColor.gray
+            cell?.textLabel?.textColor = UIColor.gray
         }
         //テキスト配置
         if indexPath.section == 0 {
-            cell.textLabel.text = weekArray[indexPath.row]
+            cell?.textLabel?.text = weekArray[indexPath.row]
         } else {
-            cell.textLabel.text = dateManager.conversionDateFormat(indexPath: indexPath)
+            cell?.textLabel?.text = dateManager.conversionDateFormat(indexPath: indexPath)
             //月によって1日の場所は異なる
         }
 
@@ -117,8 +119,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
 //            cell.textLabel.text = dateManager.conversionDateFormat(indexPath: indexPath)
 //        }
 
-
-        return cell
+        return cell ?? CalendarCell()
     }
     
     //下3つが無いとsection1の土曜日が2行目になる。
@@ -132,12 +133,16 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     }
     
     //セルの垂直方向のマージンを設定
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return cellMargin
     }
     
     //セルの水平方向のマージンを設定
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return cellMargin
     }
 
@@ -163,7 +168,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         }
     }
     
-    
     @IBAction func tapGoButton(_ sender: UIBarButtonItem) {
         
         if headerTitle.text?.contains("2019年11月") ?? true {
@@ -184,12 +188,16 @@ extension UIColor {
     //自作関数
     class func lightBlue() -> UIColor {
         //UIColorに色をつける
-        return UIColor(red: 92.0 / 255, green: 192.0 / 255, blue: 210.0 / 255, alpha: 1.0)
+        let color = #colorLiteral(red: 0.2196078449, green: 0.007843137719, blue: 0.8549019694, alpha: 1)
+        
+        return color
     }
     
     //自作関数
     class func lightRed() -> UIColor {
         //UIColorに色をつける
-        return UIColor(red: 195.0 / 255, green: 123.0 / 255, blue: 175.0 / 255, alpha: 1.0)
+        let color = #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
+        //UIColorに色をつける
+        return color
     }
 }
