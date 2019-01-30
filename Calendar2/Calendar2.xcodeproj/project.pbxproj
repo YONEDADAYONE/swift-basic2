@@ -7,24 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EEA006F321FFDF070013B150 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA006F221FFDF070013B150 /* AppDelegate.swift */; };
-		EEA006F521FFDF070013B150 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA006F421FFDF070013B150 /* ViewController.swift */; };
-		EEC879DF220048CE0087944D /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC879DE220048CE0087944D /* Model.swift */; };
+		EE348FF3220128B800E87516 /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE348FF2220128B800E87516 /* CalendarCell.swift */; };
+		EE348FF9220134DE00E87516 /*  DateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE348FF8220134DE00E87516 /*  DateManager.swift */; };
+		EE7D2B0C220122CD00E59048 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7D2B0B220122CD00E59048 /* AppDelegate.swift */; };
+		EE7D2B0E220122CD00E59048 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7D2B0D220122CD00E59048 /* ViewController.swift */; };
+		EE7D2B11220122CD00E59048 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE7D2B0F220122CD00E59048 /* Main.storyboard */; };
+		EE7D2B13220122D100E59048 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE7D2B12220122D100E59048 /* Assets.xcassets */; };
+		EE7D2B16220122D100E59048 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE7D2B14220122D100E59048 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		EEA006EF21FFDF070013B150 /* Calendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		EEA006F221FFDF070013B150 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EEA006F421FFDF070013B150 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		EEA006F721FFDF070013B150 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		EEA006F921FFDF080013B150 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		EEA006FC21FFDF080013B150 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		EEA006FE21FFDF080013B150 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EEC879DE220048CE0087944D /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		EE348FF2220128B800E87516 /* CalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
+		EE348FF8220134DE00E87516 /*  DateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " DateManager.swift"; sourceTree = "<group>"; };
+		EE7D2B08220122CD00E59048 /* Calendar2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calendar2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE7D2B0B220122CD00E59048 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EE7D2B0D220122CD00E59048 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EE7D2B10220122CD00E59048 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EE7D2B12220122D100E59048 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EE7D2B15220122D100E59048 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EE7D2B17220122D100E59048 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		EEA006EC21FFDF070013B150 /* Frameworks */ = {
+		EE7D2B05220122CD00E59048 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -34,97 +39,73 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		EEA006E621FFDF070013B150 = {
+		EE7D2AFF220122CD00E59048 = {
 			isa = PBXGroup;
 			children = (
-				EEA006F121FFDF070013B150 /* Calendar */,
-				EEA006F021FFDF070013B150 /* Products */,
+				EE7D2B0A220122CD00E59048 /* Calendar2 */,
+				EE7D2B09220122CD00E59048 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		EEA006F021FFDF070013B150 /* Products */ = {
+		EE7D2B09220122CD00E59048 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				EEA006EF21FFDF070013B150 /* Calendar.app */,
+				EE7D2B08220122CD00E59048 /* Calendar2.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		EEA006F121FFDF070013B150 /* Calendar */ = {
+		EE7D2B0A220122CD00E59048 /* Calendar2 */ = {
 			isa = PBXGroup;
 			children = (
-				EEC879E2220053080087944D /* View */,
-				EEC879DD220048AA0087944D /* Model */,
-				EEC879E3220053430087944D /* other */,
-				EEA006FE21FFDF080013B150 /* Info.plist */,
-				EEA006F921FFDF080013B150 /* Assets.xcassets */,
+				EE7D2B0B220122CD00E59048 /* AppDelegate.swift */,
+				EE7D2B0D220122CD00E59048 /* ViewController.swift */,
+				EE7D2B0F220122CD00E59048 /* Main.storyboard */,
+				EE348FF8220134DE00E87516 /*  DateManager.swift */,
+				EE348FF2220128B800E87516 /* CalendarCell.swift */,
+				EE7D2B12220122D100E59048 /* Assets.xcassets */,
+				EE7D2B14220122D100E59048 /* LaunchScreen.storyboard */,
+				EE7D2B17220122D100E59048 /* Info.plist */,
 			);
-			path = Calendar;
+			path = Calendar2;
 			sourceTree = "<group>";
-		};
-		EEC879DD220048AA0087944D /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				EEC879DE220048CE0087944D /* Model.swift */,
-			);
-			path = Model;
-			sourceTree = SOURCE_ROOT;
-		};
-		EEC879E2220053080087944D /* View */ = {
-			isa = PBXGroup;
-			children = (
-				EEA006F621FFDF070013B150 /* Main.storyboard */,
-				EEA006FB21FFDF080013B150 /* LaunchScreen.storyboard */,
-				EEA006F421FFDF070013B150 /* ViewController.swift */,
-			);
-			path = View;
-			sourceTree = SOURCE_ROOT;
-		};
-		EEC879E3220053430087944D /* other */ = {
-			isa = PBXGroup;
-			children = (
-				EEA006F221FFDF070013B150 /* AppDelegate.swift */,
-			);
-			path = other;
-			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		EEA006EE21FFDF070013B150 /* Calendar */ = {
+		EE7D2B07220122CD00E59048 /* Calendar2 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EEA0070121FFDF080013B150 /* Build configuration list for PBXNativeTarget "Calendar" */;
+			buildConfigurationList = EE7D2B1A220122D100E59048 /* Build configuration list for PBXNativeTarget "Calendar2" */;
 			buildPhases = (
-				EEA006EB21FFDF070013B150 /* Sources */,
-				EEA006EC21FFDF070013B150 /* Frameworks */,
-				EEA006ED21FFDF070013B150 /* Resources */,
-				EEA0070622001ECD0013B150 /* ShellScript */,
+				EE7D2B04220122CD00E59048 /* Sources */,
+				EE7D2B05220122CD00E59048 /* Frameworks */,
+				EE7D2B06220122CD00E59048 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = Calendar;
-			productName = Calendar;
-			productReference = EEA006EF21FFDF070013B150 /* Calendar.app */;
+			name = Calendar2;
+			productName = Calendar2;
+			productReference = EE7D2B08220122CD00E59048 /* Calendar2.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		EEA006E721FFDF070013B150 /* Project object */ = {
+		EE7D2B00220122CD00E59048 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = hiroya;
 				TargetAttributes = {
-					EEA006EE21FFDF070013B150 = {
+					EE7D2B07220122CD00E59048 = {
 						CreatedOnToolsVersion = 10.1;
 					};
 				};
 			};
-			buildConfigurationList = EEA006EA21FFDF070013B150 /* Build configuration list for PBXProject "Calendar" */;
+			buildConfigurationList = EE7D2B03220122CD00E59048 /* Build configuration list for PBXProject "Calendar2" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -132,73 +113,56 @@
 				en,
 				Base,
 			);
-			mainGroup = EEA006E621FFDF070013B150;
-			productRefGroup = EEA006F021FFDF070013B150 /* Products */;
+			mainGroup = EE7D2AFF220122CD00E59048;
+			productRefGroup = EE7D2B09220122CD00E59048 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				EEA006EE21FFDF070013B150 /* Calendar */,
+				EE7D2B07220122CD00E59048 /* Calendar2 */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		EEA006ED21FFDF070013B150 /* Resources */ = {
+		EE7D2B06220122CD00E59048 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE7D2B16220122D100E59048 /* LaunchScreen.storyboard in Resources */,
+				EE7D2B13220122D100E59048 /* Assets.xcassets in Resources */,
+				EE7D2B11220122CD00E59048 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		EEA0070622001ECD0013B150 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "
-";
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
-		EEA006EB21FFDF070013B150 /* Sources */ = {
+		EE7D2B04220122CD00E59048 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EEC879DF220048CE0087944D /* Model.swift in Sources */,
-				EEA006F521FFDF070013B150 /* ViewController.swift in Sources */,
-				EEA006F321FFDF070013B150 /* AppDelegate.swift in Sources */,
+				EE7D2B0E220122CD00E59048 /* ViewController.swift in Sources */,
+				EE348FF3220128B800E87516 /* CalendarCell.swift in Sources */,
+				EE348FF9220134DE00E87516 /*  DateManager.swift in Sources */,
+				EE7D2B0C220122CD00E59048 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		EEA006F621FFDF070013B150 /* Main.storyboard */ = {
+		EE7D2B0F220122CD00E59048 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				EEA006F721FFDF070013B150 /* Base */,
+				EE7D2B10220122CD00E59048 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		EEA006FB21FFDF080013B150 /* LaunchScreen.storyboard */ = {
+		EE7D2B14220122D100E59048 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				EEA006FC21FFDF080013B150 /* Base */,
+				EE7D2B15220122D100E59048 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -206,7 +170,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		EEA006FF21FFDF080013B150 /* Debug */ = {
+		EE7D2B18220122D100E59048 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -267,7 +231,7 @@
 			};
 			name = Debug;
 		};
-		EEA0070021FFDF080013B150 /* Release */ = {
+		EE7D2B19220122D100E59048 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -322,36 +286,36 @@
 			};
 			name = Release;
 		};
-		EEA0070221FFDF080013B150 /* Debug */ = {
+		EE7D2B1B220122D100E59048 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3HNBAS9RU7;
-				INFOPLIST_FILE = Calendar/Info.plist;
+				INFOPLIST_FILE = Calendar2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ayoih.Calendar;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ayoih.Calendar2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		EEA0070321FFDF080013B150 /* Release */ = {
+		EE7D2B1C220122D100E59048 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3HNBAS9RU7;
-				INFOPLIST_FILE = Calendar/Info.plist;
+				INFOPLIST_FILE = Calendar2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ayoih.Calendar;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ayoih.Calendar2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -361,25 +325,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		EEA006EA21FFDF070013B150 /* Build configuration list for PBXProject "Calendar" */ = {
+		EE7D2B03220122CD00E59048 /* Build configuration list for PBXProject "Calendar2" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				EEA006FF21FFDF080013B150 /* Debug */,
-				EEA0070021FFDF080013B150 /* Release */,
+				EE7D2B18220122D100E59048 /* Debug */,
+				EE7D2B19220122D100E59048 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EEA0070121FFDF080013B150 /* Build configuration list for PBXNativeTarget "Calendar" */ = {
+		EE7D2B1A220122D100E59048 /* Build configuration list for PBXNativeTarget "Calendar2" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				EEA0070221FFDF080013B150 /* Debug */,
-				EEA0070321FFDF080013B150 /* Release */,
+				EE7D2B1B220122D100E59048 /* Debug */,
+				EE7D2B1C220122D100E59048 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = EEA006E721FFDF070013B150 /* Project object */;
+	rootObject = EE7D2B00220122CD00E59048 /* Project object */;
 }
