@@ -29,22 +29,6 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zeB-gy-J2h">
-                                        <rect key="frame" x="328" y="26" width="32" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Next"/>
-                                        <connections>
-                                            <action selector="tappedHeaderNextBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cwY-nP-Kdp"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QrQ-Bo-bNu">
-                                        <rect key="frame" x="16" y="27" width="31" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Prev"/>
-                                        <connections>
-                                            <action selector="tappedHeaderPrevBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EaZ-tK-kf2"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
@@ -69,21 +53,38 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sX4-4M-cwz">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="前へ" id="vgc-XV-KzM">
+                                        <connections>
+                                            <action selector="tapBackButton:" destination="BYZ-38-t0r" id="7Xi-GB-8RC"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="NGi-E2-1BD"/>
+                                    <barButtonItem title="次へ" id="ean-OF-Sv4">
+                                        <connections>
+                                            <action selector="tapGoButton:" destination="BYZ-38-t0r" id="EBb-lR-KUc"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="backButton" destination="vgc-XV-KzM" id="VTv-WZ-kYv"/>
                         <outlet property="calenderCollectionView" destination="QfS-kO-Bub" id="BrD-Sc-i6M"/>
                         <outlet property="calenderHeaderView" destination="qTW-w2-UZy" id="IAa-Rl-QAC"/>
-                        <outlet property="headerNextBtn" destination="zeB-gy-J2h" id="XJ4-uf-tmt"/>
-                        <outlet property="headerPrevBtn" destination="QrQ-Bo-bNu" id="UyW-mI-rY7"/>
+                        <outlet property="goButton" destination="ean-OF-Sv4" id="VoH-zn-iJt"/>
                         <outlet property="headerTitle" destination="ETE-Ps-JBp" id="ar3-Z0-jZc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="308" y="138.98050974512745"/>
+            <point key="canvasLocation" x="-2247" y="-1616"/>
         </scene>
     </scenes>
 </document>

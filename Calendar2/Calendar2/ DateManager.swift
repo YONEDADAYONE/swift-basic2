@@ -79,8 +79,8 @@ class DateManager: NSObject {
             // ④配列に追加
             // 🔴修正前 (date)
             currentMonthOfDates.append(date as NSDate)
-            
-            print(currentMonthOfDates)
+
+//            print(currentMonthOfDates)
         }
     }
     

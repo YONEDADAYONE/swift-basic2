@@ -8,20 +8,6 @@
 
 import UIKit
 
-extension UIColor {
-    //自作関数
-    class func lightBlue() -> UIColor {
-        //UIColorに色をつける
-        return UIColor(red: 92.0 / 255, green: 192.0 / 255, blue: 210.0 / 255, alpha: 1.0)
-    }
-    
-    //自作関数
-    class func lightRed() -> UIColor {
-        //UIColorに色をつける
-        return UIColor(red: 195.0 / 255, green: 123.0 / 255, blue: 175.0 / 255, alpha: 1.0)
-    }
-}
-
 class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     //ここ確認
@@ -30,15 +16,16 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     let cellMargin: CGFloat = 2.0
     var selectedDate = NSDate()
     var today: NSDate!
-    let weekArray = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
-    
-    
+    let weekArray = ["日", "月", "火", "水", "木", "金", "土"]
 
-    @IBOutlet weak var headerPrevBtn: UIButton!
-    @IBOutlet weak var headerNextBtn: UIButton!
+
     @IBOutlet weak var headerTitle: UILabel!
     @IBOutlet weak var calenderHeaderView: UIView!
     @IBOutlet weak var calenderCollectionView: UICollectionView!
+
+    
+    @IBOutlet weak var backButton: UIBarButtonItem!
+    @IBOutlet weak var goButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,27 +38,57 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         //headerTitleを今の月にする
         headerTitle.text = changeHeaderTitle(date: selectedDate)
         
-        let check1 = dateManager.daysAcquisition()
-        print(check1)
-        
-        let check2 = dateManager.firstDateOfMonth()
-        print(check2)
-        
-        dateManager.dateForCellAtIndexPath(numberOfItem: 0)
+//        let check1 = dateManager.daysAcquisition()
+//        print(check1)
+//
+//        let check2 = dateManager.firstDateOfMonth()
+//        print(check2)
+//
+//        dateManager.dateForCellAtIndexPath(numberOfItem: 0)
+
     }
     
-    //1 セクションを2つ作成
-    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if headerTitle.text?.contains("2019年") ?? true {
+            backButton.isEnabled = false
+        } else {
+            goButton.isEnabled = true
+        }
+        
+    }
+    
+    //1 セクション数を決める 今回はセクションを2つ作成
+//    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+//        return 2
+//    }
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 2
     }
-    //2
+    //2 セルの数決める　今回は月火水...と1~31の2種類
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // Section毎にCellの総数を変える.
-        if section == 0 {
-            return 35
-        } else {
-            return 7 //ここは月によって異なる
+//        if section == 0 {
+//            return 7
+//        } else {
+//            return dateManager.daysAcquisition() //ここは月によって異なる
+//        }
+        
+        // Section毎にCellの総数を変える.
+        switch section{
+        case 0:
+            return 7
+            
+        case 1:
+            return dateManager.daysAcquisition()//数を変える
+            
+        default:
+            print("error")
+            return 0
         }
+        
     }
 
     //3
@@ -87,11 +104,10 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         }
         //テキスト配置
         if indexPath.section == 0 {
-            
-            cell.textLabel.text = dateManager.conversionDateFormat(indexPath: indexPath)
+            cell.textLabel.text = weekArray[indexPath.row]
         } else {
-cell.textLabel.text = weekArray[indexPath.row]
-            
+            cell.textLabel.text = dateManager.conversionDateFormat(indexPath: indexPath)
+            //月によって1日の場所は異なる
         }
 
 //        switch indexPath.section {
@@ -128,26 +144,52 @@ cell.textLabel.text = weekArray[indexPath.row]
     //headerの月を変更
     func changeHeaderTitle(date: NSDate) -> String {
         let formatter: DateFormatter = DateFormatter()
-        formatter.dateFormat = "M/yyyy"
+        formatter.locale = Locale(identifier: "ja_JP")
+        formatter.dateFormat = "yyyy年M月"
         let selectMonth = formatter.string(from: date as Date)
         return selectMonth
     }
     
-    @IBAction func tappedHeaderPrevBtn(_ sender: UIButton) {
+    @IBAction func tapBackButton(_ sender: UIBarButtonItem) {
+        
         selectedDate = dateManager.prevMonth(date: selectedDate as Date) as NSDate
         calenderCollectionView.reloadData()
         headerTitle.text = changeHeaderTitle(date: selectedDate)
         
+        if headerTitle.text?.contains("2019年1月") ?? true {
+            backButton.isEnabled = false
+        } else if headerTitle.text?.contains("2019年") ?? true {
+            goButton.isEnabled = true
+        }
     }
     
-    @IBAction func tappedHeaderNextBtn(_ sender: UIButton) {
+    
+    @IBAction func tapGoButton(_ sender: UIBarButtonItem) {
+        
+        if headerTitle.text?.contains("2019年11月") ?? true {
+            goButton.isEnabled = false
+        } else if headerTitle.text?.contains("2019年") ?? true {
+            backButton.isEnabled = true
+        }
         
         selectedDate = dateManager.nextMonth(date: selectedDate as Date) as NSDate
         calenderCollectionView.reloadData()
         headerTitle.text = changeHeaderTitle(date: selectedDate)
-        
-    }
-    
     
 }
 
+}
+
+extension UIColor {
+    //自作関数
+    class func lightBlue() -> UIColor {
+        //UIColorに色をつける
+        return UIColor(red: 92.0 / 255, green: 192.0 / 255, blue: 210.0 / 255, alpha: 1.0)
+    }
+    
+    //自作関数
+    class func lightRed() -> UIColor {
+        //UIColorに色をつける
+        return UIColor(red: 195.0 / 255, green: 123.0 / 255, blue: 175.0 / 255, alpha: 1.0)
+    }
+}
