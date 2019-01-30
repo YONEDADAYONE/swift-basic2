@@ -50,9 +50,17 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         
         //headerTitleを今の月にする
         headerTitle.text = changeHeaderTitle(date: selectedDate)
+        
+        let check1 = dateManager.daysAcquisition()
+        print(check1)
+        
+        let check2 = dateManager.firstDateOfMonth()
+        print(check2)
+        
+        dateManager.dateForCellAtIndexPath(numberOfItem: 0)
     }
     
-    //1
+    //1 セクションを2つ作成
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 2
     }
@@ -60,13 +68,13 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // Section毎にCellの総数を変える.
         if section == 0 {
-            return 7
+            return 35
         } else {
-            return dateManager.daysAcquisition() //ここは月によって異なる
+            return 7 //ここは月によって異なる
         }
     }
 
-    //3 fixをして as IndexPathを加えた
+    //3
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CalendarCell
         //テキストカラー
@@ -79,14 +87,20 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         }
         //テキスト配置
         if indexPath.section == 0 {
-            cell.textLabel.text = weekArray[indexPath.row]
-        } else {
+            
             cell.textLabel.text = dateManager.conversionDateFormat(indexPath: indexPath)
-//            cell.textLabel.text = weekArray[indexPath.row]
-            //月によって1日の場所は異なる(後ほど説明します)
+        } else {
+cell.textLabel.text = weekArray[indexPath.row]
+            
         }
-        
-        print(weekArray.count)
+
+//        switch indexPath.section {
+//        case 0:
+//            cell.textLabel.text = weekArray[indexPath.row]
+//        default:
+//            cell.textLabel.text = dateManager.conversionDateFormat(indexPath: indexPath)
+//        }
+
 
         return cell
     }
@@ -131,6 +145,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         selectedDate = dateManager.nextMonth(date: selectedDate as Date) as NSDate
         calenderCollectionView.reloadData()
         headerTitle.text = changeHeaderTitle(date: selectedDate)
+        
     }
     
     
