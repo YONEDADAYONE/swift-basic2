@@ -40,13 +40,12 @@ class CalendarView: UIViewController,
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
+        //前月・次月のボタンを非活性かするための分岐条件
         if headerTitle.text?.contains("2019年") ?? true {
             backMonthButton.isEnabled = false
         } else {
             nextMonthButton.isEnabled = true
         }
-        
     }
     
     //1 セクション数を決める。

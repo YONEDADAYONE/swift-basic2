@@ -77,7 +77,6 @@ class DateManager: NSObject {
         selectedDate = date.monthLaterDate()
         return selectedDate
     }
-    
 }
 
 extension Date {
@@ -94,7 +93,7 @@ extension Date {
     
     func monthLaterDate() -> Date {
         
-        let addValue: Int = 1
+        let addValue = 1
         let calendar = Calendar.current
         var dateComponents = DateComponents()
         dateComponents.month = addValue
