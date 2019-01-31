@@ -11,14 +11,16 @@ import UIKit
 
 class DateManager: NSObject {
     
-    public var currentMonthOfDates = [NSDate]() //表記する月の配列
-    public var selectedDate = Date()
-    public let daysPerWeek = 7
-    public var numberOfItems = 0 //セルの個数 初期値を0にする。
+    private var currentMonthOfDates = [NSDate]() //表記する月の配列
+    private var selectedDate = Date()
+    private let daysPerWeek = 7
+    private var numberOfItems = 0 //セルの個数 初期値を0にする。
     
     //月ごとのセルの数を返すメソッド。printで確認済み数は返されてる。
-    public func daysAcquisition() -> Int {
+    func daysAcquisition() -> Int {
         
+        //rangeOfWeeks
+        //currentはシステムのタイムゾーンを参照
         if let rangeOfWeeks = Calendar.current.range(of: .weekOfMonth, in: .month, for: firstDateOfMonth() as Date) {
             let numberOfWeeks = rangeOfWeeks.count //月が持つ週の数
             numberOfItems = numberOfWeeks * daysPerWeek //週の数×列の数
@@ -26,7 +28,7 @@ class DateManager: NSObject {
         return numberOfItems
     }
     //月の初日を取得。printで確認済初日は取得できている。
-    public func firstDateOfMonth() -> Date {
+    func firstDateOfMonth() -> Date {
         
         var components = Calendar.current.dateComponents([.year, .month, .day], from: selectedDate)
         components.day = 1
@@ -36,7 +38,7 @@ class DateManager: NSObject {
     }
     
     // ⑴表記する日にちの取得
-    public func dateForCellAtIndexPath(numberOfItem: Int) {
+    func dateForCellAtIndexPath(numberOfItem: Int) {
         // ①「月の初日が週の何日目か」を計算する
         guard let ordinalityOfFirstDay = Calendar.current.ordinality(of: .day,
                                                                      in: .weekOfMonth, for: firstDateOfMonth()) else {
@@ -57,22 +59,22 @@ class DateManager: NSObject {
     }
     
     // ⑵表記の変更
-    public func conversionDateFormat(indexPath: IndexPath) -> String {
+    func conversionDateFormat(indexPath: IndexPath) -> String {
         dateForCellAtIndexPath(numberOfItem: numberOfItems)
-        let formatter: DateFormatter = DateFormatter()
+        let formatter = DateFormatter()
         formatter.dateFormat = "d"
         return formatter.string(from: currentMonthOfDates[indexPath.row] as Date)
     }
     
     //前月の表示
-    public func prevMonth(date: Date) -> Date {
+    func prevMonth(date: Date) -> Date {
         currentMonthOfDates = []
         selectedDate = date.monthAgoDate()
         return selectedDate
     }
     
     //次月の表示
-    public func nextMonth(date: Date) -> Date {
+    func nextMonth(date: Date) -> Date {
         currentMonthOfDates = []
         selectedDate = date.monthLaterDate()
         return selectedDate

@@ -22,6 +22,7 @@ class CalendarView: UIViewController,
     //カレンダーを作成するのに必要な宣言
     private let dateManager = DateManager()
     private let daysPerWeek = 7
+    //下記メソッドでエラーがでるため必要
     private let cellMargin: CGFloat = 2.0
     private var selectedDate = NSDate()
     private var today: NSDate?
@@ -38,27 +39,34 @@ class CalendarView: UIViewController,
         headerTitle.text = changeHeaderTitle(date: selectedDate)
     }
     
+    //viewDidLoadのあとに行われる処理
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        //前月・次月のボタンを非活性かするための分岐条件
-        if headerTitle.text?.contains("2019年") ?? true {
+        //buttonActionの兼ね合いのためこのような機能を追加した。
+        //ヘッダータイトルテキストに2019年の文字が含まれていたら...
+        //("2019年")
+        if headerTitle.text?.contains("2019年1月") ?? true {
+            //戻るボタンを無効にする。
+            //1月かどうか
             backMonthButton.isEnabled = false
         } else {
+            //そうでないならば次へボタンを有効にする。
+            //12月か
             nextMonthButton.isEnabled = true
         }
     }
     
-    //1 セクション数を決める。
+    //1 セクション数を決める。今回は曜日と日にちの2種類を出したいので2にした
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 2
     }
     //2 セルの数決める　今回は月火水...と1~31の2種類
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
         switch section {
         case 0:
             return 7
         case 1:
+//            print("知りたいのは\(dateManager.daysAcquisition())")
             return dateManager.daysAcquisition()//数を変える
         default:
             print("error")
@@ -111,8 +119,8 @@ class CalendarView: UIViewController,
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         let numberOfMargin: CGFloat = 8.0
-        let width: CGFloat = (collectionView.frame.size.width - cellMargin * numberOfMargin) / CGFloat(daysPerWeek)
-        let height: CGFloat = width * 1.7
+        let width = (collectionView.frame.size.width - cellMargin * numberOfMargin) / CGFloat(daysPerWeek)
+        let height = width * 1.7
         return CGSize(width: width, height: height)
     }
     
@@ -132,21 +140,29 @@ class CalendarView: UIViewController,
     
     //headerの月を変更
     func changeHeaderTitle(date: NSDate) -> String {
-        let formatter: DateFormatter = DateFormatter()
+        //定数formatterにDateFormatter型のDateFormatter()クラスを参照。
+        let formatter = DateFormatter()
+        //formatter.localeを日本にする。
         formatter.locale = Locale(identifier: "ja_JP")
+        //フォーマットをyyyy年M月にする。
         formatter.dateFormat = "yyyy年M月"
+        //定数selectMonthに引数dateのformatterを入れる。
         let selectMonth = formatter.string(from: date as Date)
+        //selectMonthの値を返す。
         return selectMonth
     }
     
     //次へボタンタップ時
     @IBAction private func tappedNextMonthButton(_ sender: UIBarButtonItem) {
+        //もしヘッダーのテキストに2019年11月という文字があれば
         if headerTitle.text?.contains("2019年11月") ?? true {
+            //「次へ」ボタンを無効にする
             nextMonthButton.isEnabled = false
+            //もしヘッダーのテキストに2019年という文字があれば
         } else if headerTitle.text?.contains("2019年") ?? true {
+            //「戻る」ボタンを有効にする
             backMonthButton.isEnabled = true
         }
-        
         selectedDate = dateManager.nextMonth(date: selectedDate as Date) as NSDate
         calenderCollectionView.reloadData()
         headerTitle.text = changeHeaderTitle(date: selectedDate)
@@ -154,16 +170,19 @@ class CalendarView: UIViewController,
     
     //前へボタンタップ時
     @IBAction private func tappedBackMonthButton(_ sender: UIBarButtonItem) {
+        //もしヘッダーのテキストに2019年1月という文字があれば
+        if headerTitle.text?.contains("2019年1月") ?? true {
+            //「戻る」ボタンを無効にする
+            backMonthButton.isEnabled = false
+        } else if headerTitle.text?.contains("2019年") ?? true {
+            //「進む」ボタンを無効にする
+            nextMonthButton.isEnabled = true
+        }
         selectedDate = dateManager.prevMonth(date: selectedDate as Date) as NSDate
         calenderCollectionView.reloadData()
         headerTitle.text = changeHeaderTitle(date: selectedDate)
-        
-        if headerTitle.text?.contains("2019年1月") ?? true {
-            backMonthButton.isEnabled = false
-        } else if headerTitle.text?.contains("2019年") ?? true {
-            nextMonthButton.isEnabled = true
-        }
     }
+    
 }
 
 extension UIColor {
