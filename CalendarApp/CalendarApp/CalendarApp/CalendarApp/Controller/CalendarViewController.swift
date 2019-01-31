@@ -11,7 +11,7 @@ import UIKit
 class CalendarViewController: UIViewController,
     UICollectionViewDataSource,
     UICollectionViewDelegate,
-UICollectionViewDelegateFlowLayout {
+    UICollectionViewDelegateFlowLayout {
     
     //storyboadのIBOutlet宣言
     @IBOutlet weak private var nextMonthButton: UIBarButtonItem!
@@ -37,22 +37,9 @@ UICollectionViewDelegateFlowLayout {
         
         //headerTitleを今の月にする
         headerTitle.text = dateManager.changeHeaderTitle(date: selectedDate)
-    }
-    
-    //viewDidLoadのあとに行われる処理
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        //buttonActionの兼ね合いのためこのような機能を追加した。
-        //ヘッダータイトルテキストに2019年の文字が含まれていたら...
-        //("2019年")
+        
         if headerTitle.text?.contains("2019年1月") ?? true {
-            //戻るボタンを無効にする。
-            //1月かどうか
             backMonthButton.isEnabled = false
-        } else {
-            //そうでないならば次へボタンを有効にする。
-            //12月か
-            nextMonthButton.isEnabled = true
         }
     }
     
@@ -157,7 +144,7 @@ UICollectionViewDelegateFlowLayout {
     //前へボタンタップ時
     @IBAction private func tappedBackMonthButton(_ sender: UIBarButtonItem) {
         //もしヘッダーのテキストに2019年1月という文字があれば
-        if headerTitle.text?.contains("2019年1月") ?? true {
+        if headerTitle.text?.contains("2019年2月") ?? true {
             //「戻る」ボタンを無効にする
             backMonthButton.isEnabled = false
         } else if headerTitle.text?.contains("2019年") ?? true {
