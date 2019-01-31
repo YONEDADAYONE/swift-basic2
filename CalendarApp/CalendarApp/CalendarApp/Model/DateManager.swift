@@ -16,7 +16,7 @@ class DateManager: NSObject {
     public let daysPerWeek = 7
     public var numberOfItems = 0 //セルの個数 初期値を0にする。
     
-    //月ごとのセルの数を返すメソッド。check1で確認済み数は返されてる。
+    //月ごとのセルの数を返すメソッド。printで確認済み数は返されてる。
     public func daysAcquisition() -> Int {
         
         if let rangeOfWeeks = Calendar.current.range(of: .weekOfMonth, in: .month, for: firstDateOfMonth() as Date) {
@@ -25,7 +25,7 @@ class DateManager: NSObject {
         }
         return numberOfItems
     }
-    //月の初日を取得。check1で確認済初日は取得できている。
+    //月の初日を取得。printで確認済初日は取得できている。
     public func firstDateOfMonth() -> Date {
         
         var components = Calendar.current.dateComponents([.year, .month, .day], from: selectedDate)
@@ -40,7 +40,7 @@ class DateManager: NSObject {
         // ①「月の初日が週の何日目か」を計算する
         guard let ordinalityOfFirstDay = Calendar.current.ordinality(of: .day,
                                                                      in: .weekOfMonth, for: firstDateOfMonth()) else {
-                                                                        return
+        return
         }
         for integer in 0 ..< numberOfItems {
             // ②「月の初日」と「indexPath.item番目のセルに表示する日」の差を計算する
@@ -51,7 +51,7 @@ class DateManager: NSObject {
                                              to: firstDateOfMonth() as Date)
             // ④配列に追加
             currentMonthOfDates.append(date as NSDate? ?? NSDate())
-            //↓配列を確認するプリント
+            //↓配列を確認するプリント 確認できたのでコメントアウト済み。
             //print(currentMonthOfDates)
         }
     }

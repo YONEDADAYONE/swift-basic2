@@ -27,7 +27,6 @@ class CalendarCell: UICollectionViewCell {
     //継承
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
     }
     
 }

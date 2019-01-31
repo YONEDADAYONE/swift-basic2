@@ -11,13 +11,13 @@ import UIKit
 class CalendarView: UIViewController,
     UICollectionViewDataSource,
     UICollectionViewDelegate,
-UICollectionViewDelegateFlowLayout {
+    UICollectionViewDelegateFlowLayout {
     
     //storyboadのIBOutlet宣言
     @IBOutlet weak private var nextMonthButton: UIBarButtonItem!
     @IBOutlet weak private var backMonthButton: UIBarButtonItem!
-    @IBOutlet weak private var headerTitle: UILabel!    //③
-    @IBOutlet weak private var calenderCollectionView: UICollectionView!//⑤
+    @IBOutlet weak private var headerTitle: UILabel!
+    @IBOutlet weak private var calenderCollectionView: UICollectionView!
     
     //カレンダーを作成するのに必要な宣言
     private let dateManager = DateManager()
@@ -40,7 +40,7 @@ UICollectionViewDelegateFlowLayout {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+
         if headerTitle.text?.contains("2019年") ?? true {
             backMonthButton.isEnabled = false
         } else {
@@ -49,6 +49,7 @@ UICollectionViewDelegateFlowLayout {
         
     }
     
+    //1 セクション数を決める。
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 2
     }
@@ -64,14 +65,13 @@ UICollectionViewDelegateFlowLayout {
             print("error")
             return 0
         }
-        
     }
     
-    //3
+    //3 cell内のテキストカラー及びテキスト配置を決める
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? CalendarCell
-        //テキストカラー
+        //土曜日・日曜日を識別し土曜日だったらお青色に日曜日だったら赤色にする。
         if indexPath.row % 7 == 0 {
             cell?.dayLabel?.textColor = UIColor.lightRed()
         } else if indexPath.row % 7 == 6 {
@@ -80,13 +80,15 @@ UICollectionViewDelegateFlowLayout {
         } else {
             cell?.dayLabel?.textColor = UIColor.black()
         }
-        //テキスト配置
+        //1行目に1週間の曜日を2行目にその月のカレンダーをテキスト配置する。
         if indexPath.section == 0 {
             cell?.dayLabel?.text = weekArray[indexPath.row]
         } else {
+         //月によって1日の場所は異なる
             cell?.dayLabel?.text = dateManager.conversionDateFormat(indexPath: indexPath)
-            //月によって1日の場所は異なる
         }
+
+        //表示している月以外の日付を非活性状態にする。
         switch indexPath.row {
         case 0...5:
             if cell?.dayLabel?.text?.count == 2 {
@@ -162,7 +164,6 @@ UICollectionViewDelegateFlowLayout {
         } else if headerTitle.text?.contains("2019年") ?? true {
             nextMonthButton.isEnabled = true
         }
-        
     }
 }
 
