@@ -11,7 +11,7 @@ import UIKit
 
 class DateManager: NSObject {
     
-    private var currentMonthOfDates = [NSDate]() //表記する月の配列
+    private var currentMonthOfDates = [Date]() //表記する月の配列
     private var selectedDate = Date()
     private let daysPerWeek = 7
     private var numberOfItems = 0 //セルの個数 初期値を0にする。
@@ -21,7 +21,7 @@ class DateManager: NSObject {
         
         //rangeOfWeeks
         //currentはシステムのタイムゾーンを参照
-        if let rangeOfWeeks = Calendar.current.range(of: .weekOfMonth, in: .month, for: firstDateOfMonth() as Date) {
+        if let rangeOfWeeks = Calendar.current.range(of: .weekOfMonth, in: .month, for: firstDateOfMonth()) {
             let numberOfWeeks = rangeOfWeeks.count //月が持つ週の数
             numberOfItems = numberOfWeeks * daysPerWeek //週の数×列の数
         }
@@ -52,7 +52,7 @@ class DateManager: NSObject {
             let date = Calendar.current.date(byAdding: dateComponents as DateComponents,
                                              to: firstDateOfMonth() as Date)
             // ④配列に追加
-            currentMonthOfDates.append(date as NSDate? ?? NSDate())
+            currentMonthOfDates.append(date ?? Date())
             //↓配列を確認するプリント 確認できたのでコメントアウト済み。
             //print(currentMonthOfDates)
         }

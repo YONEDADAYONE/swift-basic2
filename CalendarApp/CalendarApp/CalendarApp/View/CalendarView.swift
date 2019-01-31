@@ -24,8 +24,8 @@ class CalendarView: UIViewController,
     private let daysPerWeek = 7
     //下記メソッドでエラーがでるため必要
     private let cellMargin: CGFloat = 2.0
-    private var selectedDate = NSDate()
-    private var today: NSDate?
+    private var selectedDate = Date()
+    private var today: Date?
     private let weekArray = ["日", "月", "火", "水", "木", "金", "土"]
     
     override func viewDidLoad() {
@@ -139,7 +139,7 @@ class CalendarView: UIViewController,
     }
     
     //headerの月を変更
-    func changeHeaderTitle(date: NSDate) -> String {
+    func changeHeaderTitle(date: Date) -> String {
         //定数formatterにDateFormatter型のDateFormatter()クラスを参照。
         let formatter = DateFormatter()
         //formatter.localeを日本にする。
@@ -163,7 +163,7 @@ class CalendarView: UIViewController,
             //「戻る」ボタンを有効にする
             backMonthButton.isEnabled = true
         }
-        selectedDate = dateManager.nextMonth(date: selectedDate as Date) as NSDate
+        selectedDate = dateManager.nextMonth(date: selectedDate)
         calenderCollectionView.reloadData()
         headerTitle.text = changeHeaderTitle(date: selectedDate)
     }
@@ -178,7 +178,7 @@ class CalendarView: UIViewController,
             //「進む」ボタンを無効にする
             nextMonthButton.isEnabled = true
         }
-        selectedDate = dateManager.prevMonth(date: selectedDate as Date) as NSDate
+        selectedDate = dateManager.prevMonth(date: selectedDate)
         calenderCollectionView.reloadData()
         headerTitle.text = changeHeaderTitle(date: selectedDate)
     }
