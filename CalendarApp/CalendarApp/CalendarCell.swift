@@ -1,6 +1,6 @@
 //
 //  CalendarCell.swift
-//  Calendar2
+//  CalendarApp
 //
 //  Created by 米田大弥 on 2019/01/30.
 //  Copyright © 2019 hiroya. All rights reserved.

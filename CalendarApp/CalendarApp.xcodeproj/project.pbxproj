@@ -7,31 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EE348FF3220128B800E87516 /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE348FF2220128B800E87516 /* CalendarCell.swift */; };
-		EE348FF9220134DE00E87516 /*  DateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE348FF8220134DE00E87516 /*  DateManager.swift */; };
-		EE5256DC2201AEF6000D5CEF /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = EE5256DB2201AEF6000D5CEF /* .swiftlint.yml */; };
-		EE7D2B0C220122CD00E59048 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7D2B0B220122CD00E59048 /* AppDelegate.swift */; };
-		EE7D2B0E220122CD00E59048 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7D2B0D220122CD00E59048 /* ViewController.swift */; };
-		EE7D2B11220122CD00E59048 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE7D2B0F220122CD00E59048 /* Main.storyboard */; };
-		EE7D2B13220122D100E59048 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE7D2B12220122D100E59048 /* Assets.xcassets */; };
-		EE7D2B16220122D100E59048 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE7D2B14220122D100E59048 /* LaunchScreen.storyboard */; };
+		EE5256EB2201CF0C000D5CEF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5256EA2201CF0C000D5CEF /* AppDelegate.swift */; };
+		EE5256F02201CF0C000D5CEF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE5256EE2201CF0C000D5CEF /* Main.storyboard */; };
+		EE5256F22201CF11000D5CEF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE5256F12201CF11000D5CEF /* Assets.xcassets */; };
+		EE5256F52201CF11000D5CEF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE5256F32201CF11000D5CEF /* LaunchScreen.storyboard */; };
+		EE5256FD2201D108000D5CEF /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5256FC2201D108000D5CEF /* CalendarCell.swift */; };
+		EE5256FF2201D203000D5CEF /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5256FE2201D203000D5CEF /* CalendarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		EE348FF2220128B800E87516 /* CalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
-		EE348FF8220134DE00E87516 /*  DateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " DateManager.swift"; sourceTree = "<group>"; };
-		EE5256DB2201AEF6000D5CEF /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
-		EE7D2B08220122CD00E59048 /* Calendar2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calendar2.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		EE7D2B0B220122CD00E59048 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EE7D2B0D220122CD00E59048 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		EE7D2B10220122CD00E59048 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		EE7D2B12220122D100E59048 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		EE7D2B15220122D100E59048 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		EE7D2B17220122D100E59048 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EE5256E72201CF0C000D5CEF /* CalendarApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CalendarApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE5256EA2201CF0C000D5CEF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EE5256EF2201CF0C000D5CEF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EE5256F12201CF11000D5CEF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EE5256F42201CF11000D5CEF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EE5256F62201CF11000D5CEF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EE5256FC2201D108000D5CEF /* CalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
+		EE5256FE2201D203000D5CEF /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		EE7D2B05220122CD00E59048 /* Frameworks */ = {
+		EE5256E42201CF0C000D5CEF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -41,75 +37,72 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		EE7D2AFF220122CD00E59048 = {
+		EE5256DE2201CF0C000D5CEF = {
 			isa = PBXGroup;
 			children = (
-				EE5256DB2201AEF6000D5CEF /* .swiftlint.yml */,
-				EE7D2B0A220122CD00E59048 /* Calendar2 */,
-				EE7D2B09220122CD00E59048 /* Products */,
+				EE5256E92201CF0C000D5CEF /* CalendarApp */,
+				EE5256E82201CF0C000D5CEF /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		EE7D2B09220122CD00E59048 /* Products */ = {
+		EE5256E82201CF0C000D5CEF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				EE7D2B08220122CD00E59048 /* Calendar2.app */,
+				EE5256E72201CF0C000D5CEF /* CalendarApp.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		EE7D2B0A220122CD00E59048 /* Calendar2 */ = {
+		EE5256E92201CF0C000D5CEF /* CalendarApp */ = {
 			isa = PBXGroup;
 			children = (
-				EE7D2B0B220122CD00E59048 /* AppDelegate.swift */,
-				EE7D2B0D220122CD00E59048 /* ViewController.swift */,
-				EE7D2B0F220122CD00E59048 /* Main.storyboard */,
-				EE348FF8220134DE00E87516 /*  DateManager.swift */,
-				EE348FF2220128B800E87516 /* CalendarCell.swift */,
-				EE7D2B12220122D100E59048 /* Assets.xcassets */,
-				EE7D2B14220122D100E59048 /* LaunchScreen.storyboard */,
-				EE7D2B17220122D100E59048 /* Info.plist */,
+				EE5256EA2201CF0C000D5CEF /* AppDelegate.swift */,
+				EE5256FE2201D203000D5CEF /* CalendarView.swift */,
+				EE5256FC2201D108000D5CEF /* CalendarCell.swift */,
+				EE5256EE2201CF0C000D5CEF /* Main.storyboard */,
+				EE5256F12201CF11000D5CEF /* Assets.xcassets */,
+				EE5256F32201CF11000D5CEF /* LaunchScreen.storyboard */,
+				EE5256F62201CF11000D5CEF /* Info.plist */,
 			);
-			path = Calendar2;
+			path = CalendarApp;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		EE7D2B07220122CD00E59048 /* Calendar2 */ = {
+		EE5256E62201CF0C000D5CEF /* CalendarApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EE7D2B1A220122D100E59048 /* Build configuration list for PBXNativeTarget "Calendar2" */;
+			buildConfigurationList = EE5256F92201CF11000D5CEF /* Build configuration list for PBXNativeTarget "CalendarApp" */;
 			buildPhases = (
-				EE7D2B04220122CD00E59048 /* Sources */,
-				EE7D2B05220122CD00E59048 /* Frameworks */,
-				EE7D2B06220122CD00E59048 /* Resources */,
-				EE5256DD2201AEFC000D5CEF /* ShellScript */,
+				EE5256E32201CF0C000D5CEF /* Sources */,
+				EE5256E42201CF0C000D5CEF /* Frameworks */,
+				EE5256E52201CF0C000D5CEF /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = Calendar2;
-			productName = Calendar2;
-			productReference = EE7D2B08220122CD00E59048 /* Calendar2.app */;
+			name = CalendarApp;
+			productName = CalendarApp;
+			productReference = EE5256E72201CF0C000D5CEF /* CalendarApp.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		EE7D2B00220122CD00E59048 /* Project object */ = {
+		EE5256DF2201CF0C000D5CEF /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = hiroya;
 				TargetAttributes = {
-					EE7D2B07220122CD00E59048 = {
+					EE5256E62201CF0C000D5CEF = {
 						CreatedOnToolsVersion = 10.1;
 					};
 				};
 			};
-			buildConfigurationList = EE7D2B03220122CD00E59048 /* Build configuration list for PBXProject "Calendar2" */;
+			buildConfigurationList = EE5256E22201CF0C000D5CEF /* Build configuration list for PBXProject "CalendarApp" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -117,77 +110,55 @@
 				en,
 				Base,
 			);
-			mainGroup = EE7D2AFF220122CD00E59048;
-			productRefGroup = EE7D2B09220122CD00E59048 /* Products */;
+			mainGroup = EE5256DE2201CF0C000D5CEF;
+			productRefGroup = EE5256E82201CF0C000D5CEF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				EE7D2B07220122CD00E59048 /* Calendar2 */,
+				EE5256E62201CF0C000D5CEF /* CalendarApp */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		EE7D2B06220122CD00E59048 /* Resources */ = {
+		EE5256E52201CF0C000D5CEF /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EE5256DC2201AEF6000D5CEF /* .swiftlint.yml in Resources */,
-				EE7D2B16220122D100E59048 /* LaunchScreen.storyboard in Resources */,
-				EE7D2B13220122D100E59048 /* Assets.xcassets in Resources */,
-				EE7D2B11220122CD00E59048 /* Main.storyboard in Resources */,
+				EE5256F52201CF11000D5CEF /* LaunchScreen.storyboard in Resources */,
+				EE5256F22201CF11000D5CEF /* Assets.xcassets in Resources */,
+				EE5256F02201CF0C000D5CEF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		EE5256DD2201AEFC000D5CEF /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"SwiftLint does not exist, download from https://github.com/realm/SwiftLint\"\nfi\n";
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
-		EE7D2B04220122CD00E59048 /* Sources */ = {
+		EE5256E32201CF0C000D5CEF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EE7D2B0E220122CD00E59048 /* ViewController.swift in Sources */,
-				EE348FF3220128B800E87516 /* CalendarCell.swift in Sources */,
-				EE348FF9220134DE00E87516 /*  DateManager.swift in Sources */,
-				EE7D2B0C220122CD00E59048 /* AppDelegate.swift in Sources */,
+				EE5256FD2201D108000D5CEF /* CalendarCell.swift in Sources */,
+				EE5256EB2201CF0C000D5CEF /* AppDelegate.swift in Sources */,
+				EE5256FF2201D203000D5CEF /* CalendarView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		EE7D2B0F220122CD00E59048 /* Main.storyboard */ = {
+		EE5256EE2201CF0C000D5CEF /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				EE7D2B10220122CD00E59048 /* Base */,
+				EE5256EF2201CF0C000D5CEF /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		EE7D2B14220122D100E59048 /* LaunchScreen.storyboard */ = {
+		EE5256F32201CF11000D5CEF /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				EE7D2B15220122D100E59048 /* Base */,
+				EE5256F42201CF11000D5CEF /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -195,7 +166,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		EE7D2B18220122D100E59048 /* Debug */ = {
+		EE5256F72201CF11000D5CEF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -256,7 +227,7 @@
 			};
 			name = Debug;
 		};
-		EE7D2B19220122D100E59048 /* Release */ = {
+		EE5256F82201CF11000D5CEF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -311,36 +282,36 @@
 			};
 			name = Release;
 		};
-		EE7D2B1B220122D100E59048 /* Debug */ = {
+		EE5256FA2201CF11000D5CEF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3HNBAS9RU7;
-				INFOPLIST_FILE = Calendar2/Info.plist;
+				INFOPLIST_FILE = CalendarApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ayoih.Calendar2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ayoih.CalendarApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		EE7D2B1C220122D100E59048 /* Release */ = {
+		EE5256FB2201CF11000D5CEF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3HNBAS9RU7;
-				INFOPLIST_FILE = Calendar2/Info.plist;
+				INFOPLIST_FILE = CalendarApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ayoih.Calendar2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ayoih.CalendarApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -350,25 +321,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		EE7D2B03220122CD00E59048 /* Build configuration list for PBXProject "Calendar2" */ = {
+		EE5256E22201CF0C000D5CEF /* Build configuration list for PBXProject "CalendarApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				EE7D2B18220122D100E59048 /* Debug */,
-				EE7D2B19220122D100E59048 /* Release */,
+				EE5256F72201CF11000D5CEF /* Debug */,
+				EE5256F82201CF11000D5CEF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EE7D2B1A220122D100E59048 /* Build configuration list for PBXNativeTarget "Calendar2" */ = {
+		EE5256F92201CF11000D5CEF /* Build configuration list for PBXNativeTarget "CalendarApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				EE7D2B1B220122D100E59048 /* Debug */,
-				EE7D2B1C220122D100E59048 /* Release */,
+				EE5256FA2201CF11000D5CEF /* Debug */,
+				EE5256FB2201CF11000D5CEF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = EE7D2B00220122CD00E59048 /* Project object */;
+	rootObject = EE5256DF2201CF0C000D5CEF /* Project object */;
 }
