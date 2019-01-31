@@ -61,16 +61,41 @@
 		EE5256E92201CF0C000D5CEF /* CalendarApp */ = {
 			isa = PBXGroup;
 			children = (
-				EE5256EA2201CF0C000D5CEF /* AppDelegate.swift */,
-				EE5256FE2201D203000D5CEF /* CalendarView.swift */,
-				EE5256FC2201D108000D5CEF /* CalendarCell.swift */,
-				EE5256EE2201CF0C000D5CEF /* Main.storyboard */,
-				EE5257002201D6B2000D5CEF /* DateManager.swift */,
-				EE5256F12201CF11000D5CEF /* Assets.xcassets */,
-				EE5256F32201CF11000D5CEF /* LaunchScreen.storyboard */,
+				EE5257072201E123000D5CEF /* other */,
+				EE5257062201E0A4000D5CEF /* View */,
+				EE5257052201E09D000D5CEF /* Model */,
 				EE5256F62201CF11000D5CEF /* Info.plist */,
 			);
 			path = CalendarApp;
+			sourceTree = "<group>";
+		};
+		EE5257052201E09D000D5CEF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EE5256FC2201D108000D5CEF /* CalendarCell.swift */,
+				EE5257002201D6B2000D5CEF /* DateManager.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EE5257062201E0A4000D5CEF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EE5256F32201CF11000D5CEF /* LaunchScreen.storyboard */,
+				EE5256EE2201CF0C000D5CEF /* Main.storyboard */,
+				EE5256FE2201D203000D5CEF /* CalendarView.swift */,
+			);
+			name = View;
+			path = CalendarApp/View;
+			sourceTree = SOURCE_ROOT;
+		};
+		EE5257072201E123000D5CEF /* other */ = {
+			isa = PBXGroup;
+			children = (
+				EE5256EA2201CF0C000D5CEF /* AppDelegate.swift */,
+				EE5256F12201CF11000D5CEF /* Assets.xcassets */,
+			);
+			path = other;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
