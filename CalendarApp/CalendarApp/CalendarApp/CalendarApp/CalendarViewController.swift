@@ -1,17 +1,17 @@
 //
-//  CalendarView.swift
+//  CalendarViewController.swift
 //  CalendarApp
 //
-//  Created by 米田大弥 on 2019/01/30.
+//  Created by 米田大弥 on 2019/01/31.
 //  Copyright © 2019 hiroya. All rights reserved.
 //
 
 import UIKit
 
-class CalendarView: UIViewController,
+class CalendarViewController: UIViewController,
     UICollectionViewDataSource,
     UICollectionViewDelegate,
-    UICollectionViewDelegateFlowLayout {
+UICollectionViewDelegateFlowLayout {
     
     //storyboadのIBOutlet宣言
     @IBOutlet weak private var nextMonthButton: UIBarButtonItem!
@@ -66,7 +66,7 @@ class CalendarView: UIViewController,
         case 0:
             return 7
         case 1:
-//            print("知りたいのは\(dateManager.daysAcquisition())")
+            //            print("知りたいのは\(dateManager.daysAcquisition())")
             return dateManager.daysAcquisition()//数を変える
         default:
             print("error")
@@ -91,10 +91,10 @@ class CalendarView: UIViewController,
         if indexPath.section == 0 {
             cell?.dayLabel?.text = weekArray[indexPath.row]
         } else {
-         //月によって1日の場所は異なる
+            //月によって1日の場所は異なる
             cell?.dayLabel?.text = dateManager.conversionDateFormat(indexPath: indexPath)
         }
-
+        
         //表示している月以外の日付を非活性状態にする。
         switch indexPath.row {
         case 0...5:
@@ -175,7 +175,7 @@ extension UIColor {
     //自作関数
     class open func lightBlue() -> UIColor {
         //UIColorに色をつける
-        let color = #colorLiteral(red: 0.01680417731, green: 0.1983509958, blue: 1, alpha: 1)
+        let color =  #colorLiteral(red: 0.01680417731, green: 0.1983509958, blue: 1, alpha: 1)
         
         return color
     }
@@ -183,7 +183,7 @@ extension UIColor {
     //自作関数
     class open func lightRed() -> UIColor {
         //UIColorに色をつける
-        let color = #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
+        let color =  #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
         //UIColorに色をつける
         return color
     }
@@ -191,7 +191,7 @@ extension UIColor {
     //自作関数
     class open func black() -> UIColor {
         //UIColorに色をつける
-        let color = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        let color =  #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         //UIColorに色をつける
         return color
     }

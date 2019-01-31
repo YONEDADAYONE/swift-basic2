@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Calendar View-->
+        <!--Calendar View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="CalendarView" customModule="CalendarApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="CalendarViewController" customModule="CalendarApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -103,12 +103,12 @@
                         <outlet property="backMonthButton" destination="B5u-oW-t2q" id="ApE-Hq-XIN"/>
                         <outlet property="calenderCollectionView" destination="ihy-ys-R3O" id="6aN-S5-DrV"/>
                         <outlet property="headerTitle" destination="yEb-lA-HFX" id="ET9-Te-FNZ"/>
-                        <outlet property="nextMonthButton" destination="k5L-WF-JgD" id="RRZ-2N-Vsj"/>
+                        <outlet property="nextMonthButton" destination="k5L-WF-JgD" id="DpO-HI-0FZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-879" y="-18"/>
+            <point key="canvasLocation" x="-1007" y="-18"/>
         </scene>
     </scenes>
 </document>
