@@ -14,6 +14,7 @@
 		EE5256FD2201D108000D5CEF /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5256FC2201D108000D5CEF /* CalendarCell.swift */; };
 		EE5256FF2201D203000D5CEF /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5256FE2201D203000D5CEF /* CalendarView.swift */; };
 		EE5257012201D6B2000D5CEF /* DateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5257002201D6B2000D5CEF /* DateManager.swift */; };
+		EE5257032201DEB0000D5CEF /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = EE5257022201DEB0000D5CEF /* .swiftlint.yml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		EE5256FC2201D108000D5CEF /* CalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
 		EE5256FE2201D203000D5CEF /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		EE5257002201D6B2000D5CEF /* DateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateManager.swift; sourceTree = "<group>"; };
+		EE5257022201DEB0000D5CEF /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +44,7 @@
 		EE5256DE2201CF0C000D5CEF = {
 			isa = PBXGroup;
 			children = (
+				EE5257022201DEB0000D5CEF /* .swiftlint.yml */,
 				EE5256E92201CF0C000D5CEF /* CalendarApp */,
 				EE5256E82201CF0C000D5CEF /* Products */,
 			);
@@ -80,6 +83,7 @@
 				EE5256E32201CF0C000D5CEF /* Sources */,
 				EE5256E42201CF0C000D5CEF /* Frameworks */,
 				EE5256E52201CF0C000D5CEF /* Resources */,
+				EE5257042201DEDA000D5CEF /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -128,6 +132,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE5257032201DEB0000D5CEF /* .swiftlint.yml in Resources */,
 				EE5256F52201CF11000D5CEF /* LaunchScreen.storyboard in Resources */,
 				EE5256F22201CF11000D5CEF /* Assets.xcassets in Resources */,
 				EE5256F02201CF0C000D5CEF /* Main.storyboard in Resources */,
@@ -135,6 +140,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		EE5257042201DEDA000D5CEF /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"SwiftLint does not exist, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		EE5256E32201CF0C000D5CEF /* Sources */ = {

@@ -8,12 +8,15 @@
 
 import UIKit
 
-class CalendarView: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout  {
+class CalendarView: UIViewController,
+UICollectionViewDataSource,
+UICollectionViewDelegate,
+UICollectionViewDelegateFlowLayout {
     
-    @IBOutlet weak var nextMonthButton: UIBarButtonItem!
-    @IBOutlet weak var backMonthButton: UIBarButtonItem!
-    @IBOutlet weak var headerTitle: UILabel!    //③
-    @IBOutlet weak var calenderCollectionView: UICollectionView!//⑤
+    @IBOutlet weak private var nextMonthButton: UIBarButtonItem!
+    @IBOutlet weak private var backMonthButton: UIBarButtonItem!
+    @IBOutlet weak private var headerTitle: UILabel!    //③
+    @IBOutlet weak private var calenderCollectionView: UICollectionView!//⑤
     
     //
     let dateManager = DateManager()
@@ -184,6 +187,3 @@ extension UIColor {
         return color
     }
 }
-
-
-
