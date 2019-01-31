@@ -79,6 +79,20 @@ class DateManager: NSObject {
         selectedDate = date.monthLaterDate()
         return selectedDate
     }
+    
+    //headerの月を変更
+    func changeHeaderTitle(date: Date) -> String {
+        //定数formatterにDateFormatter型のDateFormatter()クラスを参照。
+        let formatter = DateFormatter()
+        //formatter.localeを日本にする。
+        formatter.locale = Locale(identifier: "ja_JP")
+        //フォーマットをyyyy年M月にする。
+        formatter.dateFormat = "yyyy年M月"
+        //定数selectMonthに引数dateのformatterを入れる。
+        let selectMonth = formatter.string(from: date as Date)
+        //selectMonthの値を返す。
+        return selectMonth
+    }
 }
 
 extension Date {

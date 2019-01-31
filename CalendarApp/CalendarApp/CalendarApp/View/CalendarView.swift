@@ -36,7 +36,7 @@ class CalendarView: UIViewController,
         calenderCollectionView.backgroundColor = UIColor.white
         
         //headerTitleを今の月にする
-        headerTitle.text = changeHeaderTitle(date: selectedDate)
+        headerTitle.text = dateManager.changeHeaderTitle(date: selectedDate)
     }
     
     //viewDidLoadのあとに行われる処理
@@ -138,20 +138,6 @@ class CalendarView: UIViewController,
         return cellMargin
     }
     
-    //headerの月を変更
-    func changeHeaderTitle(date: Date) -> String {
-        //定数formatterにDateFormatter型のDateFormatter()クラスを参照。
-        let formatter = DateFormatter()
-        //formatter.localeを日本にする。
-        formatter.locale = Locale(identifier: "ja_JP")
-        //フォーマットをyyyy年M月にする。
-        formatter.dateFormat = "yyyy年M月"
-        //定数selectMonthに引数dateのformatterを入れる。
-        let selectMonth = formatter.string(from: date as Date)
-        //selectMonthの値を返す。
-        return selectMonth
-    }
-    
     //次へボタンタップ時
     @IBAction private func tappedNextMonthButton(_ sender: UIBarButtonItem) {
         //もしヘッダーのテキストに2019年11月という文字があれば
@@ -165,7 +151,7 @@ class CalendarView: UIViewController,
         }
         selectedDate = dateManager.nextMonth(date: selectedDate)
         calenderCollectionView.reloadData()
-        headerTitle.text = changeHeaderTitle(date: selectedDate)
+        headerTitle.text = dateManager.changeHeaderTitle(date: selectedDate)
     }
     
     //前へボタンタップ時
@@ -180,7 +166,7 @@ class CalendarView: UIViewController,
         }
         selectedDate = dateManager.prevMonth(date: selectedDate)
         calenderCollectionView.reloadData()
-        headerTitle.text = changeHeaderTitle(date: selectedDate)
+        headerTitle.text = dateManager.changeHeaderTitle(date: selectedDate)
     }
     
 }
