@@ -51,7 +51,7 @@ class CalendarView: UIViewController, UICollectionViewDataSource, UICollectionVi
     //2 セルの数決める　今回は月火水...と1~31の2種類
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-
+        
         switch section {
         case 0:
             return 7
@@ -104,7 +104,7 @@ class CalendarView: UIViewController, UICollectionViewDataSource, UICollectionVi
             print("a")
         }
         
-         return cell ?? CalendarCell()
+        return cell ?? CalendarCell()
     }
     //下3つが無いとsection1の土曜日が2行目になる。
     //セルのサイズを設定
@@ -140,15 +140,33 @@ class CalendarView: UIViewController, UICollectionViewDataSource, UICollectionVi
     }
     
     //②タップ時
-
+    
     @IBAction func tappedNextMonthButton(_ sender: UIBarButtonItem) {
-
+        if headerTitle.text?.contains("2019年11月") ?? true {
+            nextMonthButton.isEnabled = false
+        } else if headerTitle.text?.contains("2019年") ?? true {
+            backMonthButton.isEnabled = true
+        }
+        
+        selectedDate = dateManager.nextMonth(date: selectedDate as Date) as NSDate
+        calenderCollectionView.reloadData()
+        headerTitle.text = changeHeaderTitle(date: selectedDate)
     }
     
     @IBAction func tappedBackMonthButton(_ sender: UIBarButtonItem) {
+        selectedDate = dateManager.prevMonth(date: selectedDate as Date) as NSDate
+        calenderCollectionView.reloadData()
+        headerTitle.text = changeHeaderTitle(date: selectedDate)
+        
+        if headerTitle.text?.contains("2019年1月") ?? true {
+            backMonthButton.isEnabled = false
+        } else if headerTitle.text?.contains("2019年") ?? true {
+            nextMonthButton.isEnabled = true
+        }
+        
     }
 }
-    
+
 extension UIColor {
     //自作関数
     class func lightBlue() -> UIColor {
@@ -164,11 +182,8 @@ extension UIColor {
         let color = #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
         //UIColorに色をつける
         return color
-        
-        
-
     }
-    }
+}
 
 
 
