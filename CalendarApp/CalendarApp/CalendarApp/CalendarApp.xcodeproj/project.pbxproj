@@ -61,10 +61,10 @@
 		EE5256E92201CF0C000D5CEF /* CalendarApp */ = {
 			isa = PBXGroup;
 			children = (
-				EE52570D2202FC71000D5CEF /* CalendarViewController.swift */,
-				EE52570822029428000D5CEF /* Other */,
-				EE5257062201E0A4000D5CEF /* View */,
 				EE5257052201E09D000D5CEF /* Model */,
+				EE5257062201E0A4000D5CEF /* View */,
+				EE52570F2202FF68000D5CEF /* Controller */,
+				EE52570822029428000D5CEF /* Other */,
 				EE5256F62201CF11000D5CEF /* Info.plist */,
 			);
 			path = CalendarApp;
@@ -96,6 +96,14 @@
 				EE52570A22029428000D5CEF /* AppDelegate.swift */,
 			);
 			path = Other;
+			sourceTree = "<group>";
+		};
+		EE52570F2202FF68000D5CEF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				EE52570D2202FC71000D5CEF /* CalendarViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
