@@ -8,25 +8,167 @@
 
 import UIKit
 
-class CalendarView: UIViewController {
+class CalendarView: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout  {
     
     @IBOutlet weak var nextMonthButton: UIBarButtonItem!
     @IBOutlet weak var backMonthButton: UIBarButtonItem!
     @IBOutlet weak var headerTitle: UILabel!    //③
     @IBOutlet weak var calenderCollectionView: UICollectionView!//⑤
     
+    //
+    let dateManager = DateManager()
+    let daysPerWeek: Int = 7
+    let cellMargin: CGFloat = 2.0
+    var selectedDate = NSDate()
+    var today: NSDate?
+    let weekArray = ["日", "月", "火", "水", "木", "金", "土"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        //下3行コレクションビューを使うために必要
+        calenderCollectionView.delegate = self
+        calenderCollectionView.dataSource = self
+        calenderCollectionView.backgroundColor = UIColor.white
+        
+        //headerTitleを今の月にする
+        headerTitle.text = changeHeaderTitle(date: selectedDate)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if headerTitle.text?.contains("2019年") ?? true {
+            backMonthButton.isEnabled = false
+        } else {
+            nextMonthButton.isEnabled = true
+        }
+        
+    }
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 2
+    }
+    //2 セルの数決める　今回は月火水...と1~31の2種類
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+
+        switch section {
+        case 0:
+            return 7
+        case 1:
+            return dateManager.daysAcquisition()//数を変える
+        default:
+            print("error")
+            return 0
+        }
+        
+    }
+    
+    //3
+    func collectionView(_ collectionView: UICollectionView,
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? CalendarCell
+        //テキストカラー
+        if indexPath.row % 7 == 0 {
+            cell?.textLabel?.textColor = UIColor.lightRed()
+        } else if indexPath.row % 7 == 6 {
+            cell?.textLabel?.textColor = UIColor.lightBlue()
+            print(indexPath.row)
+        } else {
+            cell?.textLabel?.textColor = UIColor.black
+        }
+        //テキスト配置
+        if indexPath.section == 0 {
+            cell?.textLabel?.text = weekArray[indexPath.row]
+        } else {
+            cell?.textLabel?.text = dateManager.conversionDateFormat(indexPath: indexPath)
+            //月によって1日の場所は異なる
+        }
+        switch indexPath.row {
+        case 0...5:
+            if cell?.textLabel?.text?.count == 2 {
+                cell?.textLabel?.textColor = UIColor.gray
+                //                cell?.textLabel?.alpha = 0.3
+            }
+        case 29...35:
+            if cell?.textLabel?.text?.count == 1 {
+                cell?.textLabel?.textColor = UIColor.gray
+                //                cell?.textLabel?.alpha = 0.3
+            }
+        case 36...42:
+            if cell?.textLabel?.text?.count == 1 {
+                cell?.textLabel?.textColor = UIColor.gray
+                //                cell?.textLabel?.alpha = 0.3
+            }
+        default:
+            print("a")
+        }
+        
+         return cell ?? CalendarCell()
+    }
+    //下3つが無いとsection1の土曜日が2行目になる。
+    //セルのサイズを設定
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let numberOfMargin: CGFloat = 8.0
+        let width: CGFloat = (collectionView.frame.size.width - cellMargin * numberOfMargin) / CGFloat(daysPerWeek)
+        let height: CGFloat = width * 1.0
+        return CGSize(width: width, height: height)
+    }
+    
+    //セルの垂直方向のマージンを設定
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return cellMargin
+    }
+    
+    //セルの水平方向のマージンを設定
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return cellMargin
+    }
+    
+    //headerの月を変更
+    func changeHeaderTitle(date: NSDate) -> String {
+        let formatter: DateFormatter = DateFormatter()
+        formatter.locale = Locale(identifier: "ja_JP")
+        formatter.dateFormat = "yyyy年M月"
+        let selectMonth = formatter.string(from: date as Date)
+        return selectMonth
+    }
+    
+    //②タップ時
+
+    @IBAction func tappedNextMonthButton(_ sender: UIBarButtonItem) {
+
+    }
+    
+    @IBAction func tappedBackMonthButton(_ sender: UIBarButtonItem) {
+    }
+}
+    
+extension UIColor {
+    //自作関数
+    class func lightBlue() -> UIColor {
+        //UIColorに色をつける
+        let color = #colorLiteral(red: 0.2196078449, green: 0.007843137719, blue: 0.8549019694, alpha: 1)
+        
+        return color
+    }
+    
+    //自作関数
+    class func lightRed() -> UIColor {
+        //UIColorに色をつける
+        let color = #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
+        //UIColorに色をつける
+        return color
+        
         
 
     }
-    //②タップ時
+    }
 
-    @IBAction func tappedButtonMonthButton(_ sender: UIBarButtonItem) {
-    }
-    
-    
-    @IBAction func tappedNextMonthButton(_ sender: UIBarButtonItem) {
-    }
-}
+
 
