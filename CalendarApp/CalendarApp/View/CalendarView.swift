@@ -171,7 +171,7 @@ extension UIColor {
     //自作関数
     class open func lightBlue() -> UIColor {
         //UIColorに色をつける
-        let color = #colorLiteral(red: 0.2196078449, green: 0.007843137719, blue: 0.8549019694, alpha: 1)
+        let color = #colorLiteral(red: 0.01680417731, green: 0.1983509958, blue: 1, alpha: 1)
         
         return color
     }
