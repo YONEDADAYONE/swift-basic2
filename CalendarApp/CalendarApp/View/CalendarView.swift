@@ -9,22 +9,23 @@
 import UIKit
 
 class CalendarView: UIViewController,
-UICollectionViewDataSource,
-UICollectionViewDelegate,
+    UICollectionViewDataSource,
+    UICollectionViewDelegate,
 UICollectionViewDelegateFlowLayout {
     
+    //storyboadのIBOutlet宣言
     @IBOutlet weak private var nextMonthButton: UIBarButtonItem!
     @IBOutlet weak private var backMonthButton: UIBarButtonItem!
     @IBOutlet weak private var headerTitle: UILabel!    //③
     @IBOutlet weak private var calenderCollectionView: UICollectionView!//⑤
     
-    //
-    let dateManager = DateManager()
-    let daysPerWeek: Int = 7
-    let cellMargin: CGFloat = 2.0
-    var selectedDate = NSDate()
-    var today: NSDate?
-    let weekArray = ["日", "月", "火", "水", "木", "金", "土"]
+    //カレンダーを作成するのに必要な宣言
+    private let dateManager = DateManager()
+    private let daysPerWeek = 7
+    private let cellMargin: CGFloat = 2.0
+    private var selectedDate = NSDate()
+    private var today: NSDate?
+    private let weekArray = ["日", "月", "火", "水", "木", "金", "土"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,7 +53,6 @@ UICollectionViewDelegateFlowLayout {
         return 2
     }
     //2 セルの数決める　今回は月火水...と1~31の2種類
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         switch section {
@@ -73,49 +73,45 @@ UICollectionViewDelegateFlowLayout {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? CalendarCell
         //テキストカラー
         if indexPath.row % 7 == 0 {
-            cell?.textLabel?.textColor = UIColor.lightRed()
+            cell?.dayLabel?.textColor = UIColor.lightRed()
         } else if indexPath.row % 7 == 6 {
-            cell?.textLabel?.textColor = UIColor.lightBlue()
+            cell?.dayLabel?.textColor = UIColor.lightBlue()
             print(indexPath.row)
         } else {
-            cell?.textLabel?.textColor = UIColor.black
+            cell?.dayLabel?.textColor = UIColor.black()
         }
         //テキスト配置
         if indexPath.section == 0 {
-            cell?.textLabel?.text = weekArray[indexPath.row]
+            cell?.dayLabel?.text = weekArray[indexPath.row]
         } else {
-            cell?.textLabel?.text = dateManager.conversionDateFormat(indexPath: indexPath)
+            cell?.dayLabel?.text = dateManager.conversionDateFormat(indexPath: indexPath)
             //月によって1日の場所は異なる
         }
         switch indexPath.row {
         case 0...5:
-            if cell?.textLabel?.text?.count == 2 {
-                cell?.textLabel?.textColor = UIColor.gray
-                //                cell?.textLabel?.alpha = 0.3
+            if cell?.dayLabel?.text?.count == 2 {
+                cell?.dayLabel?.textColor = UIColor.gray
             }
         case 29...35:
-            if cell?.textLabel?.text?.count == 1 {
-                cell?.textLabel?.textColor = UIColor.gray
-                //                cell?.textLabel?.alpha = 0.3
+            if cell?.dayLabel?.text?.count == 1 {
+                cell?.dayLabel?.textColor = UIColor.gray
             }
         case 36...42:
-            if cell?.textLabel?.text?.count == 1 {
-                cell?.textLabel?.textColor = UIColor.gray
-                //                cell?.textLabel?.alpha = 0.3
+            if cell?.dayLabel?.text?.count == 1 {
+                cell?.dayLabel?.textColor = UIColor.gray
             }
         default:
-            print("a")
+            print("色の変更は無し")
         }
         
         return cell ?? CalendarCell()
     }
-    //下3つが無いとsection1の土曜日が2行目になる。
-    //セルのサイズを設定
+    //セルのサイズを設定    下記3つのメソッドが無いとsection1の土曜日が2行目になるので追加。
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         let numberOfMargin: CGFloat = 8.0
         let width: CGFloat = (collectionView.frame.size.width - cellMargin * numberOfMargin) / CGFloat(daysPerWeek)
-        let height: CGFloat = width * 1.0
+        let height: CGFloat = width * 1.7
         return CGSize(width: width, height: height)
     }
     
@@ -142,9 +138,8 @@ UICollectionViewDelegateFlowLayout {
         return selectMonth
     }
     
-    //②タップ時
-    
-    @IBAction func tappedNextMonthButton(_ sender: UIBarButtonItem) {
+    //次へボタンタップ時
+    @IBAction private func tappedNextMonthButton(_ sender: UIBarButtonItem) {
         if headerTitle.text?.contains("2019年11月") ?? true {
             nextMonthButton.isEnabled = false
         } else if headerTitle.text?.contains("2019年") ?? true {
@@ -156,7 +151,8 @@ UICollectionViewDelegateFlowLayout {
         headerTitle.text = changeHeaderTitle(date: selectedDate)
     }
     
-    @IBAction func tappedBackMonthButton(_ sender: UIBarButtonItem) {
+    //前へボタンタップ時
+    @IBAction private func tappedBackMonthButton(_ sender: UIBarButtonItem) {
         selectedDate = dateManager.prevMonth(date: selectedDate as Date) as NSDate
         calenderCollectionView.reloadData()
         headerTitle.text = changeHeaderTitle(date: selectedDate)
@@ -172,7 +168,7 @@ UICollectionViewDelegateFlowLayout {
 
 extension UIColor {
     //自作関数
-    class func lightBlue() -> UIColor {
+    class open func lightBlue() -> UIColor {
         //UIColorに色をつける
         let color = #colorLiteral(red: 0.2196078449, green: 0.007843137719, blue: 0.8549019694, alpha: 1)
         
@@ -180,9 +176,17 @@ extension UIColor {
     }
     
     //自作関数
-    class func lightRed() -> UIColor {
+    class open func lightRed() -> UIColor {
         //UIColorに色をつける
         let color = #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
+        //UIColorに色をつける
+        return color
+    }
+    
+    //自作関数
+    class open func black() -> UIColor {
+        //UIColorに色をつける
+        let color = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         //UIColorに色をつける
         return color
     }

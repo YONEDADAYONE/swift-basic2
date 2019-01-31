@@ -10,18 +10,18 @@ import UIKit
 
 class CalendarCell: UICollectionViewCell {
     
-    var textLabel: UILabel?
+    public var dayLabel: UILabel?
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
         //textLabelのプロパティを設定
-        textLabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height))
-        textLabel?.font = UIFont(name: "HiraKakuProN-W3", size: 12)
-        textLabel?.textAlignment = NSTextAlignment.center
+        dayLabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height))
+        dayLabel?.font = UIFont(name: "HiraKakuProN-W3", size: 12)
+        dayLabel?.textAlignment = NSTextAlignment.center
         
         // Cellに追加
-        self.addSubview(textLabel ?? UILabel())
+        self.addSubview(dayLabel ?? UILabel())
     }
     
     //継承
