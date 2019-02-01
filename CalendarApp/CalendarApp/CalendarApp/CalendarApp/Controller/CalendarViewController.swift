@@ -18,7 +18,6 @@ class CalendarViewController: UIViewController {
     @IBOutlet weak private var headerTitle: UILabel!
     @IBOutlet weak private var calenderCollectionView: UICollectionView!
     
-    //下記メソッドでエラーがでるため必要
     private var selectedDate = Date()
     private var today: Date?
     
@@ -70,32 +69,6 @@ class CalendarViewController: UIViewController {
     
 }
 
-extension UIColor {
-    //自作関数
-    class open func lightBlue() -> UIColor {
-        //UIColorに色をつける
-        let color =  #colorLiteral(red: 0.01680417731, green: 0.1983509958, blue: 1, alpha: 1)
-        
-        return color
-    }
-    
-    //自作関数
-    class open func lightRed() -> UIColor {
-        //UIColorに色をつける
-        let color =  #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
-        //UIColorに色をつける
-        return color
-    }
-    
-    //自作関数
-    class open func black() -> UIColor {
-        //UIColorに色をつける
-        let color =  #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-        //UIColorに色をつける
-        return color
-    }
-}
-
 extension UIViewController: UICollectionViewDataSource {
     
     //1 セクション数を決める。今回は曜日と日にちの2種類を出したいので2にした
@@ -127,12 +100,12 @@ extension UIViewController: UICollectionViewDataSource {
             
             //土曜日・日曜日を識別し土曜日だったらお青色に日曜日だったら赤色にする。
             if indexPath.row % 7 == 0 {
-                cell?.dayLabel?.textColor = UIColor.lightRed()
+                cell?.dayLabel?.textColor = UIColor.red
             } else if indexPath.row % 7 == 6 {
-                cell?.dayLabel?.textColor = UIColor.lightBlue()
+                cell?.dayLabel?.textColor = UIColor.blue
                 print(indexPath.row)
             } else {
-                cell?.dayLabel?.textColor = UIColor.black()
+                cell?.dayLabel?.textColor = UIColor.black
             }
             //1行目に1週間の曜日を2行目にその月のカレンダーをテキスト配置する。
             if indexPath.section == 0 {
