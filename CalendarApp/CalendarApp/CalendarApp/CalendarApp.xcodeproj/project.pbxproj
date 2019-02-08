@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		EE4D2D6D220A5CF8002CC7CC /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4D2D6C220A5CF8002CC7CC /* Color.swift */; };
 		EE4D2D6F220D0265002CC7CC /* CalendarTextModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4D2D6E220D0265002CC7CC /* CalendarTextModel.swift */; };
-		EE5256F02201CF0C000D5CEF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE5256EE2201CF0C000D5CEF /* Main.storyboard */; };
+		EE5256F02201CF0C000D5CEF /* Calendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE5256EE2201CF0C000D5CEF /* Calendar.storyboard */; };
 		EE5256F52201CF11000D5CEF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE5256F32201CF11000D5CEF /* LaunchScreen.storyboard */; };
 		EE5256FD2201D108000D5CEF /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5256FC2201D108000D5CEF /* CalendarCell.swift */; };
 		EE5257012201D6B2000D5CEF /* DateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5257002201D6B2000D5CEF /* DateManager.swift */; };
@@ -23,7 +23,7 @@
 		EE4D2D6C220A5CF8002CC7CC /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		EE4D2D6E220D0265002CC7CC /* CalendarTextModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTextModel.swift; sourceTree = "<group>"; };
 		EE5256E72201CF0C000D5CEF /* CalendarApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CalendarApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		EE5256EF2201CF0C000D5CEF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EE5256EF2201CF0C000D5CEF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Calendar.storyboard; sourceTree = "<group>"; };
 		EE5256F42201CF11000D5CEF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EE5256F62201CF11000D5CEF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EE5256FC2201D108000D5CEF /* CalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
@@ -88,7 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				EE5256F32201CF11000D5CEF /* LaunchScreen.storyboard */,
-				EE5256EE2201CF0C000D5CEF /* Main.storyboard */,
+				EE5256EE2201CF0C000D5CEF /* Calendar.storyboard */,
 				EE5256FC2201D108000D5CEF /* CalendarCell.swift */,
 			);
 			name = View;
@@ -173,7 +173,7 @@
 			files = (
 				EE5257032201DEB0000D5CEF /* .swiftlint.yml in Resources */,
 				EE5256F52201CF11000D5CEF /* LaunchScreen.storyboard in Resources */,
-				EE5256F02201CF0C000D5CEF /* Main.storyboard in Resources */,
+				EE5256F02201CF0C000D5CEF /* Calendar.storyboard in Resources */,
 				EE52570B22029428000D5CEF /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -217,12 +217,12 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		EE5256EE2201CF0C000D5CEF /* Main.storyboard */ = {
+		EE5256EE2201CF0C000D5CEF /* Calendar.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				EE5256EF2201CF0C000D5CEF /* Base */,
 			);
-			name = Main.storyboard;
+			name = Calendar.storyboard;
 			sourceTree = "<group>";
 		};
 		EE5256F32201CF11000D5CEF /* LaunchScreen.storyboard */ = {

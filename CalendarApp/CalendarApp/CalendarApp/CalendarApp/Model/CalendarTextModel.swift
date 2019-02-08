@@ -18,11 +18,14 @@ class CalendarTextModel {
     //カレンダークラスを参照
     var calendar = Calendar.current
     
+    var kari = 0
+    
+    
     func aaa() {
         calendar.locale = Locale(identifier: "ja")
         let shortWeekdaySymbols = calendar.shortWeekdaySymbols
         
+        
     }
 
-    
 }

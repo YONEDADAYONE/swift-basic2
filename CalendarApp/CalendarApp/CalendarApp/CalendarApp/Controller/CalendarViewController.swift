@@ -124,7 +124,7 @@ extension CalendarViewController: UICollectionViewDataSource {
                 cell?.catchLabel().textColor = UIColor.red
             } else if indexPath.row % 7 == 6 {
                 cell?.catchLabel().textColor = UIColor.blue
-                print(indexPath.row)
+//                print(indexPath.row)
             } else {
                 cell?.catchLabel().textColor = UIColor.black
             }
