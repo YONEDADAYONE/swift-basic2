@@ -20,6 +20,21 @@ class CalendarViewController: UIViewController {
     
     private var selectedDate = Date()
     private var today: Date?
+
+    let cellMargin: CGFloat = 2.0
+    
+    let aaa = CalendarCell()
+    
+    //マジックナンバーの回避のため
+    enum SectionNumber: Int {
+        case weekSectionCount = 7
+        case daySectionCount = 1
+        case sectionCount = 2
+    }
+    
+    let weekSectionCount = SectionNumber.weekSectionCount
+    let daySectionCount = SectionNumber.daySectionCount
+    let sectionCount = SectionNumber.daySectionCount
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,8 +47,10 @@ class CalendarViewController: UIViewController {
         headerTitle.text = dateManager.changeHeaderTitle(date: selectedDate)
         
         if headerTitle.text?.contains("2019年1月") ?? true {
+            //バックボタンをを非活性にする。
             backMonthButton.isEnabled = false
         }
+        
     }
     
     //次へボタンタップ時
@@ -69,25 +86,26 @@ class CalendarViewController: UIViewController {
     
 }
 
-extension UIViewController: UICollectionViewDataSource {
+extension CalendarViewController: UICollectionViewDataSource {
     
     //1 セクション数を決める。今回は曜日と日にちの2種類を出したいので2にした
     public func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 2
+        //enumで宣言したセクションの数を取得
+        return weekSectionCount.rawValue
     }
     
     //2 セルの数決める　今回は月火水...と1~31の2種類
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch section {
         case 0:
-            return 7
+            return weekSectionCount.rawValue
         case 1:
             //            print("知りたいのは\(dateManager.daysAcquisition())")
-            return dateManager.daysAcquisition()//数を変える
+            return dateManager.daysAcquisition()//数を変える月によってセルの数がことなる
         default:
-            print("error")
-            return 0
+            break
         }
+        return 0
     }
     
     //3 cell内のテキストカラー及びテキスト配置を決める
@@ -96,43 +114,54 @@ extension UIViewController: UICollectionViewDataSource {
         -> UICollectionViewCell {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? CalendarCell
             
-            let weekArray = ["日", "月", "火", "水", "木", "金", "土"]
+            //カレンダークラスを参照
+            var calendar = Calendar.current
+            calendar.locale = Locale(identifier: "ja")
+            let shortWeekdaySymbols = calendar.shortWeekdaySymbols
             
-            //土曜日・日曜日を識別し土曜日だったらお青色に日曜日だったら赤色にする。
+            //土曜日・日曜日を識別し土曜日だったら青色に日曜日だったら赤色にする。
             if indexPath.row % 7 == 0 {
-                cell?.dayLabel?.textColor = UIColor.red
+                cell?.catchLabel().textColor = UIColor.red
             } else if indexPath.row % 7 == 6 {
-                cell?.dayLabel?.textColor = UIColor.blue
+                cell?.catchLabel().textColor = UIColor.blue
                 print(indexPath.row)
             } else {
-                cell?.dayLabel?.textColor = UIColor.black
+                cell?.catchLabel().textColor = UIColor.black
             }
             //1行目に1週間の曜日を2行目にその月のカレンダーをテキスト配置する。
             if indexPath.section == 0 {
-                cell?.dayLabel?.text = weekArray[indexPath.row]
+                cell?.catchLabel().text = shortWeekdaySymbols[indexPath.row]
             } else {
-                //月によって1日の場所は異なる
-                cell?.dayLabel?.text = dateManager.conversionDateFormat(indexPath: indexPath)
+            //月によって1日の場所は異なる
+                cell?.catchLabel().text = dateManager.conversionDateFormat(indexPath: indexPath)
+            }
+            
+            switch indexPath.section {
+            case 0:
+                cell?.catchLabel().text = shortWeekdaySymbols[indexPath.row]
+            case 1:
+                cell?.catchLabel().text = dateManager.conversionDateFormat(indexPath: indexPath)
+            default:
+                break
             }
             
             //表示している月以外の日付を非活性状態にする。
             switch indexPath.row {
             case 0...5:
-                if cell?.dayLabel?.text?.count == 2 {
-                    cell?.dayLabel?.textColor = UIColor.gray
+                if cell?.catchLabel().text?.count == 2 {
+                    cell?.catchLabel().textColor = UIColor.gray
                 }
             case 29...35:
-                if cell?.dayLabel?.text?.count == 1 {
-                    cell?.dayLabel?.textColor = UIColor.gray
+                if cell?.catchLabel().text?.count == 1 {
+                    cell?.catchLabel().textColor = UIColor.gray
                 }
             case 36...42:
-                if cell?.dayLabel?.text?.count == 1 {
-                    cell?.dayLabel?.textColor = UIColor.gray
+                if cell?.catchLabel().text?.count == 1 {
+                    cell?.catchLabel().textColor = UIColor.gray
                 }
             default:
-                print("色の変更は無し")
+               break
             }
-            
             return cell ?? CalendarCell()
     }
     
@@ -142,18 +171,17 @@ extension UIViewController: UICollectionViewDelegate {
     
 }
 
-extension UIViewController: UICollectionViewDelegateFlowLayout {
+extension CalendarViewController: UICollectionViewDelegateFlowLayout {
     
     //セルのサイズを設定    下記3つのメソッドが無いとsection1の土曜日が2行目になるので調整のため追加。
     public func collectionView(_ collectionView: UICollectionView,
                                layout collectionViewLayout: UICollectionViewLayout,
                                sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let cellMargin: CGFloat = 2.0
         let daysPerWeek = 7
         let numberOfMargin: CGFloat = 8.0
-        let width =
-            (collectionView.frame.size.width - cellMargin * numberOfMargin) / CGFloat(daysPerWeek)
-        let height = width * 1.7
+        let width = (collectionView.frame.size.width - cellMargin * numberOfMargin) / CGFloat(daysPerWeek)
+        //以前width * 1.7 だったものを変更
+        let height = collectionView.frame.size.height / 6.2
         return CGSize(width: width, height: height)
     }
     
@@ -161,7 +189,6 @@ extension UIViewController: UICollectionViewDelegateFlowLayout {
     public func collectionView(_ collectionView: UICollectionView,
                                layout collectionViewLayout: UICollectionViewLayout,
                                minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        let cellMargin: CGFloat = 2.0
         return cellMargin
     }
     
@@ -169,7 +196,6 @@ extension UIViewController: UICollectionViewDelegateFlowLayout {
     public func collectionView(_ collectionView: UICollectionView,
                                layout collectionViewLayout: UICollectionViewLayout,
                                minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        let cellMargin: CGFloat = 2.0
         return cellMargin
     }
 }

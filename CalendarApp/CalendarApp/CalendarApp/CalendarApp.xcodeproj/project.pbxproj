@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EE4D2D6D220A5CF8002CC7CC /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4D2D6C220A5CF8002CC7CC /* Color.swift */; };
+		EE4D2D6F220D0265002CC7CC /* CalendarTextModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4D2D6E220D0265002CC7CC /* CalendarTextModel.swift */; };
 		EE5256F02201CF0C000D5CEF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE5256EE2201CF0C000D5CEF /* Main.storyboard */; };
 		EE5256F52201CF11000D5CEF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE5256F32201CF11000D5CEF /* LaunchScreen.storyboard */; };
 		EE5256FD2201D108000D5CEF /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5256FC2201D108000D5CEF /* CalendarCell.swift */; };
@@ -18,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EE4D2D6C220A5CF8002CC7CC /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		EE4D2D6E220D0265002CC7CC /* CalendarTextModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTextModel.swift; sourceTree = "<group>"; };
 		EE5256E72201CF0C000D5CEF /* CalendarApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CalendarApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE5256EF2201CF0C000D5CEF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EE5256F42201CF11000D5CEF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -74,6 +78,8 @@
 			isa = PBXGroup;
 			children = (
 				EE5257002201D6B2000D5CEF /* DateManager.swift */,
+				EE4D2D6E220D0265002CC7CC /* CalendarTextModel.swift */,
+				EE4D2D6C220A5CF8002CC7CC /* Color.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -201,7 +207,9 @@
 			files = (
 				EE52570E2202FC71000D5CEF /* CalendarViewController.swift in Sources */,
 				EE5256FD2201D108000D5CEF /* CalendarCell.swift in Sources */,
+				EE4D2D6F220D0265002CC7CC /* CalendarTextModel.swift in Sources */,
 				EE5257012201D6B2000D5CEF /* DateManager.swift in Sources */,
+				EE4D2D6D220A5CF8002CC7CC /* Color.swift in Sources */,
 				EE52570C22029428000D5CEF /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
