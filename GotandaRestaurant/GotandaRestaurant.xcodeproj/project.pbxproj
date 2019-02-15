@@ -1,0 +1,345 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EEDA8D9922164CD000DFA33A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDA8D9822164CD000DFA33A /* AppDelegate.swift */; };
+		EEDA8D9E22164CD000DFA33A /* GotandaRestaurant.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEDA8D9C22164CD000DFA33A /* GotandaRestaurant.storyboard */; };
+		EEDA8DA022164CD200DFA33A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEDA8D9F22164CD200DFA33A /* Assets.xcassets */; };
+		EEDA8DA322164CD200DFA33A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEDA8DA122164CD200DFA33A /* LaunchScreen.storyboard */; };
+		EEDA8DAB22164E5C00DFA33A /* APImodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDA8DAA22164E5C00DFA33A /* APImodel.swift */; };
+		EEDA8DAD221651E600DFA33A /* RestaurantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDA8DAC221651E600DFA33A /* RestaurantViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		EEDA8D9522164CD000DFA33A /* GotandaRestaurant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GotandaRestaurant.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EEDA8D9822164CD000DFA33A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EEDA8D9D22164CD000DFA33A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/GotandaRestaurant.storyboard; sourceTree = "<group>"; };
+		EEDA8D9F22164CD200DFA33A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EEDA8DA222164CD200DFA33A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EEDA8DA422164CD200DFA33A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EEDA8DAA22164E5C00DFA33A /* APImodel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APImodel.swift; sourceTree = "<group>"; };
+		EEDA8DAC221651E600DFA33A /* RestaurantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EEDA8D9222164CCF00DFA33A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EEDA8D8C22164CCF00DFA33A = {
+			isa = PBXGroup;
+			children = (
+				EEDA8D9722164CD000DFA33A /* GotandaRestaurant */,
+				EEDA8D9622164CD000DFA33A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EEDA8D9622164CD000DFA33A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EEDA8D9522164CD000DFA33A /* GotandaRestaurant.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EEDA8D9722164CD000DFA33A /* GotandaRestaurant */ = {
+			isa = PBXGroup;
+			children = (
+				EEDA8D9822164CD000DFA33A /* AppDelegate.swift */,
+				EEDA8DAA22164E5C00DFA33A /* APImodel.swift */,
+				EEDA8D9C22164CD000DFA33A /* GotandaRestaurant.storyboard */,
+				EEDA8DAC221651E600DFA33A /* RestaurantViewController.swift */,
+				EEDA8D9F22164CD200DFA33A /* Assets.xcassets */,
+				EEDA8DA122164CD200DFA33A /* LaunchScreen.storyboard */,
+				EEDA8DA422164CD200DFA33A /* Info.plist */,
+			);
+			path = GotandaRestaurant;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EEDA8D9422164CCF00DFA33A /* GotandaRestaurant */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EEDA8DA722164CD200DFA33A /* Build configuration list for PBXNativeTarget "GotandaRestaurant" */;
+			buildPhases = (
+				EEDA8D9122164CCF00DFA33A /* Sources */,
+				EEDA8D9222164CCF00DFA33A /* Frameworks */,
+				EEDA8D9322164CCF00DFA33A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GotandaRestaurant;
+			productName = GotandaRestaurant;
+			productReference = EEDA8D9522164CD000DFA33A /* GotandaRestaurant.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EEDA8D8D22164CCF00DFA33A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = hiroya;
+				TargetAttributes = {
+					EEDA8D9422164CCF00DFA33A = {
+						CreatedOnToolsVersion = 10.1;
+					};
+				};
+			};
+			buildConfigurationList = EEDA8D9022164CCF00DFA33A /* Build configuration list for PBXProject "GotandaRestaurant" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EEDA8D8C22164CCF00DFA33A;
+			productRefGroup = EEDA8D9622164CD000DFA33A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EEDA8D9422164CCF00DFA33A /* GotandaRestaurant */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EEDA8D9322164CCF00DFA33A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EEDA8DA322164CD200DFA33A /* LaunchScreen.storyboard in Resources */,
+				EEDA8DA022164CD200DFA33A /* Assets.xcassets in Resources */,
+				EEDA8D9E22164CD000DFA33A /* GotandaRestaurant.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EEDA8D9122164CCF00DFA33A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EEDA8DAD221651E600DFA33A /* RestaurantViewController.swift in Sources */,
+				EEDA8D9922164CD000DFA33A /* AppDelegate.swift in Sources */,
+				EEDA8DAB22164E5C00DFA33A /* APImodel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		EEDA8D9C22164CD000DFA33A /* GotandaRestaurant.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EEDA8D9D22164CD000DFA33A /* Base */,
+			);
+			name = GotandaRestaurant.storyboard;
+			sourceTree = "<group>";
+		};
+		EEDA8DA122164CD200DFA33A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EEDA8DA222164CD200DFA33A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EEDA8DA522164CD200DFA33A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EEDA8DA622164CD200DFA33A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EEDA8DA822164CD200DFA33A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3HNBAS9RU7;
+				INFOPLIST_FILE = GotandaRestaurant/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ayoih.GotandaRestaurant;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EEDA8DA922164CD200DFA33A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3HNBAS9RU7;
+				INFOPLIST_FILE = GotandaRestaurant/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ayoih.GotandaRestaurant;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EEDA8D9022164CCF00DFA33A /* Build configuration list for PBXProject "GotandaRestaurant" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EEDA8DA522164CD200DFA33A /* Debug */,
+				EEDA8DA622164CD200DFA33A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EEDA8DA722164CD200DFA33A /* Build configuration list for PBXNativeTarget "GotandaRestaurant" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EEDA8DA822164CD200DFA33A /* Debug */,
+				EEDA8DA922164CD200DFA33A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EEDA8D8D22164CCF00DFA33A /* Project object */;
+}
