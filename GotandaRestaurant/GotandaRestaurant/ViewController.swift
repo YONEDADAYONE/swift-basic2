@@ -10,8 +10,7 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-
-    @IBOutlet weak var tableVIew: UITableView!
+    @IBOutlet weak private var tableVIew: UITableView!
     
     //ForecastListの配列が入っている
     var forecasts = [ForecastList]()

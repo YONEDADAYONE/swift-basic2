@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EE13626A2216A88800BC72BC /* Cachemodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1362692216A88800BC72BC /* Cachemodel.swift */; };
+		EE13626E2216AF1200BC72BC /* RestaurantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE13626D2216AF1200BC72BC /* RestaurantCell.swift */; };
+		EE1362702216BBD100BC72BC /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = EE13626F2216BBD100BC72BC /* .swiftlint.yml */; };
 		EEDA8D9922164CD000DFA33A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDA8D9822164CD000DFA33A /* AppDelegate.swift */; };
 		EEDA8D9E22164CD000DFA33A /* GotandaRestaurant.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEDA8D9C22164CD000DFA33A /* GotandaRestaurant.storyboard */; };
 		EEDA8DA022164CD200DFA33A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEDA8D9F22164CD200DFA33A /* Assets.xcassets */; };
@@ -16,6 +19,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EE1362692216A88800BC72BC /* Cachemodel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cachemodel.swift; sourceTree = "<group>"; };
+		EE13626D2216AF1200BC72BC /* RestaurantCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantCell.swift; sourceTree = "<group>"; };
+		EE13626F2216BBD100BC72BC /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
 		EEDA8D9522164CD000DFA33A /* GotandaRestaurant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GotandaRestaurant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEDA8D9822164CD000DFA33A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EEDA8D9D22164CD000DFA33A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/GotandaRestaurant.storyboard; sourceTree = "<group>"; };
@@ -37,9 +43,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EE1362722216C37E00BC72BC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				EEDA8DAC221651E600DFA33A /* RestaurantViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		EE1362732216C38300BC72BC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EE1362692216A88800BC72BC /* Cachemodel.swift */,
+				EEDA8DAA22164E5C00DFA33A /* APImodel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EE1362742216C38A00BC72BC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EE13626D2216AF1200BC72BC /* RestaurantCell.swift */,
+				EEDA8D9C22164CD000DFA33A /* GotandaRestaurant.storyboard */,
+				EEDA8DA122164CD200DFA33A /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		EEDA8D8C22164CCF00DFA33A = {
 			isa = PBXGroup;
 			children = (
+				EE13626F2216BBD100BC72BC /* .swiftlint.yml */,
 				EEDA8D9722164CD000DFA33A /* GotandaRestaurant */,
 				EEDA8D9622164CD000DFA33A /* Products */,
 			);
@@ -57,11 +91,10 @@
 			isa = PBXGroup;
 			children = (
 				EEDA8D9822164CD000DFA33A /* AppDelegate.swift */,
-				EEDA8DAA22164E5C00DFA33A /* APImodel.swift */,
-				EEDA8D9C22164CD000DFA33A /* GotandaRestaurant.storyboard */,
-				EEDA8DAC221651E600DFA33A /* RestaurantViewController.swift */,
+				EE1362742216C38A00BC72BC /* View */,
+				EE1362732216C38300BC72BC /* Model */,
+				EE1362722216C37E00BC72BC /* Controller */,
 				EEDA8D9F22164CD200DFA33A /* Assets.xcassets */,
-				EEDA8DA122164CD200DFA33A /* LaunchScreen.storyboard */,
 				EEDA8DA422164CD200DFA33A /* Info.plist */,
 			);
 			path = GotandaRestaurant;
@@ -77,6 +110,7 @@
 				EEDA8D9122164CCF00DFA33A /* Sources */,
 				EEDA8D9222164CCF00DFA33A /* Frameworks */,
 				EEDA8D9322164CCF00DFA33A /* Resources */,
+				EE1362712216BBED00BC72BC /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -125,6 +159,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE1362702216BBD100BC72BC /* .swiftlint.yml in Resources */,
 				EEDA8DA322164CD200DFA33A /* LaunchScreen.storyboard in Resources */,
 				EEDA8DA022164CD200DFA33A /* Assets.xcassets in Resources */,
 				EEDA8D9E22164CD000DFA33A /* GotandaRestaurant.storyboard in Resources */,
@@ -133,11 +168,33 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		EE1362712216BBED00BC72BC /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"SwiftLint does not exist, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		EEDA8D9122164CCF00DFA33A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE13626E2216AF1200BC72BC /* RestaurantCell.swift in Sources */,
+				EE13626A2216A88800BC72BC /* Cachemodel.swift in Sources */,
 				EEDA8DAD221651E600DFA33A /* RestaurantViewController.swift in Sources */,
 				EEDA8D9922164CD000DFA33A /* AppDelegate.swift in Sources */,
 				EEDA8DAB22164E5C00DFA33A /* APImodel.swift in Sources */,

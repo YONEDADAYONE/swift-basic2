@@ -1,0 +1,36 @@
+//
+//  Cachemodel.swift
+//  GotandaRestaurant
+//
+//  Created by 米田大弥 on 2019/02/15.
+//  Copyright © 2019 hiroya. All rights reserved.
+//
+
+import Foundation
+import UIKit
+
+class Cachemodel {
+    
+    let imageCache = NSCache<AnyObject, UIImage>()
+    
+    //ユーザーデフォルツを使用する
+    let userDefaults = UserDefaults.standard
+    
+    var url = URL(string: "")
+    
+    func addUserdefaultsUrl() {
+        
+        userDefaults.set(url, forKey: "save20")
+        
+        //plistファイルへの出力と同期する。
+        userDefaults.synchronize()
+        
+        //内容確認
+        if UserDefaults.standard.object(forKey: "save20") != nil {
+            print("urlの値はあります")
+            print(userDefaults.string(forKey: "save20") ?? "")
+        }
+        
+    }
+    
+}
